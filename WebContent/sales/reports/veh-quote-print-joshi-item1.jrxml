@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
+<!-- 2017-01-17T09:58:29 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="veh-quote-print-joshi-item1" pageWidth="555" pageHeight="802" whenNoDataType="NoPages" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="3edc3c5c-2dc8-4c81-b509-d8369b9e37b7">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w1" value="718"/>
+	<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w2" value="268"/>
+	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w1" value="395"/>
+	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w2" value="595"/>
+	<parameter name="main_item_name" class="java.lang.String"/>
+	<parameter name="comp_id" class="java.lang.Integer"/>
+	<parameter name="quote_id" class="java.lang.Integer"/>
+	<parameter name="quote_exprice" class="java.lang.String"/>
+	<parameter name="quote_netamt" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT
+	item_name,
+	quoteitem_price,
+	
+	COALESCE (
+		(
+			SELECT
+				GROUP_CONCAT(
+					CONCAT(
+						opt.quoteitem_option_group,
+						': ',
+						optitem.item_name,
+
+					IF (
+						optitem.item_code != '',
+						CONCAT(' (', optitem.item_code, ')'),
+						''
+					),
+					CONCAT(' Qty: ', opt.quoteitem_qty),
+
+				IF (
+					optitem.item_small_desc != '',
+					CONCAT(
+						'
+',
+						optitem.item_small_desc
+					),
+					''
+				)
+					)
+					ORDER BY
+						opt.quoteitem_id ASC SEPARATOR ' '
+				)
+			FROM
+				 axelaauto_$P{comp_id}.axela_sales_quote_item opt
+			INNER JOIN axelaauto_$P{comp_id}.axela_inventory_item optitem ON optitem.item_id = opt.quoteitem_item_id
+			INNER JOIN axelaauto_$P{comp_id}.axela_inventory_item_option ON option_item_id = opt.quoteitem_item_id
+			WHERE
+				opt.quoteitem_quote_id = invitem.quoteitem_quote_id
+			AND opt.quoteitem_option_id = invitem.quoteitem_rowcount
+		),
+		''
+	) AS optionitems
+FROM
+	axelaauto_$P{comp_id}.axela_sales_quote_item invitem
+INNER JOIN axelaauto_$P{comp_id}.axela_inventory_item item ON item.item_id = invitem.quoteitem_item_id
+INNER JOIN axelaauto_$P{comp_id}.axela_inventory_uom ON uom_id = item.item_uom_id
+AND quoteitem_option_group != 'Optional Packages'
+WHERE 1=1
+AND quoteitem_rowcount = 0
+	AND
+	invitem.quoteitem_quote_id =$P{quote_id} 
+GROUP BY
+	quoteitem_id
+ORDER BY
+	quoteitem_option_group_tax,
+	quoteitem_id]]>
+	</queryString>
+	<field name="item_name" class="java.lang.String"/>
+	<field name="quoteitem_price" class="java.lang.String"/>
+	<columnHeader>
+		<band height="40">
+			<textField>
+				<reportElement isPrintRepeatedValues="false" x="193" y="19" width="361" height="20" uuid="c0a8b970-385e-4b98-af02-bf95e4692572">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Helvetica" size="8"/>
+					<paragraph leftIndent="0" rightIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{quote_exprice}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement isPrintRepeatedValues="false" x="193" y="-1" width="361" height="20" uuid="6fe3f76b-279a-4bd0-af99-6eae8da7c333">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Helvetica" size="8"/>
+					<paragraph leftIndent="0" rightIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{main_item_name}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="-1" width="193" height="20" uuid="5a2e489a-6b01-4ed5-82d4-afeb8bd1a78c">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="8"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[Model]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="19" width="193" height="20" uuid="b6e959e2-ed3a-4964-9d33-e65ca4c011fd">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="8"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[Ex-Showroom Price]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="21">
+			<textField>
+				<reportElement x="193" y="-1" width="361" height="20" uuid="3ffa4c61-8808-486e-a750-a669763d73ea">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Helvetica" size="8"/>
+					<paragraph leftIndent="0" rightIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new cloudify.connect.Connect().IndFormat($F{quoteitem_price})]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="-1" width="193" height="20" uuid="f75da53f-0480-4409-8c48-51573843f373">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement verticalAlignment="Middle" markup="html">
+					<font fontName="Helvetica" size="8"/>
+					<paragraph lineSpacing="Single" leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{item_name}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="19">
+			<textField>
+				<reportElement x="193" y="-2" width="361" height="20" uuid="dbc3475b-b9e3-44cf-84d8-d60826e6ea54">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Helvetica" size="8" isBold="true"/>
+					<paragraph leftIndent="0" rightIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{quote_netamt}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="-2" width="193" height="20" uuid="442ba384-1f2e-42d7-9339-9f7ca29f2353">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="8" isBold="true"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[Net Price]]></text>
+			</staticText>
+		</band>
+	</columnFooter>
+</jasperReport>

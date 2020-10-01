@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
+<!-- 2017-07-26T15:12:34 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Gsttax-details" pageWidth="555" pageHeight="802" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="f78fc6a7-d471-43bd-a027-3dd9b34f2be2">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<parameter name="comp_ID" class="java.lang.Integer"/>
+	<parameter name="voucher_id" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT
+	IF(item_hsn != '', item_hsn, IF(item_sac != '', item_sac, '')) AS hsn_sac,
+	COALESCE(main.vouchertrans_amount, 0.0) AS taxablevalue,
+
+	COALESCE(dtCentralTax.central_tax_rate, 0) AS central_tax_rate,
+	COALESCE(dtCentralTax.central_tax_amount, 0.0) AS central_tax_amount,
+
+	COALESCE(dtStateTax.state_tax_rate, 0) AS state_tax_rate,
+	COALESCE(dtStateTax.state_tax_amount, 0.0) AS state_tax_amount,
+
+	COALESCE(dtCessTax.cess_tax_rate, 0) AS cess_tax_rate,
+	COALESCE(dtCessTax.cess_tax_amount, 0.0) AS cess_tax_amount
+FROM
+	axelaauto_$P{comp_ID}.axela_acc_voucher_trans main
+INNER JOIN axelaauto_$P{comp_ID}.axela_inventory_item ON item_id = main.vouchertrans_item_id
+LEFT JOIN (
+	SELECT
+	vouchertrans_voucher_id,
+	vouchertrans_item_id,
+	CONCAT(FLOOR(customer_rate), '%') AS state_tax_rate,
+	SUM(vouchertrans_amount) AS state_tax_amount
+FROM
+	axelaauto_$P{comp_ID}.axela_acc_voucher_trans
+INNER JOIN axelaauto_$P{comp_ID}.axela_customer ON customer_id = vouchertrans_customer_id
+INNER JOIN axelaauto.axela_acc_tax_type ON taxtype_id = customer_taxtype_id
+AND customer_tax = '1'
+AND taxtype_id = 3
+AND vouchertrans_tax = '1'
+GROUP BY
+	vouchertrans_voucher_id, vouchertrans_item_id
+) AS dtStateTax ON dtStateTax.vouchertrans_voucher_id = main.vouchertrans_voucher_id
+AND dtStateTax.vouchertrans_item_id = main.vouchertrans_item_id
+
+LEFT JOIN (
+	SELECT
+	vouchertrans_voucher_id,
+	vouchertrans_item_id,
+	CONCAT(FLOOR(customer_rate), '%') AS central_tax_rate,
+	SUM(vouchertrans_amount) AS central_tax_amount
+FROM
+	axelaauto_$P{comp_ID}.axela_acc_voucher_trans
+INNER JOIN axelaauto_$P{comp_ID}.axela_customer ON customer_id = vouchertrans_customer_id
+INNER JOIN axelaauto.axela_acc_tax_type ON taxtype_id = customer_taxtype_id
+AND customer_tax = '1'
+AND taxtype_id IN (4, 5)
+AND vouchertrans_tax = '1'
+GROUP BY
+	vouchertrans_voucher_id, vouchertrans_item_id
+) AS dtCentralTax ON dtCentralTax.vouchertrans_voucher_id = main.vouchertrans_voucher_id
+AND dtCentralTax.vouchertrans_item_id = main.vouchertrans_item_id
+
+LEFT JOIN (
+	SELECT
+	vouchertrans_voucher_id,
+	vouchertrans_item_id,
+	CONCAT(FLOOR(customer_rate), '%') AS cess_tax_rate,
+	SUM(vouchertrans_amount) AS cess_tax_amount
+FROM
+	axelaauto_$P{comp_ID}.axela_acc_voucher_trans
+INNER JOIN axelaauto_$P{comp_ID}.axela_customer ON customer_id = vouchertrans_customer_id
+INNER JOIN axelaauto.axela_acc_tax_type ON taxtype_id = customer_taxtype_id
+AND customer_tax = '1'
+AND taxtype_id = 6 
+AND vouchertrans_tax = '1'
+GROUP BY
+	vouchertrans_voucher_id, vouchertrans_item_id
+) AS dtCessTax ON dtCessTax.vouchertrans_voucher_id = main.vouchertrans_voucher_id
+AND dtCessTax.vouchertrans_item_id = main.vouchertrans_item_id
+
+WHERE
+	1 = 1
+AND main.vouchertrans_voucher_id = $P{voucher_id}
+AND main.vouchertrans_item_id != 0
+GROUP BY
+	main.vouchertrans_item_id
+ORDER BY
+	main.vouchertrans_item_id]]>
+	</queryString>
+	<field name="hsn_sac" class="java.lang.String"/>
+	<field name="central_tax_rate" class="java.lang.String"/>
+	<field name="taxablevalue" class="java.lang.String"/>
+	<field name="central_tax_amount" class="java.lang.String"/>
+	<field name="state_tax_rate" class="java.lang.String"/>
+	<field name="state_tax_amount" class="java.lang.String"/>
+	<field name="cess_tax_rate" class="java.lang.String"/>
+	<field name="cess_tax_amount" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="29">
+			<staticText>
+				<reportElement x="197" y="15" width="40" height="14" uuid="955e03f4-259b-43dc-99eb-0516d9de0bca">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Rate]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="197" y="1" width="126" height="14" uuid="9c8a63ef-7159-4f81-bce1-04cb69610f4a"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Central Tax]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="323" y="15" width="41" height="14" uuid="1fda2dac-fc58-4538-8aa0-386fc5997966">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Rate]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="364" y="15" width="81" height="14" uuid="76dbf280-963c-4251-9624-bc00b3a1ab14">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Amount]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="323" y="1" width="122" height="14" uuid="1b2570f8-385d-4a38-90fa-614afb1f31d8"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[State Tax]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="445" y="15" width="34" height="14" uuid="cf9a04f6-2be8-4d75-a0c8-3cd304bfd55b">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Rate]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="479" y="15" width="75" height="14" uuid="5cf306f4-9045-4845-a8f0-040f588c9d16">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Amount]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="1" width="84" height="28" uuid="0dd5740f-8e4a-4399-8a19-9c27743cb619">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[HSN/SAC]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="84" y="1" width="112" height="28" uuid="96b576e3-c55c-4b73-bf89-db06b5c2b838">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Taxable Amount]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="237" y="15" width="86" height="14" uuid="42428c3b-bffa-4cbd-9915-a2ef7c94edbf">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Amount]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="445" y="1" width="109" height="14" uuid="ae8f8356-672f-4a74-b97d-7277dce815aa"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Cess]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="14" splitType="Stretch">
+			<printWhenExpression><![CDATA[$F{taxablevalue}.equals( "0.00" )==false ||
+$F{central_tax_amount}.equals( "0.00" )==false ||
+$F{state_tax_amount}.equals( "0.00" )==false ||
+$F{cess_tax_amount}.equals( "0.00" )==false]]></printWhenExpression>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="84" y="0" width="112" height="14" isRemoveLineWhenBlank="true" uuid="9d83b5cd-4479-421e-a27e-2d82a13e9c98">
+					<printWhenExpression><![CDATA[!$F{taxablevalue}.equals( "" )]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="4">
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle" markup="html">
+					<font isUnderline="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{taxablevalue}+" "]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="0" y="0" width="84" height="14" uuid="cb829f28-e47d-4e1f-80b4-048dd5585aec">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{hsn_sac}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="197" y="0" width="40" height="14" uuid="b011c252-abbf-493e-8daa-e51f938c12a0"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<paragraph spacingAfter="0"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{central_tax_rate}+"  "]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="237" y="0" width="86" height="14" uuid="0b8b8bf0-a79a-4927-b434-0c072a3ff767"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{central_tax_amount}+"  "]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="323" y="0" width="41" height="14" uuid="b90336f8-3136-4123-a68c-44f9c834d12a"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{state_tax_rate}+"  "]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="364" y="-1" width="81" height="15" uuid="7e74d16b-4215-4d5c-9c5f-ed1942370ecb"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{state_tax_amount}+"  "]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="445" y="-1" width="34" height="15" uuid="802825e4-4d45-4885-b572-bb2ed49f96bd"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{cess_tax_rate}+"  "]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="479" y="-1" width="75" height="15" uuid="4fcadffd-034c-4d2f-a3b1-65bf41517645"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<paragraph spacingAfter="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cess_tax_amount}+"  "]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

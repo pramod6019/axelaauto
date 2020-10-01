@@ -1,0 +1,2776 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
+<!-- 2017-11-27T17:35:12 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="testdrive-print-gatepass" pageWidth="595" pageHeight="842" whenNoDataType="NoPages" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="0" bottomMargin="20" whenResourceMissingType="Empty" uuid="a5ef9f7c-7dfd-44c5-b388-82eba29c5f93">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="customer_address" class="java.lang.String"/>
+	<field name="customer_phone1" class="java.lang.String"/>
+	<field name="customer_mobile1" class="java.lang.String"/>
+	<field name="veh_name" class="java.lang.String"/>
+	<field name="veh_regno" class="java.lang.String"/>
+	<field name="location_name" class="java.lang.String"/>
+	<field name="testdrive_time_from" class="java.lang.String"/>
+	<field name="testdrive_out_time" class="java.lang.String"/>
+	<field name="contactname" class="java.lang.String"/>
+	<field name="ch_yes" class="java.lang.String"/>
+	<field name="ch_no" class="java.lang.String"/>
+	<field name="ch_dealership" class="java.lang.String"/>
+	<field name="ch_customerplace" class="java.lang.String"/>
+	<field name="ch_yes1" class="java.lang.String"/>
+	<field name="ch_no1" class="java.lang.String"/>
+	<field name="emp_name" class="java.lang.String"/>
+	<field name="date" class="java.lang.String"/>
+	<field name="enquiry_no" class="java.lang.String"/>
+	<field name="enquiry_date" class="java.lang.String"/>
+	<field name="testdrive_date" class="java.lang.String"/>
+	<field name="model_name" class="java.lang.String"/>
+	<field name="city_name" class="java.lang.String"/>
+	<field name="customer_pin" class="java.lang.String"/>
+	<field name="customer_email1" class="java.lang.String"/>
+	<field name="state_name" class="java.lang.String"/>
+	<field name="customer_address1" class="java.lang.String"/>
+	<field name="testdrive_license_no" class="java.lang.String"/>
+	<field name="testdrive_license_valid" class="java.lang.String"/>
+	<field name="customer_city_name" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="664" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="58" width="555" height="1" uuid="5998b83e-3e19-41ff-9377-7baabdbafd33"/>
+			</line>
+			<staticText>
+				<reportElement x="305" y="36" width="250" height="19" uuid="07ed48c2-7045-476c-affa-11b13e96b5b8">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="1"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[		TEST RIDE BIKE AGREEMENT]]></text>
+			</staticText>
+			<line>
+				<reportElement x="-1" y="58" width="1" height="604" uuid="49ce9426-1c6b-4a00-8acf-99af94e0e7ed">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="555" y="58" width="1" height="604" uuid="04444cc7-dde0-4774-bb96-8c28b7ffffcc">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+			</line>
+			<staticText>
+				<reportElement x="10" y="59" width="172" height="15" uuid="9459598a-71ea-4dbb-85d3-dcd213bd7262">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="9"/>
+				</textElement>
+				<text><![CDATA[Name of the Customer :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="182" y="59" width="373" height="15" uuid="f0d0e8d7-1079-42f1-ac18-2dfed1a621eb">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2">
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{contactname}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="10" y="74" width="172" height="15" uuid="3d5962ea-5783-416c-b513-2aae49ce3e41">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="9"/>
+				</textElement>
+				<text><![CDATA[Address :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="89" width="172" height="15" uuid="b6d27ed3-cf40-4443-8cf9-5dd9d4366c76">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="9"/>
+				</textElement>
+				<text><![CDATA[Mobile :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="104" width="172" height="15" uuid="0eb65708-ff54-46e5-a57f-0ee05d3f67b0">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="9"/>
+				</textElement>
+				<text><![CDATA[Phone :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="119" width="172" height="15" uuid="06fb1692-de92-4063-b190-75b13e8cb695">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="9"/>
+				</textElement>
+				<text><![CDATA[Test Ride Vehicle :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="134" width="172" height="15" uuid="35ca873b-3b1a-4722-bd9b-31e9ebea5120">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="9"/>
+				</textElement>
+				<text><![CDATA[Registration Number :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="149" width="172" height="15" uuid="29189b86-9a96-4e0e-ac03-dbec8bd64f3c">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="9"/>
+				</textElement>
+				<text><![CDATA[Date :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="287" y="150" width="93" height="15" uuid="7fd5deec-a23b-4d44-9577-1661c39f3b58"/>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="9"/>
+				</textElement>
+				<text><![CDATA[Test Ride Location]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="380" y="150" width="175" height="15" uuid="f57728f7-b95b-452a-a117-ff4fa1c4af4c">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="1">
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{location_name}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="10" y="164" width="172" height="17" uuid="0d7482fc-8694-4fe6-97e5-69ddb2e5243a">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="9"/>
+				</textElement>
+				<text><![CDATA[Time (Commence) :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="287" y="165" width="93" height="15" uuid="a170dc40-3f89-4861-9706-6565371c1044">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="9"/>
+				</textElement>
+				<text><![CDATA[Time (End)]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="182" y="165" width="105" height="16" uuid="4b537e88-175a-4d6f-853c-21660ee79e6a">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2">
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{testdrive_time_from}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="380" y="165" width="175" height="15" uuid="5bad7ff3-40a1-4f66-9b08-a2d134dd2024">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="1">
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{testdrive_out_time}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="182" y="74" width="373" height="15" uuid="d5c60bf0-febf-4ee8-9371-a30e203a778b">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2">
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{customer_address}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="182" y="90" width="373" height="15" uuid="6730cbb5-72dc-4ccc-bae0-6bb6c5fc3675">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2">
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{customer_mobile1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="182" y="105" width="373" height="15" uuid="77dd3951-3e9c-43c5-adc3-aee7804e5927">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2">
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{customer_phone1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="182" y="120" width="373" height="15" uuid="8384883b-8c50-4cce-8677-0c7c8d05ee89">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2">
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{veh_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="182" y="135" width="373" height="15" uuid="5d489c5d-0e9c-4d5c-aed4-8b6e27ef0c90">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2">
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{veh_regno}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="183" width="555" height="12" uuid="8126a50c-38d4-48f8-be93-32a53509dc65">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Arial" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[					Checklist For Sales Executive]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="197" width="24" height="12" uuid="c60774da-e78f-451b-93bf-3fbf5cbecb6b">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="9"/>
+				</textElement>
+				<text><![CDATA[   1]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="40" y="197" width="230" height="12" uuid="e363a6a0-adf5-4394-b14e-beed083433f4">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="9"/>
+				</textElement>
+				<text><![CDATA[Was the test ride given to the customer?]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="209" width="24" height="12" uuid="bf78fc4f-e254-45d0-9f6b-49012c5ff956">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="9"/>
+				</textElement>
+				<text><![CDATA[   2]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="40" y="209" width="230" height="12" uuid="f22bfbfe-168e-44bb-9226-6d171799d5ce">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="9"/>
+				</textElement>
+				<text><![CDATA[IF yes,then mention the place of the test ride given.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="221" width="24" height="12" uuid="74f047d6-79ef-4b11-8da9-b5c2e5eece25">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="9"/>
+				</textElement>
+				<text><![CDATA[   3]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="40" y="221" width="230" height="12" uuid="08861e55-5f59-4ba7-9446-8a1bd34e8ed0"/>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="9"/>
+				</textElement>
+				<text><![CDATA[Was the test ride given within 3 hours of enquiry?]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="233" width="24" height="12" uuid="85f28182-d7f8-4161-bff1-32d2963aff5e">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="9"/>
+				</textElement>
+				<text><![CDATA[   4]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="40" y="233" width="230" height="12" uuid="f9d70499-199a-4fe2-a88a-7502768b531e"/>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="9"/>
+				</textElement>
+				<text><![CDATA[IF no,mention the reasons for the same]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="298" y="197" width="54" height="12" uuid="b922121b-f279-47a3-a15c-72ad4abf6823">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Helvetica" size="9"/>
+				</textElement>
+				<text><![CDATA[ Yes]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="369" y="197" width="17" height="12" uuid="dcdf4127-933a-428f-b366-8f70dd00741d">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="9"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ch_yes}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="394" y="197" width="46" height="12" uuid="9e4520cd-35ce-460d-b5ac-a82b7397008a">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Helvetica" size="9"/>
+				</textElement>
+				<text><![CDATA[ No]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="479" y="197" width="17" height="12" uuid="f6c21679-e06c-40a1-976b-4ab0d0f9b53e">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="9"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ch_no}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="298" y="209" width="54" height="12" uuid="da193ee4-dad3-41e9-bbcd-0de69aeefc20"/>
+				<box leftPadding="2"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Helvetica" size="9"/>
+				</textElement>
+				<text><![CDATA[Dealership]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="479" y="209" width="17" height="12" uuid="a2a07f80-6618-4a09-b36f-ef8a625f610c">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="9"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ch_customerplace}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="369" y="209" width="17" height="12" uuid="7c73d0be-40e2-4be0-b215-3ca08149d7de">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="9"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ch_dealership}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="394" y="209" width="76" height="12" uuid="af6f4f71-fa79-4163-8db5-0df25ec77033"/>
+				<box leftPadding="2"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Helvetica" size="9"/>
+				</textElement>
+				<text><![CDATA[Customer Place]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="298" y="221" width="54" height="12" uuid="198ccfcc-9c92-4624-90bf-98f924a12d38">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Helvetica" size="9"/>
+				</textElement>
+				<text><![CDATA[ Yes]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="479" y="221" width="17" height="12" uuid="e8ffc8d2-220c-40c9-a3fb-6dc5fc4842d2">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="9"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ch_no1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="369" y="221" width="17" height="12" uuid="e0d62d13-0f28-4745-90b8-c5321a69278a">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="9"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ch_yes1}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="394" y="221" width="46" height="12" uuid="be822da9-7375-4306-be50-6d792a18042f">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Helvetica" size="9"/>
+				</textElement>
+				<text><![CDATA[ No]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="264" width="24" height="12" uuid="ee20988d-fa21-4d90-9609-48196be0508c">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="9"/>
+				</textElement>
+				<text><![CDATA[   1).]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="276" width="24" height="12" uuid="79eedb1e-ba40-4f1f-914b-38aea39a4ab4">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="9"/>
+				</textElement>
+				<text><![CDATA[   2).]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="288" width="24" height="12" uuid="d6393062-310e-4e9c-b278-477a40d8c3de">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="9"/>
+				</textElement>
+				<text><![CDATA[   3).]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="300" width="24" height="12" uuid="12909e44-9ef2-4ab4-9dff-1cd286bd91b5">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="9"/>
+				</textElement>
+				<text><![CDATA[   4).]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="40" y="300" width="394" height="12" uuid="98be34cc-f801-4477-a55e-e723708fbc16"/>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="9"/>
+				</textElement>
+				<text><![CDATA[What was the duration of the test ride?(In Minites)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="40" y="288" width="394" height="12" uuid="015ab2bb-fa2d-4ca8-8d60-4fca916223a1"/>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="9"/>
+				</textElement>
+				<text><![CDATA[Was the test ride route ok?]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="40" y="276" width="394" height="12" uuid="e3d7f4d2-68e4-47ab-bfa4-704b437cc8f9">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="9"/>
+				</textElement>
+				<text><![CDATA[Was the condition of the vehicle in which you got the test ride was ok?]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="40" y="264" width="394" height="12" uuid="9dfcfa9f-9b76-4cd6-a6d1-57982ba9e552">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="9"/>
+				</textElement>
+				<text><![CDATA[Did you get the test ride on the  model of your choice?]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="312" width="24" height="12" uuid="ed2f2392-2a7b-4dd9-94b6-ad75c7ca7202">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="9"/>
+				</textElement>
+				<text><![CDATA[   5).]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="324" width="24" height="12" uuid="f72b3a74-fd6b-4a17-a5e3-3e150f978232">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="9"/>
+				</textElement>
+				<text><![CDATA[   6).]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="336" width="24" height="12" uuid="926c6250-63cb-4d12-b0e4-709d3ab69eb0">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="9"/>
+				</textElement>
+				<text><![CDATA[   7).]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="40" y="336" width="394" height="12" uuid="8d26519b-3ac3-4e92-b29c-58f7b9d706ed"/>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="9"/>
+				</textElement>
+				<text><![CDATA[Where the explanation given by the salesman to your satisfaction during the test ride.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="40" y="324" width="394" height="12" uuid="8f411ca9-f330-4b0c-ad1a-78f15669c9c9"/>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="9"/>
+				</textElement>
+				<text><![CDATA[Did you get the test ride at the place and time of your choice?]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="40" y="312" width="394" height="12" uuid="722dc303-686c-4975-b3e2-a9191b4bee8b">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="9"/>
+				</textElement>
+				<text><![CDATA[Was the duration of the test ride sufficient?]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="349" width="555" height="1" uuid="f86fed10-3fd4-42c1-9909-8cae5c664e02"/>
+			</line>
+			<staticText>
+				<reportElement x="11" y="360" width="204" height="12" uuid="013b9239-0f4f-4a1c-a60a-27f15751a896">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[Overall Feedback/Suggestions:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="380" width="555" height="1" uuid="72250207-4e19-43bd-ba3c-b494c6684382"/>
+			</line>
+			<staticText>
+				<reportElement x="11" y="381" width="126" height="15" uuid="f0ec88e9-cce3-411a-8eb7-36917f87358e">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[Customer Signature:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="320" y="381" width="110" height="15" uuid="a3e34535-e319-420e-9f88-7d60b136b64c">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[SM/TL Signature]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="11" y="396" width="126" height="15" uuid="3559e5a2-a8f1-47ba-9e6c-7f42189fb73c">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="9"/>
+				</textElement>
+				<text><![CDATA[Date:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="320" y="396" width="110" height="15" uuid="2a6c9107-b783-4144-8b62-718e4601d2e4">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="9"/>
+				</textElement>
+				<text><![CDATA[Date:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="411" width="555" height="1" uuid="d8eddbb1-cd37-488e-8322-5b4537b62323"/>
+			</line>
+			<staticText>
+				<reportElement x="0" y="420" width="555" height="12" uuid="455128ac-9b1d-448c-b2ce-5905dcd4d705">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[				Authorization to Test Riding of the Vehicle]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="435" width="60" height="12" uuid="c972596b-def7-4b70-8645-2464bc9d6457">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="9"/>
+				</textElement>
+				<text><![CDATA[Dear Sir,]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="36" y="451" width="516" height="23" uuid="65d08ba5-f8bc-4974-b029-24a2ccdd8ae7">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="9"/>
+				</textElement>
+				<text><![CDATA[       On my request,you have provided me the Bike no_________________________(Demo Bike) for test riding.I confirm to have undertaken as under.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="36" y="474" width="278" height="12" uuid="72eb1629-ee41-4449-9c3f-b09bd958fad1">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="9"/>
+				</textElement>
+				<text><![CDATA[1) The Demo Bike shall be ridden by me only.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="36" y="486" width="366" height="12" uuid="b8ea1298-6d60-4505-9e9f-643e8eadb312">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="9"/>
+				</textElement>
+				<text><![CDATA[2) The Demo Bike shall be used for the purpose of test ride only.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="36" y="498" width="438" height="12" uuid="1f1719ba-1b55-46ad-b2f8-59f3e11f2aff">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="9"/>
+				</textElement>
+				<text><![CDATA[3) I shall test ride the Demo Bike  only in the presence of authorized representative of your company.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="36" y="510" width="438" height="12" uuid="48d39080-48dd-4b53-91e3-fa8d6d2b8d03">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="9"/>
+				</textElement>
+				<text><![CDATA[4) I hold a valid and effective during license,a copy of which is being provided by herewith.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="36" y="522" width="438" height="12" uuid="03c9e6a7-e7bd-4d36-8368-63fa6cdc93a1">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="9"/>
+				</textElement>
+				<text><![CDATA[5) I shall test ride the Demo Bike only within the city limits .]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="36" y="534" width="438" height="12" uuid="b43c314f-b1d2-4a5d-8d08-bc613a5e4090">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="9"/>
+				</textElement>
+				<text><![CDATA[6) I shall abide by any all rules of the Road Regulations while test riding of the Demo Bike.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="36" y="546" width="478" height="24" uuid="9d889044-6d6d-46ff-819e-a5bf1ca6f47b">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="9"/>
+				</textElement>
+				<text><![CDATA[7) While conducting the test ride,I shall not engage in any activity which may be illegal or which may otherwise prejudice to M/s One Triumph.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="36" y="570" width="506" height="47" uuid="26eb2d08-c98f-42ed-b711-c08c83138fad">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="Helvetica" size="9"/>
+				</textElement>
+				<text><![CDATA[      In the event of any legal and/or civil consequence and arising from any handling/use of the aforesaid vehicle.I undertake to indemnify M/s One Triumph against all liabilities.The indemnity shall include but not be limited to police challans,damages to Demo Bike and third party property, and any other civil/criminal action that may result from my using the Demo Bike.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="36" y="617" width="143" height="15" uuid="b3fa743c-acd5-4099-8378-52fc0a9ac801">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement>
+					<font fontName="Helvetica" size="9"/>
+				</textElement>
+				<text><![CDATA[Thanking You.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="36" y="632" width="143" height="15" uuid="cdc65e96-09c6-478c-ab3b-ca4d191cf11d">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement>
+					<font fontName="Helvetica" size="9"/>
+				</textElement>
+				<text><![CDATA[Yours faithfully.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="36" y="647" width="143" height="15" uuid="4c103ce9-4f1f-49a2-a42e-5234315783f2">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement>
+					<font fontName="Helvetica" size="9"/>
+				</textElement>
+				<text><![CDATA[Customers Signature:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="-1" y="662" width="557" height="1" uuid="f6682389-f4df-42f9-96be-89efed1e1a18"/>
+			</line>
+			<line>
+				<reportElement x="0" y="181" width="555" height="1" uuid="d6848606-a203-44cf-885b-bf4b8eccda9a"/>
+			</line>
+			<image hAlign="Center">
+				<reportElement x="0" y="6" width="77" height="50" uuid="33afb305-e3b1-4607-9196-0807cec5bf29"/>
+				<imageExpression><![CDATA["../../assets/img/Triumph.jpg"]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement x="182" y="150" width="105" height="15" uuid="f930de30-7c0f-45d7-914c-0927b2effd52">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2">
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{date}]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="395" y="6" width="160" height="30" uuid="e4400914-7597-4c35-bb1f-61beaaedff69"/>
+				<imageExpression><![CDATA["../../assets/img/triumph-brandlogo.png"]]></imageExpression>
+			</image>
+		</band>
+		<band height="104">
+			<staticText>
+				<reportElement x="10" y="10" width="545" height="16" uuid="8233de26-ee7d-4a34-9681-65810c63a8e1">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement>
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<text><![CDATA[					TEST RIDE GATE PASS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="26" width="110" height="15" uuid="340d2eb2-5709-4560-9e67-75bc2eb474aa">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Arial" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Customer's Name:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="41" width="110" height="15" uuid="01b197eb-68ce-4262-9239-fb32b157e612">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Arial" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Location:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="56" width="110" height="15" uuid="11dd14c4-4ec0-4955-bfdc-8ff582716110">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Arial" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DSE Name:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="86" width="110" height="15" uuid="478f0658-68de-4a05-8608-cf68d2c1ed57">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Arial" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Mobile No:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="71" width="110" height="15" uuid="9b89c065-6d5b-4d44-b24c-e8095d30d153">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Arial" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Vehicle No:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="371" y="26" width="84" height="15" uuid="ba5887ba-bb42-43a0-93c8-5246233edf9e">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Arial" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Time Out:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="371" y="41" width="84" height="15" uuid="c8a67c77-2e7b-4bc3-9ea6-f421a50368fd">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Arial" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Time In:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="279" y="71" width="102" height="15" uuid="b328488a-9f02-47f7-a529-17c3b00bbe73">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement>
+					<font fontName="Arial" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Signature:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="279" y="86" width="102" height="15" uuid="0d922a31-bade-4ee1-8def-cda32828b02e">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement>
+					<font fontName="Arial" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[GM/SM (Sales)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="452" y="85" width="102" height="16" uuid="290edef4-9880-449f-87d7-56c433f5913c">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement>
+					<font fontName="Arial" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Security Incharge]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="103" width="555" height="1" uuid="aea3b9ff-508b-49cc-af7b-fe6300ceadfe"/>
+			</line>
+			<textField>
+				<reportElement x="120" y="26" width="149" height="15" uuid="1a034152-42b0-46ad-b71b-fb4bff5364dd">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2">
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{contactname}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="120" y="41" width="149" height="15" uuid="0c2e84a4-4d76-45de-8101-cec65d0980e8">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2">
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{location_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="120" y="56" width="149" height="15" uuid="294121ae-3a6d-4c7a-9003-4367d682a4d1">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2">
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{emp_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="120" y="71" width="149" height="15" uuid="63e10f9f-7550-4a8a-a423-20f9e1695c44">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2">
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{veh_regno}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="120" y="86" width="149" height="15" uuid="06310080-1df2-4ff6-b205-fc23e89a22e9">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2">
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{customer_mobile1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="455" y="26" width="97" height="15" uuid="b594ac2e-c0db-44ac-b076-dea37e9a3b07"/>
+				<box leftPadding="2">
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{testdrive_out_time}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="455" y="41" width="97" height="15" uuid="5a8dc69d-173a-49ed-8c1c-e4715b3e9607">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2">
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{testdrive_time_from}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="555" y="9" width="1" height="95" uuid="e6e05a97-d216-4370-bce9-422690c77a9e">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="0" y="9" width="555" height="1" uuid="2cf65093-627e-4c6c-b098-aae76ef0cb64"/>
+			</line>
+			<line>
+				<reportElement x="0" y="10" width="1" height="94" uuid="869d49e1-31c5-4f23-a5c5-25829cda252d">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+			</line>
+			<staticText>
+				<reportElement x="452" y="70" width="102" height="15" uuid="e7d2abf1-cac6-462e-9d92-f036ab069bdb">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement>
+					<font fontName="Arial" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Signature:]]></text>
+			</staticText>
+		</band>
+		<band height="821">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+			<staticText>
+				<reportElement x="205" y="72" width="151" height="21" uuid="e3ed2d1e-3a44-4b23-900f-1068a260ea43"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[INDEMNITY BOND]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="103" width="176" height="21" uuid="0449c05a-d15f-401f-a9f7-2db158a1ddb3">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="10"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<text><![CDATA[TO WHOM SO EVER IT MAY CONCERN]]></text>
+			</staticText>
+			<line>
+				<reportElement x="120" y="148" width="428" height="1" uuid="ccc9543c-9dcc-43d2-be00-ff51ddc37d33"/>
+			</line>
+			<staticText>
+				<reportElement x="10" y="128" width="108" height="21" uuid="6c303017-98aa-429d-bf48-f0df23eab9b3">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Helvetica" size="10"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<text><![CDATA[This is to declare that I ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="149" width="80" height="21" uuid="9392e298-64c1-482b-8b62-ee8fae9ad6ab">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Helvetica" size="10"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<text><![CDATA[son/daughter of ]]></text>
+			</staticText>
+			<line>
+				<reportElement x="94" y="169" width="454" height="1" uuid="25a48ca5-55c8-40e9-95a0-9b9fd98794cb"/>
+			</line>
+			<staticText>
+				<reportElement x="10" y="170" width="48" height="21" uuid="89d9d328-7635-4ad3-95ff-927763b6af5f">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Helvetica" size="10"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<text><![CDATA[address ]]></text>
+			</staticText>
+			<line>
+				<reportElement x="60" y="191" width="488" height="1" uuid="ddea4d7b-1bb0-4a87-bdac-eeef047f2bd3"/>
+			</line>
+			<staticText>
+				<reportElement x="11" y="193" width="543" height="195" uuid="6cdc26db-4537-4605-9aa0-95e78d6339ee"/>
+				<box leftPadding="2"/>
+				<textElement textAlignment="Left"/>
+				<text><![CDATA[take sole and absolute responsibility for the wellbeing of myself & material/ property/ equipment that I am arrying with me.And I will follow the CMVR- 1989 safety rules during the ride.										
+Under no circumstances will I or any person/ company hold Triumph Motorcycles India Pvt. Ltd. or any person associated with the Company, responsible for any sort of injury/ sickness/ damage/ loss/ accident/death/ delay or irregularity during or arising out of my ride.															
+I will abide by all rules and regulations laid down by the organizers, failing which I authorize the organizers to immobilize my motorcycle and leave without me.														
+I declare that I am voluntarily asking for the motorcycle to ride and am fully aware of all the associated risks to my life and material belongings.																		
+I have attained the age of maturity and am competent to give this declaration.I also agree to the below commandments of the Company:
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="389" width="555" height="20" uuid="4d6c1c82-b069-4ccf-bd57-292511107314"/>
+				<textElement textAlignment="Left"/>
+				<text><![CDATA[	•   Triumph Motorcycles Reserves the right to take back vehicles in case of reckless and negligent ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="526" width="554" height="19" uuid="1e27e77f-37d5-45d8-891d-313b43499948"/>
+				<textElement>
+					<font isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[	•  Anyone taking the bike for ride shall be responsible for any kind of damages that happen to the bike]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="745" width="58" height="21" uuid="f8b2ef14-5a0d-4569-b525-b3cb225c1c45">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Helvetica" size="10"/>
+				</textElement>
+				<text><![CDATA[Signature :]]></text>
+			</staticText>
+			<line>
+				<reportElement x="68" y="765" width="149" height="1" uuid="6977bde6-545e-48f2-9bea-e8f7da36d443"/>
+			</line>
+			<line>
+				<reportElement x="356" y="764" width="149" height="1" uuid="9967833e-448b-49dc-bd1e-218b9352aecd"/>
+			</line>
+			<staticText>
+				<reportElement x="319" y="745" width="36" height="21" uuid="e5066504-8e4e-44ac-af70-5d6765b4a1fd">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Helvetica" size="10"/>
+				</textElement>
+				<text><![CDATA[Date :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="771" width="38" height="21" uuid="0f820281-5695-4720-91f0-9ef7e87eac0e">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Helvetica" size="10"/>
+				</textElement>
+				<text><![CDATA[Place :]]></text>
+			</staticText>
+			<line>
+				<reportElement x="48" y="791" width="149" height="1" uuid="b7c78234-eaf2-48ab-9fb7-5ff9b761a282"/>
+			</line>
+			<staticText>
+				<reportElement x="0" y="546" width="554" height="19" uuid="a471d0ac-c31a-44d5-81f1-8cfd8e2d0f6f"/>
+				<textElement>
+					<font isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[	    during the possession of the bike with the receiver and shall be liable to bear all expenses that will go in ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="565" width="554" height="19" uuid="cff9eb75-e30c-48f8-8d8d-632ba83d3a7c"/>
+				<textElement>
+					<font isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[	    repairing the bike.]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="120" y="128" width="428" height="19" uuid="e6f45bc5-1c94-4376-aa67-a97b3d34b38c"/>
+				<textElement verticalAlignment="Bottom"/>
+				<textFieldExpression><![CDATA[$F{contactname}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="-20" y="1" width="594" height="59" backcolor="#ABA4A4" uuid="af5232ac-e73d-439e-ae83-0e774a364c5a"/>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<image>
+				<reportElement x="352" y="1" width="203" height="59" uuid="b234e9e5-a408-4a4c-ac59-bd3c58b47200"/>
+				<imageExpression><![CDATA["../../assets/img/printlogolockup.png"]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement x="60" y="170" width="488" height="20" uuid="4449f8fc-7a27-46f5-92a4-2a0079d19886"/>
+				<textElement verticalAlignment="Bottom"/>
+				<textFieldExpression><![CDATA[$F{customer_address}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="409" width="554" height="19" uuid="acb1291b-9410-4e1a-840d-74ed12a05158"/>
+				<textElement>
+					<font isBold="false" isItalic="false" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[	      riding or if ridden under the influence of alcohol or any drug related substances.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="428" width="555" height="20" uuid="00739e08-df37-4632-b92e-d0217cd44213"/>
+				<textElement textAlignment="Left"/>
+				<text><![CDATA[	•   As a company policy we do not encourage unsafe riding, we would request media titles to not]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="448" width="554" height="19" uuid="f2a01b49-aa9e-4b37-89d1-2c454c8b3ac2"/>
+				<textElement>
+					<font isBold="false" isItalic="false" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[	      indulge in activities like Wheelies, Burnout, Stoppie, Knee on ground while riding etc. Any worn]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="467" width="554" height="19" uuid="5c7a3eee-38f8-47c9-9b5b-5788b9545d5c"/>
+				<textElement>
+					<font isBold="false" isItalic="false" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[	     out tires or wear and tear to the Motorcycles due to the above will have to be compensated by the rider.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="486" width="555" height="20" uuid="41881967-c00e-4f7c-83c6-702d1cc1adf6"/>
+				<textElement textAlignment="Left"/>
+				<text><![CDATA[	•   Any offences raised due to the above mentioned with local authorities or any 3rd party will be]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="506" width="554" height="19" uuid="842e8315-8c01-4cab-9f35-0c34f9fc5deb"/>
+				<textElement>
+					<font isBold="false" isItalic="false" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[	     solely dealt by the receiver/rider of the bike.]]></text>
+			</staticText>
+		</band>
+		<band height="750">
+			<image hAlign="Center">
+				<reportElement x="5" y="30" width="77" height="55" uuid="aa7533f7-5f79-471c-b866-d758e7481723"/>
+				<imageExpression><![CDATA["../../assets/img/Triumph.jpg"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="395" y="26" width="160" height="53" uuid="8206c68a-ea44-4b77-86bf-472d2d32b5e7"/>
+				<imageExpression><![CDATA["../../assets/img/triumph-brandlogo.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="18" y="95" width="82" height="12" uuid="9a7a9581-2241-457b-aaf3-7086e5d2e40d">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="9"/>
+				</textElement>
+				<text><![CDATA[Customer name:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="100" y="95" width="419" height="12" uuid="f858ea06-6d74-46f0-84b7-e7745ee523ed">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement>
+					<font fontName="Helvetica" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{contactname}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="231" y="65" width="100" height="30" uuid="44d6112f-6ccc-442e-b19d-f8ce8e72d62e"/>
+				<textElement>
+					<font fontName="Helvetica"/>
+				</textElement>
+				<text><![CDATA[Test Ride Feedback]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="18" y="107" width="82" height="16" uuid="eb81c1d3-b349-42b0-95ca-14aa380b3241"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Helvetica" size="9"/>
+				</textElement>
+				<text><![CDATA[Enquiry number:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="100" y="107" width="116" height="16" uuid="ba18cb2f-9b23-4677-8346-13713ce311d2">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Helvetica" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{enquiry_no}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="220" y="107" width="62" height="16" uuid="e21daf26-25cd-40e6-b527-a7c677253f95"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Helvetica"/>
+				</textElement>
+				<text><![CDATA[Enquiry date:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="282" y="107" width="237" height="16" uuid="79ebdc23-8da3-437e-bf46-032422d7e151">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Helvetica" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{enquiry_date}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="18" y="123" width="82" height="16" uuid="8dcb7e31-5352-4655-aafd-200596b25264"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Helvetica" size="9"/>
+				</textElement>
+				<text><![CDATA[Test Ride date:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="100" y="123" width="116" height="16" uuid="02528804-e096-46e6-b46a-177999a213b9">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Helvetica" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{testdrive_date}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="220" y="123" width="144" height="16" uuid="eb19f5b9-e60c-45c9-9d34-573531c535b8"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Helvetica"/>
+				</textElement>
+				<text><![CDATA[Vehicle interested to purchase:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="364" y="123" width="155" height="16" uuid="67bcf449-daa4-4fe5-8259-1e6836031c6c">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Helvetica" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{model_name}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="37" y="148" width="160" height="22" uuid="69c20f9a-0a17-4140-9b11-5970cbd94425"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Helvetica" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[To be filled by customer]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="72" y="170" width="200" height="19" uuid="67c0689e-1af4-4ee5-9248-f32eff0014a3"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Helvetica" size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Test ride distance covered(tick relevant)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="133" y="193" width="22" height="12" uuid="73637aef-b656-4b7a-aef4-eab2d0e8435a">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement>
+					<font fontName="Helvetica" size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="155" y="193" width="58" height="12" uuid="9fe1c11b-f08e-45c0-8607-34d7aea793fa">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="7" isBold="false"/>
+				</textElement>
+				<text><![CDATA[  <5 kms]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="133" y="205" width="22" height="12" uuid="d84e43ac-5b68-4205-b487-93a2651fb9e7">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement>
+					<font fontName="Helvetica" size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="155" y="205" width="58" height="12" uuid="669fa158-8032-4049-83eb-9999ab69004f">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="7" isBold="false"/>
+				</textElement>
+				<text><![CDATA[  5-10 kms]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="133" y="217" width="22" height="12" uuid="7b550685-db73-412d-9cb1-ef49bf7c9270"/>
+				<box>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement>
+					<font fontName="Helvetica" size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="155" y="217" width="58" height="12" uuid="69b0e506-aaa8-4454-b484-d77716700fab">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="7" isBold="false"/>
+				</textElement>
+				<text><![CDATA[  10-15 kms]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="133" y="229" width="22" height="12" uuid="89a346b5-4990-49da-b825-16817eab8700"/>
+				<box>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement>
+					<font fontName="Helvetica" size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="155" y="229" width="58" height="12" uuid="92d5f938-1ec4-4ceb-bbf7-46b3477b7076"/>
+				<box>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="7" isBold="false"/>
+				</textElement>
+				<text><![CDATA[  15-20 kms]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="133" y="241" width="22" height="12" uuid="ea495450-9692-4e5f-994e-895c2f529a88"/>
+				<box>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement>
+					<font fontName="Helvetica" size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="155" y="241" width="58" height="12" uuid="f872dc77-f415-4b34-89ea-663a2692ca2f">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="7" isBold="false"/>
+				</textElement>
+				<text><![CDATA[  >20 kms]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="320" y="170" width="200" height="19" uuid="c53abf44-d397-46f3-8a7c-f8f47daf5668"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Helvetica" size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Driving condition(tick relevant)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="358" y="193" width="22" height="12" uuid="111adc21-85ac-4214-b8f0-3af34672e02f">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement>
+					<font fontName="Helvetica" size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="380" y="193" width="58" height="12" uuid="c7ff0ac9-fa81-4bdf-81b5-a14d7596e74b">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="7" isBold="false"/>
+				</textElement>
+				<text><![CDATA[  City]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="358" y="205" width="22" height="12" uuid="7043579f-c94b-4e12-91e6-31c849abe02b">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement>
+					<font fontName="Helvetica" size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="380" y="205" width="58" height="12" uuid="b30c9a82-17f2-435c-baef-c67f378e6401">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="7" isBold="false"/>
+				</textElement>
+				<text><![CDATA[  Highway]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="358" y="217" width="22" height="12" uuid="f47feaa3-6e04-4ab1-9bb6-5e845600377e"/>
+				<box>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement>
+					<font fontName="Helvetica" size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="380" y="217" width="58" height="12" uuid="c68d371d-fdd5-4e94-a705-536f1035525b">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="7" isBold="false"/>
+				</textElement>
+				<text><![CDATA[  City & Highway]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="138" y="257" width="300" height="12" uuid="cf67ad96-003e-4cb0-b7ec-8c9b57df19e6"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Helvetica" size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Vehicle(s) test driven(please give a feedback for each test ride you take)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="121" y="293" width="22" height="12" uuid="20efb5a1-cc32-4855-9ed2-fa0b4d645dcf">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement>
+					<font fontName="Helvetica" size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="143" y="293" width="140" height="12" uuid="703dfe16-eb5b-47bb-9d63-470d13f9f871">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="7" isBold="false"/>
+				</textElement>
+				<text><![CDATA[  Bonneville  T100]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="121" y="305" width="22" height="12" uuid="45103cc8-a2c1-45fd-8e80-c856217a6a18">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement>
+					<font fontName="Helvetica" size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="143" y="305" width="140" height="12" uuid="6b4f7896-cfbd-4770-8dc5-2a288f5ddf69">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="7" isBold="false"/>
+				</textElement>
+				<text><![CDATA[  Bonneville  T120]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="121" y="317" width="22" height="12" uuid="dda38b3d-18ce-48b8-b174-327d061a5beb"/>
+				<box>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement>
+					<font fontName="Helvetica" size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="143" y="317" width="140" height="12" uuid="8b88339c-274d-4070-91be-41c3d569eb77">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="7" isBold="false"/>
+				</textElement>
+				<text><![CDATA[  Thurxton R]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="121" y="329" width="22" height="12" uuid="6dd1036e-4ea3-4901-b682-b9acf64333d2"/>
+				<box>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement>
+					<font fontName="Helvetica" size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="143" y="329" width="140" height="12" uuid="5818b68b-3720-4f38-8ebf-cc8bb472ebeb"/>
+				<box>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="7" isBold="false"/>
+				</textElement>
+				<text><![CDATA[  Street Scrambler]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="121" y="341" width="22" height="12" uuid="8886b9be-4bc4-4621-bc8a-ceca790a0071"/>
+				<box>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement>
+					<font fontName="Helvetica" size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="143" y="341" width="140" height="12" uuid="79d8b2c3-da09-499c-ae8e-c6d569fb8f40">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="7" isBold="false"/>
+				</textElement>
+				<text><![CDATA[  Bonneville  Bobber]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="121" y="353" width="22" height="12" uuid="96144453-5993-441d-9971-47ee8e6d2a8b"/>
+				<box>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement>
+					<font fontName="Helvetica" size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="143" y="353" width="140" height="12" uuid="75557351-fe20-4fe5-a6a6-cfb0f2d07e1d">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="7" isBold="false"/>
+				</textElement>
+				<text><![CDATA[  Street Triple s]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="283" y="293" width="22" height="12" uuid="d738fbc8-319e-4cfd-8e4a-a7d1459c7212">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement>
+					<font fontName="Helvetica" size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="305" y="293" width="140" height="12" uuid="b5c229be-c0a0-4861-8b1d-bc5ff11f5652">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="7" isBold="false"/>
+				</textElement>
+				<text><![CDATA[  Tiger 800 XR]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="283" y="305" width="22" height="12" uuid="bb646f24-9b84-4ef8-9641-de22b86a1edb">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement>
+					<font fontName="Helvetica" size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="305" y="305" width="140" height="12" uuid="4ffc5337-c00a-427c-9590-4882fdf306be">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="7" isBold="false"/>
+				</textElement>
+				<text><![CDATA[  Tiger 800 XRX]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="283" y="317" width="22" height="12" uuid="06b924ab-a789-4fdc-94fa-abef4032358b"/>
+				<box>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement>
+					<font fontName="Helvetica" size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="305" y="317" width="140" height="12" uuid="be6789fe-5d01-468d-8a91-937697483203">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="7" isBold="false"/>
+				</textElement>
+				<text><![CDATA[  Tiger 800 XCX]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="283" y="329" width="22" height="12" uuid="bded183b-1dda-482f-855f-4a9ce7b3cf10"/>
+				<box>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement>
+					<font fontName="Helvetica" size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="305" y="329" width="140" height="12" uuid="6c446c64-f29b-46d5-9f83-e5617af5566d"/>
+				<box>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="7" isBold="false"/>
+				</textElement>
+				<text><![CDATA[  Tiger 800 XCA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="283" y="341" width="22" height="12" uuid="678f0178-bdc2-4d39-b0c9-f7f607b2edb6"/>
+				<box>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement>
+					<font fontName="Helvetica" size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="305" y="341" width="140" height="12" uuid="402540d7-7034-43a8-bff9-86b11a540285">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="7" isBold="false"/>
+				</textElement>
+				<text><![CDATA[  Thunderbird Storm]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="283" y="353" width="22" height="12" uuid="2e167474-9646-4583-85f1-326c5b6bd5b7"/>
+				<box>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement>
+					<font fontName="Helvetica" size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="305" y="353" width="140" height="12" uuid="04c54684-db36-407f-ab64-7f9369292bf6">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="7" isBold="false"/>
+				</textElement>
+				<text><![CDATA[ ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="121" y="365" width="158" height="15" uuid="86e7dcbb-d7f6-4f3c-8442-b6ce785b1646"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Helvetica" size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Customer Feedback(please rate from 1-10):]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="125" y="384" width="57" height="22" uuid="b713d17f-b8bd-4f5e-820e-ce5733e7ccc0">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="Helvetica" size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Customer Rating]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="182" y="384" width="97" height="22" uuid="c42342b6-98fb-4031-9ccf-637ce83d37cb">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Helvetica" size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Motorcycle attribute]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="125" y="406" width="57" height="12" uuid="c12318f7-9f6e-4b26-b515-7f59bb7bca7e">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement>
+					<font fontName="Helvetica" size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="182" y="406" width="97" height="12" uuid="74e82562-9969-4aca-b9a9-c3150fa706eb">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="7" isBold="false"/>
+				</textElement>
+				<text><![CDATA[  Engine Power]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="125" y="418" width="57" height="12" uuid="5a34d278-6bd0-4115-a358-04be4fa94fec"/>
+				<box>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement>
+					<font fontName="Helvetica" size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="182" y="418" width="97" height="12" uuid="1d874f21-1d35-4c25-8b08-31639db6df2b">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="7" isBold="false"/>
+				</textElement>
+				<text><![CDATA[  Throttle reponse]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="125" y="430" width="57" height="12" uuid="755187c5-2853-4979-ae51-9620bab7d1a2"/>
+				<box>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement>
+					<font fontName="Helvetica" size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="182" y="430" width="97" height="12" uuid="d2e9ca94-5864-4982-9ce7-4a6b1e4151ef"/>
+				<box>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="7" isBold="false"/>
+				</textElement>
+				<text><![CDATA[  Acceleration]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="125" y="454" width="57" height="12" uuid="866602b6-75e8-4d5b-876f-855a427bc881"/>
+				<box>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement>
+					<font fontName="Helvetica" size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="182" y="454" width="97" height="12" uuid="608237d4-afcf-414e-9890-fb5a820c0d2c"/>
+				<box>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="7" isBold="false"/>
+				</textElement>
+				<text><![CDATA[  Seat comfort]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="125" y="442" width="57" height="12" uuid="d53be440-dce5-47be-ab05-e5c39fa0ba97"/>
+				<box>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement>
+					<font fontName="Helvetica" size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="182" y="442" width="97" height="12" uuid="72d444bf-b6d6-476f-bf08-7b0995fdb478">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="7" isBold="false"/>
+				</textElement>
+				<text><![CDATA[  Braking Efficiency]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="290" y="384" width="57" height="22" uuid="8b14ec32-838d-43aa-b5c1-f354a4a2bd00">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="Helvetica" size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Customer Rating]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="347" y="384" width="97" height="22" uuid="ded690fa-abee-4c53-817d-875eb046b6e4">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Helvetica" size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Motorcycle attribute]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="290" y="406" width="57" height="12" uuid="8763fb97-a8b7-4be4-9b48-8566c55c51a2">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement>
+					<font fontName="Helvetica" size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="347" y="406" width="97" height="12" uuid="3fa8fc2e-a97c-41d0-9dd7-9ce82e5e7f3c">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="7" isBold="false"/>
+				</textElement>
+				<text><![CDATA[  Seat height]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="290" y="418" width="57" height="12" uuid="ad72a9a6-18ea-448c-8778-849219957254"/>
+				<box>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement>
+					<font fontName="Helvetica" size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="347" y="418" width="97" height="12" uuid="6b567cf1-4a0b-4558-9f7c-143770b5b521">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="7" isBold="false"/>
+				</textElement>
+				<text><![CDATA[  Driving handle position]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="290" y="430" width="57" height="12" uuid="9afb7c4f-2aa5-4a52-9297-e404e3f81848"/>
+				<box>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement>
+					<font fontName="Helvetica" size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="347" y="430" width="97" height="12" uuid="f7567f5e-e8b4-4fcc-b86c-e2bd4654ab1a"/>
+				<box>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="7" isBold="false"/>
+				</textElement>
+				<text><![CDATA[  Vehicle handling]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="290" y="454" width="57" height="12" uuid="5f996aae-5e0d-43f3-8145-ebb6abc96e6b"/>
+				<box>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement>
+					<font fontName="Helvetica" size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="347" y="454" width="97" height="12" uuid="729f68f2-745b-448e-bcec-1a4c35623a4d"/>
+				<box>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="7" isBold="false"/>
+				</textElement>
+				<text><![CDATA[  Maneuverability]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="290" y="442" width="57" height="12" uuid="9f342bd5-c0b2-47eb-8f6e-df1e1aedb3f9"/>
+				<box>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement>
+					<font fontName="Helvetica" size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="347" y="442" width="97" height="12" uuid="e48d10e3-b3c5-4475-8f24-9f968ccf2c3d">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="7" isBold="false"/>
+				</textElement>
+				<text><![CDATA[  Suspension comfort]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="198" y="466" width="156" height="22" uuid="2635d87b-6ad4-4a8f-895d-6e9be19356d5"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Customer Feedback(please rate from 1-10):]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="198" y="488" width="57" height="22" uuid="7aa248c6-1bbc-4f29-8c1a-7804138927d4">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="Helvetica" size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Customer Rating]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="255" y="488" width="155" height="22" uuid="e2e7d04b-5ce8-45c6-889e-2cd65978b8fe">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Helvetica" size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[  Description]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="198" y="510" width="57" height="12" uuid="12264cc1-90ee-4c5f-88a5-913315d26dec">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement>
+					<font fontName="Helvetica" size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="255" y="510" width="155" height="12" uuid="a37503b7-a1f3-4f15-83b9-db8e3321dcb1">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="7" isBold="false"/>
+				</textElement>
+				<text><![CDATA[  Condition of Test Ride vehicle]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="198" y="522" width="57" height="12" uuid="cf31c778-ed45-4bf7-9620-de044e6fed03"/>
+				<box>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement>
+					<font fontName="Helvetica" size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="255" y="522" width="155" height="12" uuid="1d354761-7a63-43c2-aad1-200c98d7f127">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="7" isBold="false"/>
+				</textElement>
+				<text><![CDATA[  Sales Consultant product knoweledge]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="198" y="534" width="57" height="12" uuid="651cdabb-a0fd-48b5-aeb2-a0de18d0fc26"/>
+				<box>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement>
+					<font fontName="Helvetica" size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="255" y="534" width="155" height="12" uuid="84ff1c5c-621c-4a34-8461-33bc72c50f78"/>
+				<box>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="7" isBold="false"/>
+				</textElement>
+				<text><![CDATA[  Explanation of avilable accessories]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="198" y="546" width="57" height="12" uuid="2d0eb357-b7ce-472e-b021-41e49fe77dc8"/>
+				<box>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement>
+					<font fontName="Helvetica" size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="255" y="546" width="155" height="12" uuid="008ef0c3-0bbc-4b35-9180-d3b5853b126a">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="7" isBold="false"/>
+				</textElement>
+				<text><![CDATA[  All my quries answered satisfactorily]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="91" y="570" width="428" height="15" uuid="659d9412-98d1-453c-95d2-258ea21a3065"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Helvetica" size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Customer Comments:_ _ _ _  _ _ _  _ _ _ _ _ _  _ _ _  _ _ _ _ _ _ _ _ _  _ _ _ _ _ _  _ _ _  _ _ _ _ _ _ _ _ _  _ _ _ _ _ _]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="93" y="610" width="79" height="15" uuid="c175d578-cbaa-4b64-8a06-bb2c97e6b5a9"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="Helvetica" size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Customer Sign]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="93" y="595" width="79" height="15" uuid="78c5bed1-fb0e-411f-8448-d2572042baaa"/>
+				<textElement>
+					<font fontName="Helvetica"/>
+				</textElement>
+				<text><![CDATA[_ _ _ _  _ _ _ _ _ _]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="93" y="640" width="79" height="15" uuid="b33db44e-73a6-445d-b54d-8b7715d0ec9a"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="Helvetica" size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Sales Manager Sign]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="93" y="625" width="79" height="15" uuid="bcff9cb2-a149-445e-970c-61d5a303e3b0"/>
+				<textElement>
+					<font fontName="Helvetica"/>
+				</textElement>
+				<text><![CDATA[_ _ _ _  _ _ _ _ _ _]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="338" y="610" width="79" height="15" uuid="9dca75c8-a032-43c6-85a1-b17d92e9f1d8"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="Helvetica" size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Sales Consultant Sign]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="338" y="595" width="79" height="15" uuid="a5dd688b-3ed5-438f-89f3-6e11ff0bd979"/>
+				<textElement>
+					<font fontName="Helvetica"/>
+				</textElement>
+				<text><![CDATA[_ _ _ _  _ _ _ _ _ _]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="338" y="640" width="79" height="15" uuid="0e4f85ee-a4a2-441c-912c-0c4ed9b8600e"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="Helvetica" size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[GM Sign]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="338" y="625" width="79" height="15" uuid="d0f1022e-be6f-4d4f-837d-52f0d658ff3c"/>
+				<textElement>
+					<font fontName="Helvetica"/>
+				</textElement>
+				<text><![CDATA[_ _ _ _  _ _ _ _ _ _]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="-20" y="657" width="594" height="5" backcolor="#030202" uuid="ddb1ce6f-0682-4a83-89b6-17a0f649d7a6"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Helvetica" size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="31" y="671" width="344" height="26" uuid="9976a79b-474f-476a-9816-a48d800aa60c"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="Helvetica"/>
+				</textElement>
+				<text><![CDATA[OneTriumph (A Division of Dehradun Automobiles Pvt. Ltd.)
+A 14 Kailash Colony, Near Kailash Colony Metro Station, New Delhi-110048]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="31" y="697" width="344" height="14" uuid="7bd5cedc-ce88-486b-b20a-fe881b4ee092"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="Helvetica"/>
+				</textElement>
+				<text><![CDATA[Workshop: D-149, Okhla Phase-I,New Delhi-110020]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="31" y="711" width="344" height="20" uuid="132df13b-1629-4069-a8f9-ec19ec1bca56"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="Helvetica"/>
+				</textElement>
+				<text><![CDATA[Registered Office:B-8,Mayapuri Industrial Area,Phase 2 New Delhi-110064]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="31" y="731" width="344" height="19" uuid="277c806d-c7ec-40db-8074-973ed203de87"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="Helvetica"/>
+				</textElement>
+				<text><![CDATA[CIN Number:U74899DL1989PTC038355]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="375" y="671" width="170" height="26" uuid="627525f7-3940-4766-883b-a1b2346208d2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica"/>
+				</textElement>
+				<text><![CDATA[Tel: +91 - 9693 - 800 - 800]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="375" y="697" width="170" height="14" uuid="7313dce5-3a7f-45e4-a422-9d85e14ad3b6"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica"/>
+				</textElement>
+				<text><![CDATA[info@onetriumph.com]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="375" y="711" width="170" height="20" uuid="18c918e9-866b-40c8-a47f-85800a7c7f85"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica"/>
+				</textElement>
+				<text><![CDATA[www.onetriumph.com]]></text>
+			</staticText>
+			<image>
+				<reportElement x="375" y="731" width="170" height="19" uuid="3aa6a314-6ef6-4cbe-93b5-3939edfb769d"/>
+				<imageExpression><![CDATA["../../assets/img/One-triumph.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="121" y="281" width="22" height="12" uuid="9046c5d0-957e-4c8c-b149-de8bc8b2918e">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement>
+					<font fontName="Helvetica" size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="143" y="281" width="140" height="12" uuid="4cebde98-a923-443d-a6f0-fbead47a84b2">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="7" isBold="false"/>
+				</textElement>
+				<text><![CDATA[  Street Twin]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="283" y="281" width="22" height="12" uuid="6d933ab2-c7e4-4735-81ae-850683f71b9e">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement>
+					<font fontName="Helvetica" size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="305" y="281" width="140" height="12" uuid="87884e3a-fbf2-4bf8-ae4c-2f82bb80ee3d">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="7" isBold="false"/>
+				</textElement>
+				<text><![CDATA[  Street Triple RS]]></text>
+			</staticText>
+		</band>
+	</detail>
+</jasperReport>

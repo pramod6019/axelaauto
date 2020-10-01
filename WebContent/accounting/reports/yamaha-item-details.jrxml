@@ -1,0 +1,461 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
+<!-- 2017-06-06T15:44:09 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="item-details" pageWidth="555" pageHeight="802" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="82db01c8-1845-4b5f-88aa-7b73dbd39d21">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w1" value="232"/>
+	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w2" value="761"/>
+	<parameter name="voucher_id" class="java.lang.String">
+		<parameterDescription><![CDATA[]]></parameterDescription>
+	</parameter>
+	<parameter name="comp_ID" class="java.lang.Integer"/>
+	<parameter name="voucher_so_id" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT
+	@row_id := @row_id + 1 AS slno,
+	 item_name,
+ if(item_type_id = 1,COALESCE(option_name,''),'') AS option_name,
+if(item_type_id = 1,COALESCE(veh_chassis_no,''),'') AS veh_chassis_no,
+if(item_type_id = 1,COALESCE(veh_engine_no,''),'') AS veh_engine_no,
+   vouchertrans_amount,
+   @discount := COALESCE (
+		(
+			SELECT
+				disc.vouchertrans_amount
+			FROM
+				axelaauto_$P{comp_ID}.axela_acc_voucher_trans disc
+			WHERE
+				disc.vouchertrans_option_id = trans.vouchertrans_rowcount
+			AND disc.vouchertrans_discount = 1
+			AND disc.vouchertrans_voucher_id = trans.vouchertrans_voucher_id
+		),
+		0
+	) AS discount,
+	@vouchervalue := (vouchertrans_amount - @discount) AS vouchervalue,
+	
+	@taxrate := COALESCE (
+		(
+			SELECT
+				customer_rate
+			FROM
+				axelaauto_$P{comp_ID}.axela_acc_voucher_trans taxtable
+			INNER JOIN axelaauto_$P{comp_ID}.axela_customer ON customer_id = taxtable.vouchertrans_tax_id
+			WHERE
+				taxtable.vouchertrans_option_id = trans.vouchertrans_rowcount
+			AND taxtable.vouchertrans_tax = 1
+			AND taxtable.vouchertrans_voucher_id = trans.vouchertrans_voucher_id
+			LIMIT 1
+		),
+		0
+	) AS tax,
+	
+	
+	@taxble_amt:=		(vouchertrans_price * @taxrate)/100 as taxable_amt,
+	
+
+	vouchertrans_qty,
+	vouchertrans_price,
+	 @vouchervalue + @taxble_amt  AS total_amt
+FROM
+	axelaauto_$P{comp_ID}.axela_inventory_item
+INNER JOIN axelaauto_$P{comp_ID}.axela_acc_voucher_trans trans ON trans.vouchertrans_item_id = item_id
+INNER JOIN axelaauto_$P{comp_ID}.axela_acc_voucher ON voucher_id = vouchertrans_voucher_id
+LEFT JOIN axelaauto_$P{comp_ID}.axela_sales_so ON so_id = voucher_so_id
+LEFT JOIN axelaauto_$P{comp_ID}.axela_vehstock_option ON option_id = so_option_id
+LEFT JOIN axelaauto_$P{comp_ID}.axela_service_veh ON veh_so_id = so_id
+WHERE
+	1 = 1
+AND vouchertrans_discount = 0
+AND vouchertrans_tax = 0
+AND vouchertrans_voucher_id = $P{voucher_id}
+AND item_type_id = 1 
+GROUP BY
+	item_id
+ORDER BY
+	vouchertrans_voucher_id]]>
+	</queryString>
+	<field name="item_name" class="java.lang.String"/>
+	<field name="vouchertrans_qty" class="java.lang.String"/>
+	<field name="vouchervalue" class="java.lang.Double"/>
+	<field name="discount" class="java.lang.Double"/>
+	<field name="slno" class="java.lang.String"/>
+	<field name="taxable_amt" class="java.lang.Double"/>
+	<field name="vouchertrans_price" class="java.lang.Double"/>
+	<field name="vouchertrans_amount" class="java.lang.Double"/>
+	<field name="veh_chassis_no" class="java.lang.String"/>
+	<field name="veh_engine_no" class="java.lang.String"/>
+	<field name="option_name" class="java.lang.String"/>
+	<field name="total_amt" class="java.lang.Double"/>
+	<field name="tax" class="java.lang.Double"/>
+	<variable name="total_items" class="java.lang.Integer" calculation="Count">
+		<variableExpression><![CDATA[$F{item_name}]]></variableExpression>
+	</variable>
+	<variable name="total_qty" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[Double.valueOf($F{vouchertrans_qty})]]></variableExpression>
+	</variable>
+	<variable name="return_total_items" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$F{taxable_amt}]]></variableExpression>
+	</variable>
+	<variable name="total_amount" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$F{vouchertrans_amount}]]></variableExpression>
+	</variable>
+	<variable name="total_tax_amount" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$F{taxable_amt}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<columnHeader>
+		<band height="21" splitType="Stretch">
+			<staticText>
+				<reportElement x="-3" y="0" width="35" height="20" uuid="4d5a1b13-6404-45d9-9cdb-2f32e3557f60">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[SNO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="32" y="0" width="189" height="20" uuid="79da9fec-73cf-41db-952f-a0837472fcce">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Vehicle Details]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="430" y="0" width="60" height="20" uuid="73793fc0-a9b6-4649-9d2a-c94e66fdc7a1"/>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[VAT Amount]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="270" y="0" width="24" height="20" uuid="97dfd21c-31dc-476b-8714-bd27b7559db3">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Qty]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="294" y="0" width="65" height="20" uuid="8ddf6c70-c7cf-4e9a-8aa2-87fcc2ae58f9"/>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Rate]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="359" y="0" width="71" height="20" uuid="fad67a2a-fe92-441c-be83-d3d229450461"/>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Gross AMT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToTallestObject" x="490" y="0" width="63" height="20" uuid="4504959b-0517-4623-97ae-df5865e45164"/>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[NET AMT]]></text>
+			</staticText>
+			<line>
+				<reportElement x="269" y="0" width="1" height="20" uuid="6f192f4f-7871-4b69-bfde-9fdf576168d2"/>
+			</line>
+			<line>
+				<reportElement x="554" y="0" width="1" height="20" uuid="f2114a14-59a7-47e2-94e2-417f06ebf253"/>
+			</line>
+			<staticText>
+				<reportElement x="221" y="-1" width="48" height="21" uuid="70217c0f-337d-4a13-9939-e9c363ede96c">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[VAT%]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="106" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+			<textField>
+				<reportElement x="1" y="-1" width="28" height="20" uuid="233594dd-1ce6-4649-a804-c109276c16bb">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2">
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA["1"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="33" y="-2" width="187" height="20" uuid="c821dee2-3a37-410e-98c9-6fe2b9c70aba">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2">
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{item_name}.replaceAll( "&#40;", "(" ).replaceAll( "&#41;", ")" )]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="431" y="-1" width="57" height="20" uuid="7e3b143a-ddb9-42af-afcd-bae34e912109">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box rightPadding="2">
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[new  cloudify.connect.Connect().IndFormat(new java.text.DecimalFormat("##0.00").format($F{taxable_amt}))]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="270" y="-2" width="23" height="20" uuid="8a2882c3-59fc-4937-90d2-54752e748de5">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2" rightPadding="2">
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{vouchertrans_qty} + "Nos"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="295" y="-2" width="62" height="21" uuid="42315f48-56a2-4cd7-b72b-ff4a7cf087df">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2">
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[new  cloudify.connect.Connect().IndFormat(new java.text.DecimalFormat("##0.00").format($F{vouchertrans_amount}))]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="361" y="-2" width="66" height="20" uuid="5c85289d-6d13-46c0-893b-92a4fb174394">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box leftPadding="0" rightPadding="2">
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[new  cloudify.connect.Connect().IndFormat(new java.text.DecimalFormat("##0.00").format($F{vouchertrans_amount}))]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="491" y="-2" width="62" height="20" uuid="78a10591-0b10-4c8a-b6ea-6f49cc0151cf"/>
+				<box rightPadding="2">
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[new  cloudify.connect.Connect().IndFormat(new java.text.DecimalFormat("##0.00").format($F{total_amt}))]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="-3" y="-22" width="1" height="126" uuid="28453e3b-82a7-4680-84ab-1e84fd349db1">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="269" y="-21" width="1" height="127" uuid="2585205c-8506-4e32-b69b-67a076cd9d6c"/>
+			</line>
+			<line>
+				<reportElement x="554" y="-1" width="1" height="105" uuid="325e17b4-c9fb-434d-b2e6-8d769efe1dd7"/>
+			</line>
+			<line>
+				<reportElement x="220" y="-21" width="1" height="125" uuid="166dc236-f3d2-4ddb-b60e-6ebc0457458f">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+			</line>
+			<textField>
+				<reportElement x="221" y="-2" width="46" height="20" uuid="876891ea-2fe8-4c56-bd92-57a5fb32bf03">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[new java.text.DecimalFormat("##0.00").format($F{tax})+"%"]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="32" y="-1" width="1" height="106" uuid="04ab2a8d-0a33-42f5-9807-9929096b8393">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="294" y="0" width="1" height="105" uuid="680a6b22-0e8d-4640-95bd-87e78c8ee1e5"/>
+			</line>
+			<textField isBlankWhenNull="true">
+				<reportElement x="100" y="18" width="118" height="20" isRemoveLineWhenBlank="true" uuid="270234f5-75a6-4cd5-b172-660449edc562">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<printWhenExpression><![CDATA[$F{veh_chassis_no}.equals("")== false]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="2">
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{veh_chassis_no}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="33" y="18" width="56" height="20" uuid="8291020a-2689-4f0d-8401-f30284099f84">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<textElement markup="none"/>
+				<text><![CDATA[Chassis No ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="" x="33" y="39" width="56" height="20" isRemoveLineWhenBlank="true" uuid="b8c84375-d79d-4768-bc5f-cfcba2e8e1ba"/>
+				<text><![CDATA[Engine No ]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="100" y="39" width="118" height="20" isRemoveLineWhenBlank="true" uuid="8c6dedc1-be41-4331-adb5-671d091a0c80">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<printWhenExpression><![CDATA[$F{veh_engine_no}.equals("")== false]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="2">
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{veh_engine_no}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="34" y="60" width="55" height="20" isRemoveLineWhenBlank="true" uuid="3a834622-fdef-4ed2-8542-a0afd9a85840"/>
+				<text><![CDATA[Colour]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="99" y="59" width="118" height="20" isRemoveLineWhenBlank="true" uuid="8e73e5ad-6873-471e-9b88-96038a9edd2f">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<printWhenExpression><![CDATA[$F{option_name}.equals("")== false]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="2">
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{option_name}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="359" y="-1" width="1" height="105" uuid="5d28fe53-8e04-48f4-84da-edc139808acd">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="490" y="0" width="1" height="104" uuid="63f7be2e-cb29-4297-852b-7c279af71d8b"/>
+			</line>
+			<line>
+				<reportElement x="430" y="0" width="1" height="104" uuid="0b5d5694-6213-41d4-85ce-c4b7b3d2bf5a"/>
+			</line>
+			<staticText>
+				<reportElement x="89" y="19" width="10" height="20" uuid="533933ef-e998-4363-b775-f0c8e344616a">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="89" y="39" width="10" height="20" uuid="c589b446-c46f-4671-b4bc-06de53c1dd65">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="89" y="59" width="10" height="20" uuid="2a1406a4-7034-4423-b3fd-3a052b5600cb">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="34" y="81" width="55" height="20" isRemoveLineWhenBlank="true" uuid="5aabcfb0-e1ea-4d49-93cf-a486b84e8a9c"/>
+				<text><![CDATA[Key No]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="89" y="81" width="10" height="20" uuid="073e4e40-75ad-4108-9728-60a376befc41">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="99" y="80" width="118" height="20" isRemoveLineWhenBlank="true" uuid="876d85ca-580f-49ab-b0a1-cfae51112622">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<printWhenExpression><![CDATA[$F{option_name}.equals("")== false]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="2">
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

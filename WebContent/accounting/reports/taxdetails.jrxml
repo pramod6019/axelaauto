@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
+<!-- 2018-02-23T17:09:48 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="taxdetails" pageWidth="555" pageHeight="802" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="e7068b23-089d-41db-943b-50c0a2f0d7bd">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<parameter name="voucher_id" class="java.lang.String">
+		<parameterDescription><![CDATA[]]></parameterDescription>
+	</parameter>
+	<parameter name="comp_ID" class="java.lang.Integer"/>
+	<queryString>
+		<![CDATA[SELECT
+	COALESCE (
+		CONCAT(
+			'Output ',
+			SUBSTR(customer_name, 1, 4),
+			' - '
+		),
+		''
+	) AS item_name,
+	SUM(vouchertrans_amount) AS vouchertrans_amount
+FROM
+	axelaauto_$P{comp_ID}.axela_inventory_item
+INNER JOIN axelaauto_$P{comp_ID}.axela_acc_voucher_trans ON vouchertrans_item_id = item_id
+LEFT JOIN axelaauto_$P{comp_ID}.axela_customer ON customer_id = vouchertrans_tax_id
+LEFT JOIN axelaauto.axela_acc_tax_type ON customer_taxtype_id = taxtype_id
+AND customer_tax = 1
+WHERE
+	1 = 1
+AND vouchertrans_discount = 0
+AND vouchertrans_tax = 1
+AND vouchertrans_voucher_id = $P{voucher_id}
+AND vouchertrans_amount != 0
+GROUP BY
+	taxtype_id
+ORDER BY
+	vouchertrans_voucher_id,
+	taxtype_rank]]>
+	</queryString>
+	<field name="vouchertrans_amount" class="java.lang.Double"/>
+	<field name="item_name" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="12" splitType="Stretch">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="103" y="0" width="150" height="12" uuid="c607d883-34f2-4810-87e5-e13a5aa74759">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box rightPadding="4">
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Bottom">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.text.DecimalFormat("##0.00").format($F{vouchertrans_amount})+" "]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="0" y="0" width="140" height="12" uuid="7799b430-cb90-452a-8e80-e6263b65e0b3">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2">
+					<leftPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Bottom">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{item_name}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

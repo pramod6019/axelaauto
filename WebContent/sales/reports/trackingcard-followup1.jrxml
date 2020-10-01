@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
+<!-- 2017-01-24T16:05:52 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="trackingcard-followup1" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="2c85a2be-f5b5-4b88-803b-41b5238cb2fa">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<parameter name="comp_id" class="java.lang.String"/>
+	<parameter name="enquiry_id" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT
+
+	DATE_FORMAT(
+		followup_followup_time,
+		'%d/%m/%Y'
+	) AS followup_followup_time,
+	followup_desc,
+	COALESCE(DATEDIFF(
+		enquiry_close_date,
+		enquiry_date
+	), '') AS diff,
+	COALESCE(followuptype_name, '') AS followuptype_name,
+	COALESCE (
+		DATE_FORMAT(
+			(
+				SELECT
+					followup_followup_time
+				FROM
+					axelaauto_$P!{comp_id}.axela_sales_enquiry_followup
+				WHERE
+					followup_enquiry_id = $P{enquiry_id}
+				AND followup_id > f.followup_id
+				ORDER BY
+					followup_followup_time
+				LIMIT 1
+			),
+			'%d/%m/%Y'
+		),
+		''
+	) AS nextfollowup
+FROM
+	axelaauto_$P!{comp_id}.axela_sales_enquiry_followup f
+INNER JOIN axelaauto_$P!{comp_id}.axela_sales_enquiry ON enquiry_id = f.followup_enquiry_id
+INNER JOIN axelaauto_$P!{comp_id}.axela_sales_enquiry_followup_type ON followuptype_id = f.followup_followuptype_id
+WHERE
+	1 = 1
+AND f.followup_enquiry_id = $P{enquiry_id}
+ORDER BY
+	f.followup_followup_time]]>
+	</queryString>
+	<field name="followup_followup_time" class="java.lang.String"/>
+	<field name="followuptype_name" class="java.lang.String"/>
+	<field name="followup_desc" class="java.lang.String"/>
+	<field name="diff" class="java.lang.String"/>
+	<field name="nextfollowup" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="-20" y="0" width="60" height="20" uuid="00977afb-9b1a-48c0-abd7-c5a9d650931d">
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Left">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{followup_followup_time}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="40" y="0" width="120" height="20" uuid="71e3395b-912e-44a7-b198-c9645e23e3c2">
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{followuptype_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="160" y="0" width="110" height="20" uuid="92e4630b-10c6-4387-8089-a692999372d2">
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{followup_desc}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="270" y="0" width="120" height="20" uuid="a5802560-118e-4ed7-8950-ff8507157511"/>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{diff}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="390" y="0" width="150" height="20" uuid="784099a0-1ea4-4e38-87a7-87caf0b8c8ac"/>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nextfollowup}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

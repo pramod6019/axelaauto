@@ -1,0 +1,11 @@
+eclipse.preferences.version=1
+encoding//WebContent/accounting/reports/bill-print.jrxml=UTF-8
+encoding//WebContent/accounting/reports/item-details.jrxml=UTF-8
+encoding//WebContent/accounting/reports/onetriumph-item-details.jrxml=UTF-8
+encoding//WebContent/accounting/reports/onetriumph-receipt-print.jrxml=UTF-8
+encoding//WebContent/accounting/reports/onetriumph-salesinvoice-print.jrxml=UTF-8
+encoding//WebContent/accounting/reports/paymode-details.jrxml=UTF-8
+encoding//WebContent/accounting/reports/po-item-details.jrxml=UTF-8
+encoding//WebContent/accounting/reports/purchaseinvoice-print.jrxml=UTF-8
+encoding//WebContent/accounting/reports/receipt-print.jrxml=UTF-8
+encoding//WebContent/accounting/reports/salesinvoice-print.jrxml=UTF-8

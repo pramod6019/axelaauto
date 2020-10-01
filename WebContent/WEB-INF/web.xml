@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+    <listener>
+        <listener-class>axela.portal.SessionCounter</listener-class>
+    </listener>
+    <listener>
+        <listener-class>axela.portal.ContextListener</listener-class>
+    </listener>
+    <servlet>
+        <servlet-name>Thumbnail</servlet-name>
+        <servlet-class>axela.portal.Thumbnail</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Thumbnailblob</servlet-name>
+        <servlet-class>axela.portal.ThumbnailBlob</servlet-class>
+    </servlet>
+     <servlet>
+        <servlet-name>DDMotorsThumbnail</servlet-name>
+        <servlet-class>axela.ddmotors_app.Thumbnail</servlet-class>
+    </servlet>
+     <servlet>
+        <servlet-name>ThumbnailAxelaApp</servlet-name>
+        <servlet-class>axela.axelaauto_app.Thumbnail</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Fetchdocs</servlet-name>
+        <servlet-class>axela.portal.Fetchdocs</servlet-class>
+    </servlet>
+     <servlet> 
+     <servlet-name>log4j-init</servlet-name>
+     <servlet-class>cloudify.connect.Log4jInit</servlet-class> 
+     <init-param>
+       <param-name>log4j-init-file</param-name>
+       <param-value>/WEB-INF/log4j.properties</param-value>
+     </init-param>
+     <load-on-startup>1</load-on-startup>
+</servlet>
+    
+    <servlet>
+        <servlet-name>Captcha</servlet-name>
+        <servlet-class>cloudify.connect.Captcha</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ServletAdaptor</servlet-name>
+        <servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Thumbnailblob</servlet-name>
+        <url-pattern>/Thumbnailblob.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Thumbnail</servlet-name>
+        <url-pattern>/Thumbnail.do</url-pattern>
+    </servlet-mapping>
+      <servlet-mapping>
+        <servlet-name>DDMotorsThumbnail</servlet-name>
+        <url-pattern>/DDMotorsThumbnail.do</url-pattern>       
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ThumbnailAxelaApp</servlet-name>
+        <url-pattern>/ThumbnailAxelaApp.do</url-pattern>       
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Fetchdocs</servlet-name>
+        <url-pattern>/Fetchdocs.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Captcha</servlet-name>
+        <url-pattern>/Captcha.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServletAdaptor</servlet-name>
+        <url-pattern>/ws/*</url-pattern>
+    </servlet-mapping>
+    
+    
+    <filter>
+    <filter-name>SecurityFilter</filter-name>
+    <filter-class>axela.ws.api.SecurityFilter</filter-class>
+    </filter>
+    
+    
+    <filter-mapping>
+    <filter-name>SecurityFilter</filter-name>
+    <url-pattern>/ws/api1.0/*</url-pattern>
+    </filter-mapping>
+    
+    
+    
+    
+    
+    
+    <filter>
+        <filter-name>XSSFilter</filter-name>
+        <filter-class>com.cj.xss.XSSFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>XSSFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+    <mime-mapping>
+        <extension>xlsx</extension>
+        <mime-type>application/vnd.openxmlformats-officedocument.spreadsheetml.sheet</mime-type>
+    </mime-mapping>
+    <resource-ref>
+      <description>DB Connection</description>
+      <res-ref-name>jdbc/ConnectDB</res-ref-name>
+      <res-type>javax.sql.DataSource</res-type>
+      <res-auth>Container</res-auth>
+  </resource-ref>
+    <session-config>
+       <session-timeout>
+           30
+       </session-timeout>
+    </session-config>
+    <welcome-file-list>
+        <welcome-file>
+            index.jsp
+        </welcome-file>
+    </welcome-file-list>
+</web-app>

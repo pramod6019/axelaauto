@@ -1,0 +1,446 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
+<!-- 2018-01-06T14:22:03 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="veh-quote-print-new" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isSummaryWithPageHeaderAndFooter="true" uuid="dda09a57-872a-472d-92c0-ef704c05042b">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="customer_name" class="java.lang.String"/>
+	<field name="customer_address" class="java.lang.String"/>
+	<field name="quote_id" class="java.lang.String"/>
+	<field name="quote_date" class="java.lang.String"/>
+	<field name="enquiry_id" class="java.lang.String"/>
+	<field name="customer_id" class="java.lang.String"/>
+	<field name="branch_add" class="java.lang.String"/>
+	<field name="branch_invoice_name" class="java.lang.String"/>
+	<field name="quote_exprice" class="java.lang.String"/>
+	<field name="quote_discamt" class="java.lang.String"/>
+	<field name="quote_grandtotal" class="java.lang.String"/>
+	<field name="total_amt" class="java.lang.String"/>
+	<field name="team_lead_name" class="java.lang.String"/>
+	<field name="team_lead_mob" class="java.lang.String"/>
+	<field name="emp_name" class="java.lang.String"/>
+	<field name="quoteitem_price" class="java.lang.String"/>
+	<field name="team_lead_email" class="java.lang.String"/>
+	<field name="item_name" class="java.lang.String"/>
+	<field name="comp_id" class="java.lang.Integer"/>
+	<field name="branch_quote_terms" class="java.lang.String"/>
+	<field name="branch_logo" class="java.lang.String"/>
+	<field name="reportname" class="java.lang.String"/>
+	<field name="emp_mobile1" class="java.lang.String"/>
+	<field name="main_item_name" class="java.lang.String"/>
+	<field name="main_quoteitem_qty" class="java.lang.String"/>
+	<field name="main_quoteitem_price" class="java.lang.String"/>
+	<field name="itemname" class="java.lang.String"/>
+	<field name="branch_mobile1" class="java.lang.String"/>
+	<field name="branch_email1" class="java.lang.String"/>
+	<field name="branch_name" class="java.lang.String"/>
+	<field name="quoteitem_tcs_price" class="java.lang.String"/>
+	<field name="quoteitem_roadtax_price" class="java.lang.String"/>
+	<field name="quoteitem_insur_price" class="java.lang.String"/>
+	<field name="quoteitem_esskit_price" class="java.lang.String"/>
+	<field name="fueltype_name" class="java.lang.String"/>
+	<field name="vehstock_comm_no" class="java.lang.String"/>
+	<field name="comp_logo" class="java.lang.String"/>
+	<field name="branch_phone1" class="java.lang.String"/>
+	<field name="quoteitem_handling_price" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<image scaleImage="FillFrame" onErrorType="Blank">
+				<reportElement x="210" y="-1" width="136" height="60" uuid="37b62991-e46e-4c73-8383-a8a3865d32f2"/>
+				<imageExpression><![CDATA[$F{comp_logo}]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement x="210" y="59" width="136" height="20" uuid="6567d153-d726-4978-b65e-71333c6f4b3f">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Helvetica" size="9" isItalic="false" isUnderline="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{reportname}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="128" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="1" width="555" height="1" uuid="124574ad-b73c-4ff0-ab7d-cb177d61da22">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+			</line>
+			<staticText>
+				<reportElement x="0" y="2" width="60" height="20" uuid="8232bdb4-ad90-49c3-ac0e-38f0350ec9c5">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box bottomPadding="2"/>
+				<textElement textAlignment="Right" verticalAlignment="Bottom">
+					<font fontName="Helvetica" size="8"/>
+				</textElement>
+				<text><![CDATA[Invoice Number:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="61" y="2" width="76" height="20" uuid="ebc41218-8a16-4f66-94b6-d3437b9b471c">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2" bottomPadding="2"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Helvetica" size="7"/>
+				</textElement>
+			</textField>
+			<staticText>
+				<reportElement x="210" y="2" width="36" height="20" uuid="03f7f63f-9be7-4340-9c9a-2ce2a6dce215"/>
+				<box bottomPadding="2"/>
+				<textElement textAlignment="Right" verticalAlignment="Bottom">
+					<font fontName="Helvetica" size="8"/>
+				</textElement>
+				<text><![CDATA[Date:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="246" y="2" width="100" height="20" uuid="71106a97-1c15-42ba-b221-a2f6242e4858">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2" bottomPadding="2"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Helvetica" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{quote_date}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="410" y="2" width="69" height="20" uuid="1463d675-30a8-4cea-8e05-d13a8898c41e"/>
+				<box bottomPadding="2"/>
+				<textElement textAlignment="Right" verticalAlignment="Bottom">
+					<font fontName="Helvetica" size="8"/>
+				</textElement>
+				<text><![CDATA[Commission No.]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="479" y="2" width="76" height="20" uuid="13684464-9b98-445f-9e1b-97676ba0a1a4">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2" bottomPadding="2"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Helvetica" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{vehstock_comm_no}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="24" width="180" height="18" uuid="b6dfe7cd-970c-426e-b58d-6588060866ce">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{branch_name}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="FixRelativeToBottom" x="0" y="42" width="180" height="19" uuid="cfebd027-214b-43c2-b813-fadffed936b0">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Top" markup="none">
+					<font fontName="Helvetica" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{branch_add}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="77" width="180" height="16" uuid="237ed90f-dfa2-48d7-9047-ff2ebcd67918">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{branch_mobile1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="93" width="180" height="16" uuid="f4f834d9-0144-4888-90dd-da8dd93fc56c">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{branch_email1}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="430" y="24" width="125" height="48" uuid="38fe9cb8-c2bd-45d9-b84c-f4c3f4e3b914"/>
+				<box topPadding="4" leftPadding="2"/>
+				<textElement textAlignment="Left">
+					<font fontName="Helvetica" size="8"/>
+				</textElement>
+				<text><![CDATA[Terms of Payment
+30% Advance Payment
+Balance on receipt of VIN No]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="507" y="108" width="48" height="20" uuid="abc61e1d-706f-424a-b6b0-c11a58f17b9c">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box rightPadding="2"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Helvetica" size="7"/>
+				</textElement>
+				<text><![CDATA[Price INR]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="22" width="555" height="1" uuid="6da1af62-dd57-4609-b6e8-1136c24330cc">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.3"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement x="0" y="61" width="180" height="16" uuid="c6c1ec59-3e91-4827-bcdb-a024b456f884">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{branch_phone1}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="41" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+			<subreport overflowType="Stretch">
+				<reportElement x="0" y="21" width="555" height="20" uuid="f748d68d-e41f-49f2-b3ed-855b6b5b4819"/>
+				<subreportParameter name="quote_id">
+					<subreportParameterExpression><![CDATA[$F{quote_id}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="comp_id">
+					<subreportParameterExpression><![CDATA[$F{comp_id}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA["veh-quote-items-list.jasper"]]></subreportExpression>
+			</subreport>
+			<textField>
+				<reportElement x="0" y="0" width="200" height="20" uuid="ac066090-02b3-4671-8b77-e088ca10c62b">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{main_item_name} +" "+ $F{fueltype_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="421" y="0" width="134" height="20" uuid="9c7ad45c-8008-4749-94e4-b5b25c7d545f">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box rightPadding="2"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Helvetica" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{main_quoteitem_price}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="259" splitType="Stretch">
+			<staticText>
+				<reportElement x="364" y="1" width="86" height="12" uuid="6609b8d5-225d-4559-b731-9e89ff31cbd5">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Helvetica" size="7"/>
+				</textElement>
+				<text><![CDATA[Total Vehicle Price :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="450" y="1" width="104" height="12" uuid="e55a18a5-6dcb-4ebd-84ba-a1ce407340dd">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Helvetica" size="8"/>
+					<paragraph lineSpacing="Double"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{quote_exprice}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="320" y="13" width="130" height="12" uuid="27ba3151-d3c7-432c-a534-4dfde35cd148">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Helvetica" size="8"/>
+				</textElement>
+				<text><![CDATA[Tax Collected @ Source (1%) :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="450" y="13" width="104" height="12" uuid="f9dbd95f-ade2-49fd-b2a3-64a75ddadd45">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Helvetica" size="8"/>
+					<paragraph lineSpacing="Double"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{quoteitem_tcs_price}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="340" y="25" width="110" height="12" uuid="297b8e23-a1df-4fb2-9a05-bfb3a58ab1cc"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Helvetica" size="8"/>
+				</textElement>
+				<text><![CDATA[Road Tax@: 19.98% KA :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="450" y="25" width="104" height="12" uuid="b05d4b72-7823-49b6-9bc7-a0d3279a8ac7"/>
+				<box leftPadding="2"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Helvetica" size="8"/>
+					<paragraph lineSpacing="Double"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{quoteitem_roadtax_price}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="390" y="37" width="60" height="12" uuid="88ede76e-b42f-4782-9d53-5cf0fede657f"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Helvetica" size="8"/>
+				</textElement>
+				<text><![CDATA[Essential Kit :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="450" y="37" width="104" height="12" uuid="d4e66e98-17b4-4b0a-90e0-37e6aa9931d7"/>
+				<box leftPadding="2"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Helvetica" size="8"/>
+					<paragraph lineSpacing="Double"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{quoteitem_esskit_price}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="360" y="49" width="90" height="12" uuid="288db0e4-bdfd-4a49-9577-ccc2ee6118bc">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Helvetica" size="8"/>
+				</textElement>
+				<text><![CDATA[0% Dep Insurances :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="450" y="49" width="104" height="12" uuid="a19c8f70-e5b9-4987-97b7-cf1bdd5c2ea1"/>
+				<box leftPadding="2"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Helvetica" size="8"/>
+					<paragraph lineSpacing="Double"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{quoteitem_insur_price}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="374" y="91" width="76" height="18" uuid="5a1114ba-db9b-4977-93ed-03a6d6fe2b57">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Helvetica" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total Amount :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="450" y="91" width="104" height="18" uuid="954a3108-327e-430f-8208-b02da6e05880"/>
+				<box leftPadding="2"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Helvetica" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{quote_grandtotal}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="191" width="111" height="20" uuid="41859828-ce5f-4c46-b126-45ed5115becd">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="8"/>
+				</textElement>
+				<text><![CDATA[Authorised Signatory :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="237" width="68" height="20" uuid="f30fa0b5-131a-4ffd-908b-6ede2935264b">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="8"/>
+				</textElement>
+				<text><![CDATA[Prepared by:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="68" y="237" width="112" height="20" uuid="bfc98115-26a4-4233-9967-acabf0d67c1a">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{emp_name}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="246" y="238" width="128" height="20" uuid="9362e261-7df7-4906-b7a8-cabc4df6ebc0">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Helvetica" size="8"/>
+				</textElement>
+				<text><![CDATA[Accounts Manager]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="448" y="239" width="106" height="20" uuid="247a5543-75b6-4689-8adb-f850020de160">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Helvetica" size="8"/>
+				</textElement>
+				<text><![CDATA[Sales Consultant]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="111" width="554" height="1" uuid="a70b7bfb-c3bd-48c0-a641-9c6bc5475322"/>
+				<graphicElement>
+					<pen lineWidth="0.3"/>
+				</graphicElement>
+			</line>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="112" width="554" height="58" uuid="bc24ad2f-b6e4-4304-ab9d-dd1157ebaebd"/>
+				<box leftPadding="2"/>
+				<textElement markup="html">
+					<font fontName="Helvetica" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{branch_quote_terms}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="171" width="180" height="20" uuid="2561c4aa-22f3-4843-bc6a-6c5294e5676b">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{branch_name}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="360" y="61" width="90" height="12" uuid="962b456a-c102-4fcc-84d7-1ddbf7f7ff64">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Helvetica" size="8"/>
+				</textElement>
+				<text><![CDATA[Handling Charges :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="450" y="61" width="104" height="12" uuid="dde1d540-9af4-4b80-ae22-b8e0d35c9500"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Helvetica" size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{quoteitem_handling_price}]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>

@@ -1,0 +1,65 @@
+<table border="1" cellspacing="0" cellpadding="0" align="center" class="listtable">
+                                    <tr>
+                                    <th align="center" colspan="6">Item Details</th>
+                                  </tr>
+                                    <tr>
+                                    <td colspan="6" align="center" valign="top"><div style="display:inline" id="item_name"> </div>
+                                        <input name="txt_item_id" type="hidden" id="txt_item_id"></td>
+                                  </tr>
+                                    <!--<tr>
+                                    <td align="center" valign="top">Quantity:
+                                        <input name="txt_item_qty" type="text" class="textbox" id="txt_item_qty"  value="<%//=mybean.item_qty%>" size="10" maxlength="10" onKeyUp="CalItemTotal();">
+                                        <input type="hidden" id="emp_po_priceupdate" name="emp_po_priceupdate" value="<%=mybean.emp_so_priceupdate%>">
+                                        <input type="hidden" id="emp_po_discountupdate" name="emp_po_discountupdate" value="<%=mybean.emp_so_discountupdate%>">
+                                        <input type="hidden" id="txt_item_baseprice" name="txt_item_baseprice" value="">
+                                        <input type="hidden" id="txt_item_pricevariable" name="txt_item_pricevariable" value="">
+                                    <td align="center" valign="top">Price:
+                                        <input name="txt_item_price" type="text" class="textbox" id="txt_item_price" value="<%//=mybean.item_price%>" size="10" maxlength="10"  onKeyUp="CalItemTotal();" onChange="CheckBasePrice();"></td>
+                                    <td align="center" valign="top">Discount:
+                                        <input name="txt_item_disc" type="text" class="textbox" id="txt_item_disc" value="<%//=mybean.item_disc%>" size="10" maxlength="10"  onKeyUp="CalItemTotal();"></td>
+                                    <td align="center" valign="top" nowrap><input name="txt_item_tax" type="hidden" id="txt_item_tax" value="">
+                                        <input name="txt_item_tax_id" type="hidden" id="txt_item_tax_id" value="" >
+                                        <div style="display:inline" id="tax_name">Tax</div>
+                                        : <br>
+                                        <div style="display:inline" id="item_tax">0</div></td>
+                                    <td align="center" valign="top"><input name="txt_item_total" type="hidden" id="txt_item_total" value="" >
+                                        <b>Total: <br>
+                                      <div style="display:inline" id="item_total">0</div>
+                                      </b></td>
+                                      <td align="center" valign="top"><div id="mode_button">
+                                        <input name="add_button" id="add_button" type="button" class="button" value="Add" onClick="AddCartItem();"/>
+                                      </div></td>
+                                  </tr>-->
+                                  <tr>
+                                  <td align="center" valign="top">Supplier UOM: <br>
+                                        <div style="display:inline" id="supplier_uom"></div></td>
+                                  <td align="center" valign="top">Our UOM: <br>
+                                        <div style="display:inline" id="our_uom"></div></td>
+                                        </tr>
+                                        <tr>
+                                  <td align="center" valign="top">Supplier Qty:
+                                        <input name="txt_supplier_qty" type="text" class="textbox" id="txt_supplier_qty" size="10" maxlength="10" onKeyUp="CalItemTotal();"></td>
+                                  <td align="center" valign="top">Our Qty: <br>
+                                        <div style="display:inline" id="our_qty">0</div></td>
+                                        </tr>
+                                        <tr>
+                                  <td align="center" valign="top">Supplier Price:
+                                        <input name="txt_supplier_price" type="text" class="textbox" id="txt_supplier_price" size="10" maxlength="10" onKeyUp="CalItemTotal();"></td>
+                                  <td align="center" valign="top">Delivery Date:
+                                  <input name=txt_item_delivery_date type=text class=textbox  id = txt_item_delivery_date value ="<%=mybean.ToLongDate(kknow())%>" size=12 maxlength=10>
+            <input type=image name=trigger id=trigger src=../admin-ifx/img.gif width=20 height=14 border=0>
+            <script type=text/javascript>
+            Calendar.setup({
+            inputField: "txt_item_delivery_date",
+            ifFormat: "%d/%m/%Y",
+            button: "trigger"
+            });
+           </script>
+		   </td>
+           </tr>
+           <tr>
+            <td align="center" valign="top" colspan="2"><input name="txt_item_total" type="hidden" id="txt_item_total" value="" >
+                                        <b>Total: <br>
+                                      <div style="display:inline" id="item_total">0</div>
+                                      </b></td>
+                                  </table>

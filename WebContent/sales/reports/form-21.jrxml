@@ -1,0 +1,444 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
+<!-- 2017-07-05T18:15:32 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Form-21" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="62b1ebf4-2c54-4556-976c-2c45abe1e1af">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="model_name" class="java.lang.String"/>
+	<field name="contact_name" class="java.lang.String"/>
+	<field name="contact_address" class="java.lang.String"/>
+	<field name="contact_mobile1" class="java.lang.String"/>
+	<field name="so_delivered_date" class="java.lang.String"/>
+	<field name="vehstock_engine_no" class="java.lang.String"/>
+	<field name="vehstock_chassis_no" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="38" splitType="Stretch">
+			<staticText>
+				<reportElement x="240" y="2" width="80" height="18" uuid="acd1fd43-b5a8-4d59-8643-378a60d0c22b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Helvetica" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FORM NO.21]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="218" y="22" width="125" height="14" uuid="02adfde1-29e5-4012-a083-afc5ca6e4e0f"/>
+				<textElement textAlignment="Center">
+					<font fontName="Helvetica"/>
+				</textElement>
+				<text><![CDATA[[See Rule 47 (a) and (d) ]]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="755" splitType="Stretch">
+			<staticText>
+				<reportElement x="20" y="12" width="520" height="30" uuid="d217243e-787c-40cb-9490-20ff7b7395f9"/>
+				<textElement>
+					<font fontName="Helvetica" size="12"/>
+				</textElement>
+				<text><![CDATA[To be issued by manufacture/Dealer or office of Defecne Department(incase of Millitary auctioned vehicle) for presenting along with the application or registration of a motor vehicle]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="20" y="55" width="520" height="15" uuid="8465b852-a37a-4ac6-a8af-f688f2c9a545"/>
+				<textElement>
+					<font fontName="Helvetica" size="12"/>
+				</textElement>
+				<text><![CDATA[Certified that ......................................................................................................................................]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="190" y="71" width="170" height="19" uuid="4f65dd4b-9db8-4ada-95b2-2a4e6fb97282"/>
+				<textElement>
+					<font fontName="Helvetica" size="12"/>
+				</textElement>
+				<text><![CDATA[(Brand Name of the Vehicle )]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="20" y="110" width="160" height="20" uuid="d7ce2469-e86d-40c8-ad36-14b8a17a363a"/>
+				<textElement>
+					<font fontName="Helvetica" size="12"/>
+				</textElement>
+				<text><![CDATA[Wife/Son/Daughter :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="180" y="90" width="200" height="20" uuid="c5bd2ddd-e3dc-4c34-8c30-0ad14c0200c8"/>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="380" y="97" width="160" height="20" uuid="79a01682-8008-47f3-8711-0e08709a7137"/>
+				<textElement>
+					<font fontName="Helvetica" size="12"/>
+				</textElement>
+				<text><![CDATA[on..................................................]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="20" y="90" width="160" height="20" uuid="28177ce4-9777-49c4-bcf9-741c5e20298d"/>
+				<textElement>
+					<font fontName="Helvetica" size="12"/>
+				</textElement>
+				<text><![CDATA[has been delivered by us to ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="18" y="130" width="162" height="20" uuid="fbe8eca7-b37b-4ce6-918b-e17139fbb84c"/>
+				<textElement>
+					<font fontName="Helvetica" size="12"/>
+				</textElement>
+				<text><![CDATA[Parmanent Address :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="18" y="170" width="162" height="20" uuid="8b4a0cd1-0e87-444e-9a08-3424821cdfae"/>
+				<textElement>
+					<font fontName="Helvetica" size="12"/>
+				</textElement>
+				<text><![CDATA[Mobile No :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="180" y="190" width="376" height="20" uuid="a1a87184-a7fd-40f3-9723-6d3a1f4516b9"/>
+				<textElement>
+					<font fontName="Helvetica" size="12"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="55" y="212" width="481" height="18" uuid="37e6f374-85a9-40d0-91f7-e79117f03986"/>
+				<textElement>
+					<font fontName="Helvetica" size="12"/>
+				</textElement>
+				<text><![CDATA[The vehicle is hold under agreement of Hire purchase/Lease/Hypothecation]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="15" y="260" width="376" height="20" uuid="95aa4d0e-6d80-476f-b1e2-45a045bd545a"/>
+				<textElement>
+					<font fontName="Helvetica" size="12"/>
+				</textElement>
+				<text><![CDATA[The Details of the Vehicle are given below]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="22" y="230" width="162" height="30" uuid="fd247303-ca6e-428f-8c21-b93b17337953"/>
+				<textElement>
+					<font fontName="Helvetica" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[.Nil]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="15" y="280" width="295" height="20" uuid="97fa6420-7f82-42bf-99af-7d02098b2b5e"/>
+				<textElement>
+					<font fontName="Helvetica" size="12"/>
+				</textElement>
+				<text><![CDATA[1. Class of the Vehicle]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="15" y="300" width="295" height="20" uuid="e14666f7-d8c6-4de1-b01e-7ecec5909be3"/>
+				<textElement>
+					<font fontName="Helvetica" size="12"/>
+				</textElement>
+				<text><![CDATA[2. Makers Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="15" y="320" width="295" height="20" uuid="87131192-5998-4741-9ecc-f129b007f2ca"/>
+				<textElement>
+					<font fontName="Helvetica" size="12"/>
+				</textElement>
+				<text><![CDATA[3. Chasis Number]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="15" y="340" width="295" height="20" uuid="6c189385-cad7-4301-a8e8-d7adfab3a082"/>
+				<textElement>
+					<font fontName="Helvetica" size="12"/>
+				</textElement>
+				<text><![CDATA[4. Engine Number]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="15" y="360" width="295" height="20" uuid="238085fa-7e29-4b61-ad62-83aee3db82f6"/>
+				<textElement>
+					<font fontName="Helvetica" size="12"/>
+				</textElement>
+				<text><![CDATA[5. Horse power or Cubic Capacity ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="15" y="380" width="295" height="20" uuid="0948a9d5-2845-46b5-a639-9a3e484770ff"/>
+				<textElement>
+					<font fontName="Helvetica" size="12"/>
+				</textElement>
+				<text><![CDATA[6. Fuel Used]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="15" y="400" width="295" height="20" uuid="28b7e70f-a09c-4af6-8f3f-30f0bc0ce133"/>
+				<textElement>
+					<font fontName="Helvetica" size="12"/>
+				</textElement>
+				<text><![CDATA[7. No of Cylinders]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="15" y="440" width="295" height="20" uuid="0732414f-6395-4ab8-81e3-0eb3a7cbc5d2"/>
+				<textElement>
+					<font fontName="Helvetica" size="12"/>
+				</textElement>
+				<text><![CDATA[9. Seating Capability (Including Driver)                                                       :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="15" y="600" width="295" height="20" uuid="4007e6ad-cd72-4342-bd96-4bce99b8d623"/>
+				<textElement>
+					<font fontName="Helvetica" size="12"/>
+				</textElement>
+				<text><![CDATA[12. Colour or colours of the body                                                     :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="15" y="480" width="295" height="20" uuid="8d52003b-cfd7-419f-842f-ef0f9965e4dd"/>
+				<textElement>
+					<font fontName="Helvetica" size="12"/>
+				</textElement>
+				<text><![CDATA[11. Maximum Axle Weight and number and description                          ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="15" y="640" width="295" height="20" uuid="36ae4b85-82d6-4c27-8d86-ee43ada48b1d"/>
+				<textElement>
+					<font fontName="Helvetica" size="12"/>
+				</textElement>
+				<text><![CDATA[14. Type of Body]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="15" y="620" width="295" height="20" uuid="fd6793ca-4326-4677-a742-e67125254a25"/>
+				<textElement>
+					<font fontName="Helvetica" size="12"/>
+				</textElement>
+				<text><![CDATA[13. Gross Vehicle Weight                                                       :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="15" y="460" width="295" height="20" uuid="39fedad2-37d9-474f-92d8-b0646a398113"/>
+				<textElement>
+					<font fontName="Helvetica" size="12"/>
+				</textElement>
+				<text><![CDATA[10. Unladen Weight ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="15" y="420" width="295" height="20" uuid="d40f364e-f68a-4d23-9ced-4b132081eb3b"/>
+				<textElement>
+					<font fontName="Helvetica" size="12"/>
+				</textElement>
+				<text><![CDATA[8. Month and year of Manufacture                                               :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="34" y="500" width="250" height="20" uuid="5ed7314a-745e-4ef0-8338-c69b5a2b959e"/>
+				<textElement>
+					<font fontName="Helvetica" size="12"/>
+				</textElement>
+				<text><![CDATA[and Tyres(incase of Transport Vehicles)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="15" y="520" width="250" height="20" uuid="906cc0ff-8616-4c29-917c-d8f005f49b7f"/>
+				<textElement>
+					<font fontName="Helvetica" size="12"/>
+				</textElement>
+				<text><![CDATA[a) Front Axle]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="15" y="540" width="250" height="20" uuid="86c64bc4-83fe-40c6-ae61-834e8efba14e"/>
+				<textElement>
+					<font fontName="Helvetica" size="12"/>
+				</textElement>
+				<text><![CDATA[b) Rear Axle]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="15" y="560" width="250" height="20" uuid="e94422fe-f12a-4bfe-862e-c28b8795c07b"/>
+				<textElement>
+					<font fontName="Helvetica" size="12"/>
+				</textElement>
+				<text><![CDATA[c) Any other Axle]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="15" y="580" width="250" height="20" uuid="353cfcd0-345f-481d-9690-8afabfc5b5e9"/>
+				<textElement>
+					<font fontName="Helvetica" size="12"/>
+				</textElement>
+				<text><![CDATA[d)Tandom Axle]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="335" y="690" width="200" height="60" uuid="46acf970-f0a9-4132-94ce-c6af9a521942"/>
+				<textElement>
+					<font fontName="Helvetica" size="12"/>
+				</textElement>
+				<text><![CDATA[Signature of Manufacturer/ Dealer]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="310" y="280" width="10" height="20" uuid="81cc5239-99cf-475d-80c8-3e27cfa6e4b0"/>
+				<textElement>
+					<font fontName="Helvetica" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="310" y="340" width="10" height="20" uuid="28dc5b16-cc7d-49d5-9e26-73b6fb2c25e0"/>
+				<textElement>
+					<font fontName="Helvetica" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="310" y="300" width="10" height="20" uuid="8def214a-3744-47c8-a059-3efbe3628c9b"/>
+				<textElement>
+					<font fontName="Helvetica" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="310" y="320" width="10" height="20" uuid="4f5dd951-d50e-44b6-af95-9c623663cfad"/>
+				<textElement>
+					<font fontName="Helvetica" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="310" y="360" width="10" height="20" uuid="2ee7b5bd-e845-44a3-8cbb-1e6e14c189ac"/>
+				<textElement>
+					<font fontName="Helvetica" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="310" y="380" width="10" height="20" uuid="98b939b4-7373-464b-b143-dc1277f73d08"/>
+				<textElement>
+					<font fontName="Helvetica" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="310" y="400" width="10" height="20" uuid="5a57951f-2e67-4c12-9b55-77224917875c"/>
+				<textElement>
+					<font fontName="Helvetica" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="310" y="420" width="10" height="20" uuid="190c0861-a11b-4493-857e-bb65e01207a4"/>
+				<textElement>
+					<font fontName="Helvetica" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="310" y="440" width="10" height="20" uuid="561cc74e-6d13-4c7b-8253-d88e4397e2af"/>
+				<textElement>
+					<font fontName="Helvetica" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="310" y="460" width="10" height="20" uuid="b9668a9b-b35f-488a-84ec-8385090ec875"/>
+				<textElement>
+					<font fontName="Helvetica" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="310" y="600" width="10" height="20" uuid="63f8f008-d7c7-4cea-9af6-7d758166dd20"/>
+				<textElement>
+					<font fontName="Helvetica" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="310" y="620" width="10" height="20" uuid="a60e60c9-01a0-4dbe-8225-fe350d2ff916"/>
+				<textElement>
+					<font fontName="Helvetica" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="310" y="640" width="10" height="20" uuid="cb899ef6-a29a-4d9e-be97-0060a09987fd"/>
+				<textElement>
+					<font fontName="Helvetica" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="190" y="52" width="100" height="23" uuid="9308a93a-d858-4179-b95d-585da6528b9d"/>
+				<textElement>
+					<font fontName="Helvetica" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{model_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="220" y="90" width="100" height="20" uuid="46e31f30-b1cc-4b86-9cd9-abc2729f3d17"/>
+				<textElement>
+					<font fontName="Helvetica" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{contact_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="410" y="95" width="100" height="20" uuid="679f0d94-1da9-4edd-8654-1f14523d3c95"/>
+				<textElement>
+					<font fontName="Helvetica" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{so_delivered_date}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="180" y="130" width="360" height="40" isPrintWhenDetailOverflows="true" uuid="e2fa403c-1dd4-4bf9-b098-f4d6ee96692b"/>
+				<textElement>
+					<font fontName="Helvetica" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{contact_address}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="180" y="170" width="200" height="20" uuid="8101e935-d53e-4932-b1da-8a99c653d3ac"/>
+				<textElement>
+					<font fontName="Helvetica" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{contact_mobile1}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="320" y="280" width="236" height="20" uuid="fe60f00b-6637-4712-a08d-a3a35f1a50cf"/>
+				<textElement>
+					<font fontName="Helvetica" size="12"/>
+				</textElement>
+				<text><![CDATA[Motor Cycle Above 95CC]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="320" y="300" width="236" height="20" uuid="7d840c78-115b-4932-bcc2-80e43bde25a9"/>
+				<textElement>
+					<font fontName="Helvetica" size="12"/>
+				</textElement>
+				<text><![CDATA[YAMAHA]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="320" y="320" width="236" height="20" uuid="47059072-aa9a-4853-a257-a91135835342"/>
+				<textElement>
+					<font fontName="Helvetica" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{vehstock_chassis_no}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="320" y="340" width="236" height="20" uuid="12d880f3-2b03-426d-92f8-a09e560badae"/>
+				<textElement>
+					<font fontName="Helvetica" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{vehstock_engine_no}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="320" y="380" width="236" height="20" uuid="58cffc35-d301-4f4b-ac7e-1937248fae45"/>
+				<textElement>
+					<font fontName="Helvetica" size="12"/>
+				</textElement>
+				<text><![CDATA[Petrol]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="320" y="440" width="236" height="20" uuid="42fac86b-74f0-4346-ac27-96bfb14eed9b"/>
+				<textElement>
+					<font fontName="Helvetica" size="12"/>
+				</textElement>
+				<text><![CDATA[2]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="18" y="190" width="162" height="20" uuid="b9cfb08c-c969-4dcd-9d50-e30f4299f137"/>
+				<textElement>
+					<font fontName="Helvetica" size="12"/>
+				</textElement>
+				<text><![CDATA[(Temporary) :]]></text>
+			</staticText>
+		</band>
+	</detail>
+</jasperReport>

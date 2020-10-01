@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<title>Chart Theming
+<link class="include" rel="stylesheet" type="text/css" href="../Library/jqplot/jquery.jqplot.min.css" />
+<link rel="stylesheet" type="text/css" href="../Library/jqplot/examples.min.css">
+<link rel="stylesheet" type="text/css" href="../Library/jqplot/syntaxhighlighter/styles/shCoreDefault.css">
+<link rel="stylesheet" type="text/css" href="../Library/jqplot/syntaxhighlighter/styles/shThemejqPlot.min.css">
+
+<!--[if lt IE 9]><script language="javascript" type="text/javascript" src="../Library/jqplot/excanvas.js"></script><![endif]-->
+<script class="include" type="text/javascript" src="../Library/jqplot/jquery.min.js"></script>
+ <link href="../assets/themes/theme<%=mybean.GetTheme(request)%>.css"
+
+	rel="stylesheet" type="text/css" />
+<link href="../assets/css/style.css" rel="stylesheet"
+	type="text/css" />
+</HEAD>
+<body>
+<div class="example-content"> 
+  
+  <!-- Example scripts go here -->
+  
+  <style type="text/css">
+.jqplot-target {
+    margin: 30px;
+}
+</style>
+  <div id="chart3" class="plot" style="width:400px;height:320px;"></div>
+</div>
+<script language="javascript" type="text/javascript">
+$(document).ready(function(){
+
+    l1 = [['Seoul', 1], ['Paris', 10], ['Singapore',3], ['Hong  Kong',5], ['Chicago', 2], ['New York', 9]];
+     
+    plot3 = $.jqplot('chart3',[l1],{
+       title: 'Global City Index',
+       legend: {
+           show: true,
+           rendererOptions: {
+               // numberColumns: 2,
+               fontSize: '10pt'
+           }
+        },
+		
+       seriesDefaults: {
+		   pointLabels: { show: true, location: 'n', edgeTolerance: -50 },
+           renderer: $.jqplot.FunnelRenderer,
+		   rendererOptions: {
+          // Put data labels on the pie slices.
+          // By default, labels show the percentage of the slice.
+          showDataLabels: true
+        }
+       }
+    });
+        
+    
+    
+    plot3.themeEngine.newTheme('uma', temp);
+   
+});
+
+
+
+
+</script> 
+
+<!-- End example scripts --> 
+
+<!-- Don't touch this! --> 
+<script class="include" type="text/javascript" src="../Library/jqplot/jquery.jqplot.min.js"></script> 
+<script type="text/javascript" src="../Library/jqplot/syntaxhighlighter/scripts/shCore.min.js"></script> 
+<script type="text/javascript" src="../Library/jqplot/syntaxhighlighter/scripts/shBrushJScript.min.js"></script> 
+<script type="text/javascript" src="../Library/jqplot/syntaxhighlighter/scripts/shBrushXml.min.js"></script> 
+<!-- End Don't touch this! --> 
+
+<!-- Additional plugins go here --> 
+<script language="javascript" type="text/javascript" src="../Library/jqplot/plugins/jqplot.barRenderer.min.js"></script> 
+<script language="javascript" type="text/javascript" src="../Library/jqplot/plugins/jqplot.categoryAxisRenderer.min.js"></script> 
+<script language="javascript" type="text/javascript" src="../Library/jqplot/plugins/jqplot.pieRenderer.min.js"></script> 
+<script language="javascript" type="text/javascript" src="../Library/jqplot/plugins/jqplot.donutRenderer.min.js"></script> 
+<script language="javascript" type="text/javascript" src="../Library/jqplot/plugins/jqplot.highlighter.min.js"></script> 
+<script language="javascript" type="text/javascript" src="../Library/jqplot/plugins/jqplot.cursor.min.js"></script> 
+<script language="javascript" type="text/javascript" src="../Library/jqplot/plugins/jqplot.funnelRenderer.min.js"></script> 
+<script language="javascript" type="text/javascript" src="../Library/jqplot/plugins/jqplot.canvasTextRenderer.min.js"></script> 
+<script language="javascript" type="text/javascript" src="../Library/jqplot/plugins/jqplot.canvasAxisTickRenderer.min.js"></script> 
+<script language="javascript" type="text/javascript" src="../Library/jqplot/plugins/jqplot.canvasAxisLabelRenderer.min.js"></script> 
+
+<!-- End additional plugins -->
+
+<script type="text/javascript" src="../Library/jqplot/example.min.js"></script>
+</body>
+</html>

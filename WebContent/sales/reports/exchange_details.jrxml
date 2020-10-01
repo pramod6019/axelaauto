@@ -1,0 +1,487 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.1.0.final using JasperReports Library version 6.1.0  -->
+<!-- 2016-04-26T16:53:03 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Blank_A4_4" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="8eed5e5d-6b55-4f15-9022-80f141181d8b">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<parameter name="enquiry_id" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT  enquiry_purchasemonth, 
+enquiry_loancompletionmonth, enquiry_kms, enquiry_loanfinancer, enquiry_expectedprice, 
+enquiry_quotedprice, ABS(CAST(enquiry_expectedprice AS CHAR) - CAST(enquiry_quotedprice AS CHAR)) AS gap, 
+enquiry_othercar,
+COALESCE (testdrive_notes, '') AS testdrive_notes,
+COALESCE (ownership_name, '') AS ownership_name
+FROM axelaauto_1011.axela_sales_enquiry
+INNER JOIN axelaauto_1011.axela_branch ON branch_id = enquiry_branch_id
+INNER JOIN axelaauto_1011.axela_customer_contact ON contact_id = enquiry_contact_id
+INNER JOIN axelaauto_1011.axela_city ON city_id = contact_city_id
+INNER JOIN axelaauto_1011.axela_state ON state_id = city_state_id
+INNER JOIN axelaauto_1011.axela_customer ON customer_id = enquiry_customer_id
+INNER JOIN axelaauto_1011.axela_title ON title_id = contact_title_id
+INNER JOIN axelaauto_1011.axela_emp ON emp_id = enquiry_emp_id
+LEFT JOIN axelaauto_1011.axela_sales_testdrive ON testdrive_enquiry_id = enquiry_id
+LEFT JOIN axelaauto_1011.axela_sales_testdrive_location ON location_id= testdrive_location_id
+LEFT JOIN axelaauto_1011.axela_sales_enquiry_type ON enquirytype_id = enquiry_enquirytype_id
+LEFT JOIN axelaauto_1011.axela_sales_enquiry_add_ownership ON ownership_id = enquiry_ownership_id
+LEFT JOIN axelaauto_1011.axela_sales_enquiry_add_age ON age_id = enquiry_age_id
+LEFT JOIN axelaauto_1011.axela_sales_enquiry_add_occ ON occ_id = enquiry_occ_id
+LEFT JOIN axelaauto_1011.axela_sales_company on company_id = contact_company_id
+LEFT JOIN axelaauto_1011.axela_inventory_item_model ON model_id = enquiry_model_id
+LEFT JOIN axelaauto_1011.axela_sales_enquiry_add_monthkms ON monthkms_id = enquiry_monthkms_id, axelaauto_1011.axela_comp
+WHERE enquiry_id = $P{enquiry_id}
+GROUP BY enquiry_id
+ORDER BY enquiry_id DESC]]>
+	</queryString>
+	<field name="testdrive_notes" class="java.lang.String"/>
+	<field name="enquiry_purchasemonth" class="java.lang.String"/>
+	<field name="ownership_name" class="java.lang.String"/>
+	<field name="enquiry_loancompletionmonth" class="java.lang.String"/>
+	<field name="enquiry_kms" class="java.lang.String"/>
+	<field name="enquiry_loanfinancer" class="java.lang.String"/>
+	<field name="enquiry_expectedprice" class="java.lang.String"/>
+	<field name="gap" class="java.lang.String"/>
+	<field name="enquiry_othercar" class="java.lang.String"/>
+	<field name="enquiry_quotedprice" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="219" splitType="Stretch">
+			<staticText>
+				<reportElement x="22" y="0" width="517" height="15" uuid="27718fcb-3ecf-4bcb-b166-f9f0e4160c53">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<text><![CDATA[Reasons if Test Drive not given]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="22" y="19" width="517" height="15" uuid="f3fd209c-ce65-4d65-b9c5-862137af5bc6">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement>
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{testdrive_notes}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="23" y="34" width="100" height="15" forecolor="#F7F5F5" backcolor="#080707" uuid="18f16a2d-b69a-49ba-906f-d2486fe79666">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Exchange Details]]></text>
+			</staticText>
+			<line>
+				<reportElement x="22" y="49" width="517" height="2" uuid="533ffec1-95ef-44c9-a3fa-a6854905592d"/>
+			</line>
+			<staticText>
+				<reportElement x="22" y="52" width="108" height="15" uuid="e00e33cb-cde2-482d-8131-b69a0e64173c">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<text><![CDATA[Manfacturer]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="130" y="52" width="142" height="15" uuid="47a23023-d7fb-4eb9-9bc8-2c176c501cbc">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<text><![CDATA[Model/Variant]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="272" y="52" width="128" height="15" uuid="913191ad-c486-49d0-b970-23d91fe2277c">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<text><![CDATA[Year of Manufacture]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="400" y="53" width="134" height="15" uuid="944bec32-e7bc-498a-9c2d-36d3b9bb189b">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<text><![CDATA[Purchase Month/Year]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="21" y="68" width="109" height="15" uuid="313d0ab5-4b16-46cc-97a7-929e7c9f94bf">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="9"/>
+				</textElement>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="132" y="68" width="139" height="15" uuid="f70f052f-100c-40b0-a755-b565f42b8b8e">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="9"/>
+				</textElement>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="272" y="68" width="128" height="15" uuid="b5e97be8-c442-4648-a2ea-d12b5787261e">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="9"/>
+				</textElement>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="402" y="68" width="137" height="15" uuid="5db20c82-e268-4278-9c49-4a51ba33384d">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{enquiry_purchasemonth}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="21" y="84" width="98" height="15" uuid="0d042e80-3c08-4ca0-877f-eb1c17b38141">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<text><![CDATA[Owner]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="130" y="86" width="159" height="15" uuid="f4cddc82-6adf-4d25-8b2f-366f4e6715f1">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<text><![CDATA[Loan Completion Month/Year(if any)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="290" y="85" width="108" height="15" uuid="5025f2fc-137c-4176-b918-1f854917ae28">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<text><![CDATA[Kms Done]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="399" y="85" width="134" height="15" uuid="698f7580-de2a-4a3b-9dca-26c52d05fbf6">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<text><![CDATA[Financer Name]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="20" y="99" width="110" height="16" uuid="fcc55a3a-a27f-48cd-992d-a790847a6884">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ownership_name}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="130" y="101" width="159" height="15" uuid="f033c1e0-7f12-47b1-be56-3ae70a150e44">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{enquiry_loancompletionmonth}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="290" y="101" width="107" height="15" uuid="9566cd91-159e-42e4-b7db-a7fb02ad7725">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{enquiry_kms}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="401" y="101" width="137" height="15" uuid="0df0779b-5c7d-429d-8cba-a41cbf239d31">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{enquiry_loanfinancer}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="26" y="118" width="98" height="13" uuid="c03b1f76-56a5-468f-873f-0bb5ee6d49f7">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<text><![CDATA[Expected Price(INR)]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="20" y="133" width="104" height="16" uuid="acfa9469-cfe3-4053-b7ee-517b2cfa4cd5">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{enquiry_expectedprice}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="135" y="120" width="159" height="15" uuid="3fdd2b3f-7eb0-4a69-b620-c1e652654a09">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<text><![CDATA[Quoted Price (INR) (B)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="295" y="119" width="238" height="15" uuid="a210a61b-5aa1-4f11-b52c-7ef2ddff5317">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<text><![CDATA[Gap (INR) (A-B)]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="295" y="135" width="238" height="15" uuid="7e9d8b03-5ceb-4f52-9664-1b7b172848aa">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{gap}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="21" y="150" width="100" height="15" forecolor="#FAEEED" backcolor="#0F0E0E" uuid="bbfb4b4f-26b6-4add-85a9-46c55ae6df97">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Summary]]></text>
+			</staticText>
+			<line>
+				<reportElement x="20" y="166" width="521" height="1" uuid="b487c74d-20a6-46a5-8ee4-6dda1fb209cb">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+			</line>
+			<staticText>
+				<reportElement x="22" y="167" width="100" height="15" uuid="b5d6618f-fe14-4252-9a8a-f05d14391990">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<text><![CDATA[Status (Booked/Lost)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="130" y="168" width="165" height="15" uuid="760cf0b3-c5b2-44b6-a6f6-d7c13e991a6a">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<text><![CDATA[Model & variant Enquired]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="298" y="168" width="138" height="15" uuid="de704d23-e05a-4014-8ac4-529e86adfc55">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<text><![CDATA[Model & Variant Booked]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="436" y="168" width="100" height="15" uuid="0d0336e7-75f0-43e3-ad5b-2cfc67c62060">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<text><![CDATA[Date of Booking]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="21" y="183" width="100" height="15" uuid="19e4c70e-1146-40cb-ba07-7a18c0401e54">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box padding="0">
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="9"/>
+				</textElement>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="131" y="184" width="163" height="15" uuid="94e94e42-3abb-4875-9bf1-54646793c1d1">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box padding="0">
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="9"/>
+				</textElement>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="302" y="185" width="133" height="15" uuid="09f63b64-24a1-4f3c-8374-fcf8aa5a4a10">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box padding="0">
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="9"/>
+				</textElement>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="439" y="185" width="100" height="15" uuid="05bef256-af74-427d-98e9-088671613c83">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box padding="0">
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="9"/>
+				</textElement>
+			</textField>
+			<line>
+				<reportElement x="0" y="218" width="563" height="1" uuid="b4e26d85-9f08-4d6e-b99f-364e5ee3d121">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="18" y="208" width="523" height="1" uuid="03d76348-626a-4ee5-9b19-fcdb4bdc10cb"/>
+			</line>
+			<line>
+				<reportElement x="0" y="0" width="1" height="218" uuid="d10772d5-9c55-482a-a722-2f96e6e789b2">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="562" y="0" width="1" height="218" uuid="61c907c5-b640-4eca-a62e-fa61dd5491e2">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="19" y="-2" width="1" height="210" uuid="c5268b27-7d1d-43cf-951a-dc1f354e47f5">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="541" y="1" width="2" height="208" uuid="69f9f998-0cc5-4db2-8b4e-546683b886f9">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+			</line>
+			<textField isBlankWhenNull="true">
+				<reportElement x="130" y="135" width="165" height="16" uuid="930b274f-c90a-4bc6-a3f3-64396b0401f1">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{enquiry_quotedprice}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

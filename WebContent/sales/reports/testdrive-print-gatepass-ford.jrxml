@@ -1,0 +1,998 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
+<!-- 2018-01-06T17:00:11 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="testdrive-print-gatepass" pageWidth="595" pageHeight="842" whenNoDataType="NoPages" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="a5ef9f7c-7dfd-44c5-b388-82eba29c5f93">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="customer_address" class="java.lang.String"/>
+	<field name="customer_phone1" class="java.lang.String"/>
+	<field name="customer_mobile1" class="java.lang.String"/>
+	<field name="veh_name" class="java.lang.String"/>
+	<field name="veh_regno" class="java.lang.String"/>
+	<field name="location_name" class="java.lang.String"/>
+	<field name="testdrive_time_from" class="java.lang.String"/>
+	<field name="testdrive_out_time" class="java.lang.String"/>
+	<field name="testdrive_date" class="java.lang.String"/>
+	<field name="contactname" class="java.lang.String"/>
+	<field name="ch_yes" class="java.lang.String"/>
+	<field name="ch_no" class="java.lang.String"/>
+	<field name="ch_dealership" class="java.lang.String"/>
+	<field name="ch_customerplace" class="java.lang.String"/>
+	<field name="ch_yes1" class="java.lang.String"/>
+	<field name="ch_no1" class="java.lang.String"/>
+	<detail>
+		<band height="801" splitType="Stretch">
+			<staticText>
+				<reportElement x="280" y="0" width="276" height="16" uuid="07ed48c2-7045-476c-affa-11b13e96b5b8">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Right">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[		TEST DRIVE CAR AGREEMENT]]></text>
+			</staticText>
+			<line>
+				<reportElement x="-1" y="16" width="1" height="625" uuid="49ce9426-1c6b-4a00-8acf-99af94e0e7ed">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="556" y="16" width="1" height="625" uuid="04444cc7-dde0-4774-bb96-8c28b7ffffcc">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+			</line>
+			<staticText>
+				<reportElement x="0" y="17" width="172" height="12" uuid="9459598a-71ea-4dbb-85d3-dcd213bd7262">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="3">
+					<topPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[Name of the Customer:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="172" y="17" width="384" height="12" uuid="f0d0e8d7-1079-42f1-ac18-2dfed1a621eb">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="3">
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{contactname}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="29" width="172" height="12" uuid="3d5962ea-5783-416c-b513-2aae49ce3e41">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="3">
+					<topPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[Address:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="41" width="172" height="12" uuid="b6d27ed3-cf40-4443-8cf9-5dd9d4366c76">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="3">
+					<topPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[Mobile:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="53" width="172" height="12" uuid="0eb65708-ff54-46e5-a57f-0ee05d3f67b0">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="3">
+					<topPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[Phone:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="65" width="172" height="12" uuid="06fb1692-de92-4063-b190-75b13e8cb695">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="3">
+					<topPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[Test drive vehicle:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="77" width="172" height="12" uuid="35ca873b-3b1a-4722-bd9b-31e9ebea5120">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="3">
+					<topPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[Registration Number:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="89" width="110" height="12" uuid="29189b86-9a96-4e0e-ac03-dbec8bd64f3c">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="3">
+					<topPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[Date:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="244" y="89" width="112" height="12" uuid="7fd5deec-a23b-4d44-9577-1661c39f3b58"/>
+				<box leftPadding="3">
+					<topPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[Test drive Location:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="356" y="89" width="200" height="12" uuid="f57728f7-b95b-452a-a117-ff4fa1c4af4c">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box leftPadding="3">
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{location_name}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="101" width="110" height="12" uuid="0d7482fc-8694-4fe6-97e5-69ddb2e5243a">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="3">
+					<topPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[Time(commence):]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="244" y="101" width="112" height="12" uuid="a170dc40-3f89-4861-9706-6565371c1044">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="3">
+					<topPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[Time(End):]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="110" y="89" width="134" height="12" uuid="4b537e88-175a-4d6f-853c-21660ee79e6a">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="3">
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{testdrive_time_from}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="110" y="101" width="134" height="12" uuid="5bad7ff3-40a1-4f66-9b08-a2d134dd2024">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="3">
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{testdrive_out_time}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="172" y="29" width="384" height="12" uuid="d5c60bf0-febf-4ee8-9371-a30e203a778b">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="3">
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{customer_address}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="172" y="41" width="384" height="12" uuid="6730cbb5-72dc-4ccc-bae0-6bb6c5fc3675">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="3">
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{customer_mobile1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="172" y="53" width="384" height="12" uuid="77dd3951-3e9c-43c5-adc3-aee7804e5927">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="3">
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{customer_phone1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="172" y="65" width="384" height="12" uuid="8384883b-8c50-4cce-8677-0c7c8d05ee89">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="3">
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{veh_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="172" y="77" width="384" height="12" uuid="5d489c5d-0e9c-4d5c-aed4-8b6e27ef0c90">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="3">
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{veh_regno}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="10" y="121" width="540" height="18" uuid="8126a50c-38d4-48f8-be93-32a53509dc65">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[					Checklist For Sales Executive]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="143" width="24" height="12" uuid="c60774da-e78f-451b-93bf-3fbf5cbecb6b">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[   1]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="34" y="143" width="230" height="12" uuid="e363a6a0-adf5-4394-b14e-beed083433f4">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[Was the test drive given to the customer?]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="155" width="24" height="12" uuid="bf78fc4f-e254-45d0-9f6b-49012c5ff956">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[   2]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="34" y="155" width="230" height="12" uuid="f22bfbfe-168e-44bb-9226-6d171799d5ce">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[IF yes,then mention the place of the test drive given.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="167" width="24" height="12" uuid="74f047d6-79ef-4b11-8da9-b5c2e5eece25">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[   3]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="34" y="167" width="230" height="12" uuid="08861e55-5f59-4ba7-9446-8a1bd34e8ed0"/>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[Was the test drive given within 3 hours of enquiry?]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="179" width="24" height="12" uuid="85f28182-d7f8-4161-bff1-32d2963aff5e">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[   4]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="34" y="179" width="230" height="12" uuid="f9d70499-199a-4fe2-a88a-7502768b531e"/>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[IF no,mention the reasons for the same]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="310" y="143" width="30" height="12" uuid="b922121b-f279-47a3-a15c-72ad4abf6823">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[ Yes]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="369" y="143" width="17" height="12" uuid="dcdf4127-933a-428f-b366-8f70dd00741d">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ch_yes}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="410" y="143" width="30" height="12" uuid="9e4520cd-35ce-460d-b5ac-a82b7397008a">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[ No]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="479" y="143" width="17" height="12" uuid="f6c21679-e06c-40a1-976b-4ab0d0f9b53e">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ch_no}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="277" y="155" width="76" height="12" uuid="da193ee4-dad3-41e9-bbcd-0de69aeefc20"/>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[Dealership]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="479" y="155" width="17" height="12" uuid="a2a07f80-6618-4a09-b36f-ef8a625f610c">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ch_customerplace}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="369" y="155" width="17" height="12" uuid="7c73d0be-40e2-4be0-b215-3ca08149d7de">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ch_dealership}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="394" y="155" width="76" height="12" uuid="af6f4f71-fa79-4163-8db5-0df25ec77033"/>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[Customer Place]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="310" y="167" width="30" height="12" uuid="198ccfcc-9c92-4624-90bf-98f924a12d38">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[ Yes]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="479" y="167" width="17" height="12" uuid="e8ffc8d2-220c-40c9-a3fb-6dc5fc4842d2">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ch_no1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="369" y="167" width="17" height="12" uuid="e0d62d13-0f28-4745-90b8-c5321a69278a">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ch_yes1}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="410" y="167" width="30" height="12" uuid="be822da9-7375-4306-be50-6d792a18042f">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[ No]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="207" width="24" height="12" uuid="ee20988d-fa21-4d90-9609-48196be0508c">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[   1).]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="219" width="24" height="12" uuid="79eedb1e-ba40-4f1f-914b-38aea39a4ab4">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[   2).]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="231" width="24" height="12" uuid="d6393062-310e-4e9c-b278-477a40d8c3de">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[   3).]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="243" width="24" height="12" uuid="12909e44-9ef2-4ab4-9dff-1cd286bd91b5">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[   4).]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="34" y="243" width="230" height="12" uuid="98be34cc-f801-4477-a55e-e723708fbc16"/>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[What was the duration of the test drive?(In Minites)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="34" y="231" width="230" height="12" uuid="015ab2bb-fa2d-4ca8-8d60-4fca916223a1"/>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[Was the test drive route ok?]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="34" y="219" width="340" height="12" uuid="e3d7f4d2-68e4-47ab-bfa4-704b437cc8f9">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[Was the condition of the vehicle in which you got the test drive was ok?]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="34" y="207" width="254" height="12" uuid="9dfcfa9f-9b76-4cd6-a6d1-57982ba9e552">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[Did you get the test drive on the  model of your choice?]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="255" width="24" height="12" uuid="ed2f2392-2a7b-4dd9-94b6-ad75c7ca7202">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[   5).]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="267" width="24" height="12" uuid="f72b3a74-fd6b-4a17-a5e3-3e150f978232">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[   6).]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="279" width="24" height="12" uuid="926c6250-63cb-4d12-b0e4-709d3ab69eb0">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[   7).]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="34" y="279" width="394" height="12" uuid="8d26519b-3ac3-4e92-b29c-58f7b9d706ed"/>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[Where the explanation given by the salesman to your satisfaction during the test drive.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="34" y="267" width="294" height="12" uuid="8f411ca9-f330-4b0c-ad1a-78f15669c9c9"/>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[Did you get the test drive at the place and time of your choice?]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="34" y="255" width="230" height="12" uuid="722dc303-686c-4975-b3e2-a9191b4bee8b">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[Was the duration of the test drive sufficient?]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="15" y="300" width="204" height="12" uuid="013b9239-0f4f-4a1c-a60a-27f15751a896"/>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[Overall Feedback/suggestions:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="325" width="556" height="1" uuid="72250207-4e19-43bd-ba3c-b494c6684382">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+			</line>
+			<staticText>
+				<reportElement x="13" y="330" width="126" height="12" uuid="f0ec88e9-cce3-411a-8eb7-36917f87358e">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[Customer Signature:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="320" y="330" width="110" height="12" uuid="a3e34535-e319-420e-9f88-7d60b136b64c">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[SM/TL Signature]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="14" y="349" width="70" height="12" uuid="3559e5a2-a8f1-47ba-9e6c-7f42189fb73c">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[Date:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="329" y="349" width="70" height="12" uuid="2a6c9107-b783-4144-8b62-718e4601d2e4">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[Date:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="380" width="556" height="18" uuid="455128ac-9b1d-448c-b2ce-5905dcd4d705">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0"/>
+				</box>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[				Authorization to Test Driving of the Vehicle]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="400" width="60" height="12" uuid="c972596b-def7-4b70-8645-2464bc9d6457">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[Dear Sir,]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="420" width="536" height="12" uuid="65d08ba5-f8bc-4974-b029-24a2ccdd8ae7">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[       On my request,you have provided me the Car no_________________________(Demo Car) for test driving.I confirm to have undertaken as under:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="11" y="437" width="278" height="12" uuid="72eb1629-ee41-4449-9c3f-b09bd958fad1">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[1) The Demo Car shall be driven by me only.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="11" y="449" width="366" height="12" uuid="b8ea1298-6d60-4505-9e9f-643e8eadb312">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[2) The Demo Car shall be used for the purpose of test drive only.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="11" y="461" width="438" height="12" uuid="1f1719ba-1b55-46ad-b2f8-59f3e11f2aff">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[3) I shall test drive the Demo Car  only in the presence of authorized representative of your company.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="11" y="473" width="438" height="12" uuid="48d39080-48dd-4b53-91e3-fa8d6d2b8d03">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[4) I hold a valid and effective during license,a copy of which is being provided by herewith.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="11" y="485" width="438" height="12" uuid="03c9e6a7-e7bd-4d36-8368-63fa6cdc93a1">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[5) I shall test drive the Demo Car only within the municipal limits of city of kollam.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="11" y="497" width="438" height="12" uuid="b43c314f-b1d2-4a5d-8d08-bc613a5e4090">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[6) I shall abide by any all rules of the Road Regulations while test driving of the Demo Car.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="11" y="509" width="508" height="12" uuid="9d889044-6d6d-46ff-819e-a5bf1ca6f47b"/>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[7) While conducting the test drive,I shall not engage in any activity which may be illegal or which may otherwise prejudice to M/s Kairali Ford.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="11" y="530" width="502" height="30" uuid="26eb2d08-c98f-42ed-b711-c08c83138fad">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[      In the event of any legal and/or civil consequence and arising from any handling/use of the aforesaid vehicle.I undertake to indemnify M/s Kairali Ford against all liabilities.The indemnity shall include but not be limited to police challans,damages to Demo Car and third party property, and any other civil/criminal action that may result from my using the Demo Car.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="11" y="561" width="142" height="12" uuid="b3fa743c-acd5-4099-8378-52fc0a9ac801">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[Thanking You.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="11" y="586" width="142" height="12" uuid="cdc65e96-09c6-478c-ab3b-ca4d191cf11d">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[Yours faithfully.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="617" width="556" height="24" uuid="4c103ce9-4f1f-49a2-a42e-5234315783f2">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="3">
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[Customers Signature:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="-1" y="655" width="1" height="141" uuid="48021c30-17cc-4941-9dab-2621aac669c3">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="554" y="656" width="1" height="141" uuid="c9afc1b4-f029-4e43-88aa-de8078701fb0">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+			</line>
+			<staticText>
+				<reportElement x="0" y="656" width="554" height="18" uuid="6ae2f56c-5ad7-4a82-9df7-37a754649fe8">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[					TEST DRIVE GATE PASS]]></text>
+			</staticText>
+			<line>
+				<reportElement x="-1" y="796" width="555" height="1" uuid="0501c10a-5969-44cf-8e74-e757c3b9e108"/>
+			</line>
+			<staticText>
+				<reportElement x="15" y="684" width="100" height="12" uuid="fb4e3aaf-5747-4f16-a60c-2a45e7aab90a">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Customer's Name:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="15" y="696" width="100" height="12" uuid="d3e397ab-b411-46ed-90ce-4d1d6be01395">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Location:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="15" y="708" width="100" height="12" uuid="275f94b4-2455-4a85-b167-241961f9496b">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DSE Name:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="15" y="720" width="100" height="12" uuid="b558f991-aeb2-4267-996e-6815ab30b06b">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Vehicle No:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="15" y="732" width="100" height="12" uuid="abf758fa-de5a-4681-a4d9-15db5feeeb92">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Mobile No:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="354" y="708" width="76" height="12" uuid="3bf1973c-69b7-4d9f-a60d-c78bfa3622b8">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Time In:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="354" y="684" width="76" height="12" uuid="7030d17f-08a0-4e8f-b6d4-ad3303e2c5be">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Time Out:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="237" y="723" width="78" height="12" uuid="985e8e82-0230-4842-a03e-8704f0a5a332">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Signature:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="433" y="763" width="96" height="12" uuid="ba6243f8-3a52-4f50-bd15-2087c2e1c37d">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Security Incharge:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="237" y="763" width="100" height="12" uuid="77e8eb73-2936-416e-b0da-53bd706c764b">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[GM/SM (Sales)]]></text>
+			</staticText>
+			<line>
+				<reportElement x="115" y="695" width="100" height="1" uuid="d3a56262-6fe4-4410-bc92-4628c9439d07"/>
+			</line>
+			<line>
+				<reportElement x="115" y="707" width="100" height="1" uuid="4ec2c4cd-b492-4997-a142-59620ca2f524"/>
+			</line>
+			<line>
+				<reportElement x="115" y="743" width="100" height="1" uuid="39c789aa-641d-4905-bf67-1fe6740cc091"/>
+			</line>
+			<line>
+				<reportElement x="115" y="731" width="100" height="1" uuid="d0689469-09cb-45cd-bc77-0eabce787200"/>
+			</line>
+			<line>
+				<reportElement x="115" y="720" width="100" height="1" uuid="1b932695-83e1-4d06-8d50-fcc5683fe455"/>
+			</line>
+			<line>
+				<reportElement x="430" y="695" width="100" height="1" uuid="92a0ef94-8992-4a4e-965b-9158bbd371e7"/>
+			</line>
+			<line>
+				<reportElement x="430" y="719" width="100" height="1" uuid="526c8761-ac96-4969-b42d-0e99589fce09"/>
+			</line>
+			<staticText>
+				<reportElement x="356" y="101" width="200" height="12" uuid="37410686-958b-4249-b0e1-747a2e41d4cb">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="3">
+					<topPen lineWidth="0.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="291" width="556" height="1" uuid="bdd88342-e7ba-4cb5-bbf5-e2a37a7a9751">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+			</line>
+		</band>
+	</detail>
+</jasperReport>

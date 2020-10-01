@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
+<!-- 2017-06-08T17:32:42 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="receipt-print-yamaha" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="e616e0e5-de7a-4d1f-9a2d-087e6f251763">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="vouchertrans_cheque_date" class="java.lang.String"/>
+	<field name="voucher_amount" class="java.lang.Double"/>
+	<field name="voucher_narration" class="java.lang.String"/>
+	<field name="total_amount" class="java.lang.String"/>
+	<field name="bank_name" class="java.lang.String"/>
+	<field name="cheque_no" class="java.lang.String"/>
+	<field name="voucher_no" class="java.lang.String"/>
+	<field name="voucher_date" class="java.lang.String"/>
+	<field name="bank_name1" class="java.lang.String"/>
+	<field name="branch_invoice_name" class="java.lang.String"/>
+	<field name="branch_address" class="java.lang.String"/>
+	<field name="branch_phone" class="java.lang.String"/>
+	<field name="paymode_name" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="80" splitType="Stretch">
+			<image>
+				<reportElement x="1" y="0" width="136" height="50" uuid="160679da-1efc-42fb-a1ba-93db454fe1a4"/>
+				<imageExpression><![CDATA["../../assets/img/Indel-color.png"]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement x="137" y="0" width="313" height="20" uuid="fc11c215-e748-45bd-a6c9-127260131e82">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{branch_invoice_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="138" y="20" width="300" height="40" uuid="48186f3f-361a-48b1-a463-a9579aba6ed1"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{branch_address}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="136" y="60" width="300" height="20" uuid="08a1c319-eb26-4fb6-86d7-5c9abe956ae7">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{branch_phone}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="75" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+			<textField>
+				<reportElement x="80" y="55" width="100" height="20" uuid="5e922064-c304-418d-b71d-047e567114ef"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[" "+$F{voucher_no}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="1" y="55" width="79" height="20" uuid="3b9d7c22-1f8c-45d7-b12f-0b559d9122b4">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Receipt No. :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="402" y="54" width="52" height="20" uuid="84bcba99-2aa4-4b73-b467-ce48fcdeb498">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Date :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="454" y="54" width="100" height="20" uuid="340c2875-6dd3-4561-a4a3-c776daaa865a"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[" "+$F{voucher_date}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="120" y="0" width="334" height="20" uuid="53348056-57f3-46b7-bad7-69e93412f20f">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{paymode_name}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="190" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="280" height="20" uuid="f303067c-aee1-4e76-9ca8-57a10ddaa2eb">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PARTICULARS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="280" y="0" width="160" height="20" uuid="2bda05b5-22df-4eff-9781-1fb241c139ae">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Against Bill No]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="440" y="0" width="114" height="20" uuid="b862359d-a851-4c99-b33b-2e63db56c004">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Amount]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="20" width="1" height="170" uuid="c2d1ffa9-d76c-47c1-ada7-215b2af0f7b7"/>
+			</line>
+			<textField>
+				<reportElement x="1" y="20" width="279" height="20" uuid="0724388a-2550-4d88-9623-bd82ca74b7c1">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[" "+ $F{bank_name1}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="10" y="82" width="270" height="20" uuid="5833925f-41eb-4dd3-97e3-e626adc997f3">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{bank_name}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="10" y="108" width="270" height="20" uuid="c125b5cb-d8f1-4494-9f30-9bf46adca069">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{cheque_no}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="280" y="20" width="1" height="170" uuid="33cf36d7-2b60-4cb1-8851-b76fac0c2309"/>
+			</line>
+			<textField isBlankWhenNull="true">
+				<reportElement x="10" y="134" width="270" height="56" uuid="ddfc7f99-cbc4-4891-85be-70148a430310">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textFieldExpression><![CDATA["Remarks : "+$F{voucher_narration}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="440" y="20" width="1" height="170" uuid="b86fd1b6-7788-4519-a733-6750017ddc3a"/>
+			</line>
+			<line>
+				<reportElement x="554" y="19" width="1" height="170" uuid="4ee72763-86ba-4073-81dc-ad7a76856109"/>
+			</line>
+			<textField>
+				<reportElement x="441" y="20" width="112" height="20" uuid="5c27a9eb-c372-4d81-b8f2-657c1e3d4d2c">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[new java.text.DecimalFormat("##0.00").format($F{voucher_amount})]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="102" splitType="Stretch">
+			<staticText>
+				<reportElement x="380" y="70" width="174" height="20" uuid="8701a194-d8e7-4ae6-aff2-42bb3b3393bd">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Receiver's Signature]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="70" width="152" height="20" uuid="89abe87b-a9f8-428c-983e-596723a03cb5"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Prepared By]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="0" width="280" height="20" uuid="95910f75-7e46-4ca8-b089-a80325778c77">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA["  Rs "+$F{total_amount}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="281" y="0" width="159" height="20" uuid="d5db1687-710c-4fb6-8a88-464426c24780"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="441" y="0" width="113" height="20" uuid="d0c5f498-eb1a-4b06-a67e-8df543376b2b"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[new java.text.DecimalFormat("##0.00").format($F{voucher_amount})]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="201" y="69" width="152" height="20" uuid="59e0bada-e134-49d7-a298-993e19e2fac7"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Verified By]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>

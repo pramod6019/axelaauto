@@ -1,0 +1,176 @@
+<html>
+<head>
+<script type="text/javascript">
+function getObject(obj)
+{
+    var theObj;
+    if(document.all)
+    {
+        if(typeof obj=="string")
+        {
+            return document.all(obj);
+        }
+        else
+        {
+            return obj.style;
+        }
+    }
+    if(document.getElementById)
+    {
+        if(typeof obj=="string")
+        {
+            return document.getElementById(obj);
+        }
+        else
+        {
+            return obj.style;
+        }
+    }
+    return null;
+}
+function toPhone(textid, textname)
+{	
+    var textidObj=getObject(textid);
+    var newString = "";		 // REVISED/CORRECTED STRING
+    var count = 0;			 // COUNTER FOR LOOPING THROUGH STRING
+    // LOOP THROUGH STRING
+    for (i = 0; i < textidObj.value.length; i++) 
+    {
+        ch = textidObj.value.substring(i, i+1);  // CHECK EACH CHARACTER
+        if ((ch >= "0" && ch <= "9") || (ch == "-")) 
+        {
+            newString += ch;
+        }
+    }
+    textidObj.value = newString;
+    return (false);
+}
+function validateForm(){
+var title=document.getElementById("dr_title").value;
+var fname=document.getElementById("txt_lead_fname").value;
+var lname=document.getElementById("txt_lead_lname").value;
+var job_title=document.getElementById("txt_lead_jobtitle").value;
+var mobile=document.getElementById("txt_lead_mobile").value;
+var phone=document.getElementById("txt_lead_phone").value;
+var email=document.getElementById("txt_lead_email").value;
+var website=document.getElementById("txt_lead_website").value;
+var company=document.getElementById("txt_lead_company").value;
+var emp_count=document.getElementById("dr_empcount").value;
+var requirements=document.getElementById("txt_lead_req").value;
+    if(title=='0'){
+	alert("Select Title!");
+	return false;
+	}
+    if(fname==''){
+	alert("Enter First Name!");
+	return false;
+	}
+	if(lname==''){
+	alert("Enter Last Name!");
+	return false;
+	}
+	if(job_title==''){
+	alert("Enter Job Title!");
+	return false;
+	}
+	if(mobile=='' && phone==''){
+	alert("Enter Contact number!");
+	return false;
+	}
+	if(email==''){
+	alert("Enter Email ID!");
+	return false;
+	}else if(email!=''){
+		var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+		if(!filter.test(email)){
+			alert("Eneter valid Email ID!");
+			return false;
+			}
+		}
+	if(company==''){
+	alert("Enter Company!");
+	return false;
+	}
+	if(emp_count=='0'){
+	alert("Select Employee Count!");
+	return false;
+	}
+	if(requirements==''){
+	alert("Enter Requirements!");
+	return false;
+	}
+}
+</script>
+</head>
+<body>
+<form name="form_fill" method="post" action="[URL]" onSubmit="return validateForm()">
+  <table width="600" align="center">
+    <tr>
+      <td colspan="4" align="center"><b>Enquiry Form</b></td>
+    </tr>
+    <tr>
+      <td align="right" valign="top" nowrap>Contact
+        Name<font color="#ff0000">*</font>:</td>
+      <td colspan="3" valign="top"><table border="0" cellpadding="0">
+          <tr>
+            <td><select name="dr_title" class="textbox" id="dr_title">
+                <option selected="selected" value="0">Select</option>
+                [TITLE]
+              </select>
+              <br>
+              Title</td>
+            <td ><input name = "txt_lead_fname" type = "text" class="textbox" id= "txt_lead_fname" size="30" maxlength="255"  />
+              <br>
+              First Name</td>
+            <td ><input name = "txt_lead_lname" type = "text" class="textbox" id= "txt_lead_lname" size="30" maxlength="255"  />
+              <br>
+              Last Name</td>
+          </tr>
+        </table></td>
+    </tr>
+    <tr valign="center">
+      <td align="right" valign="top">Job Title<b><font color="#ff0000">*</font></b>:</td>
+      <td><input name = "txt_lead_jobtitle" type = "text" class="textbox" id= "txt_lead_jobtitle" size="30" maxlength="255" ></td>
+      <td align="right" valign="top">&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr valign="center">
+      <td align="right" valign="top"> Mobile:</td>
+      <td><input name ="txt_lead_mobile" type="text" class="textbox"  id ="txt_lead_mobile" onKeyUp="toPhone('txt_lead_mobile','Mobile')" size="18" maxlength="15" >
+        <br>
+        (91-9999999999)</td>
+      <td align="right" valign="top"> Phone:</td>
+      <td><input name = "txt_lead_phone" type = "text" class="textbox" id= "txt_lead_phone" onKeyUp="toPhone('txt_lead_phone','Phone')" size="18" maxlength="15" >
+        <br>
+        (91-80-33333333)</td>
+    </tr>
+    <tr valign="center">
+      <td align="right" valign="top"> Email<b><font color="#ff0000">*</font></b>:</td>
+      <td><input name = "txt_lead_email" type = "text" class="textbox" id= "txt_lead_email" size="30" maxlength="255" ></td>
+      <td align="right" valign="top">Website:</td>
+      <td><input name = "txt_lead_website" type = "text" class="textbox" id= "txt_lead_website" size="30" maxlength="255" ></td>
+    </tr>
+    <tr valign="center">
+      <td align="right" valign="top">Company<b><font color="#ff0000">*</font></b>:</td>
+      <td><input name = "txt_lead_company" type = "text" class="textbox" id= "txt_lead_company" size="30" maxlength="255" ></td>
+      <td align="right" nowrap>Employee Count<b><font color="#ff0000">*</font></b>:</td>
+      <td valign="top"><select name="dr_empcount" class="textbox" id="dr_empcount">
+          <option selected="selected" value="0">Select</option>
+         [EMPLOYEECOUNT]
+        </select></td>
+    </tr>
+    <tr valign="center">
+      <td align="right" valign="top">Requirment<b><font color="#ff0000">*</font></b>:</td>
+      <td colspan="3"><textarea name="txt_lead_req"  cols="50" rows="5" class="textbox" id="txt_lead_req"></textarea></td>
+    </tr>
+    <tr>
+      <td colspan="4" align="center"><input type="submit" name="enquiry" value="Submit">
+        <input type="hidden" name="dr_branch" value="[BRANCH_ID]">
+        <input type="hidden" name="dr_emp" value="[EMP_ID]">
+        <input type="hidden" name="dr_soe" value="[SOE_ID]">
+        <input type="hidden" name="dr_sob" value="[SOB_ID]">
+        </td>
+  </table>
+</form>
+</body>
+</html>

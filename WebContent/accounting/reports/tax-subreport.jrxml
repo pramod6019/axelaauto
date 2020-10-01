@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
+<!-- 2017-05-18T15:03:17 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="tax-subreport" pageWidth="555" pageHeight="802" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="4a04f468-b75d-499c-8e31-5390dd01421f">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<parameter name="voucher_id" class="java.lang.String"/>
+	<parameter name="amt_sum" class="java.lang.Double"/>
+	<parameter name="total_qty" class="java.lang.Double"/>
+	<parameter name="total_items" class="java.lang.Integer"/>
+	<parameter name="comp_name" class="java.lang.String"/>
+	<parameter name="comp_ID" class="java.lang.Integer"/>
+	<queryString>
+		<![CDATA[SELECT 
+	customer_name,
+	COALESCE (sum(vouchertrans_amount), 0) AS taxamount
+FROM
+	axelaauto_$P{comp_ID}.axela_acc_voucher_trans
+INNER JOIN axelaauto_$P{comp_ID}.axela_customer ON customer_id = vouchertrans_tax_id
+WHERE
+	vouchertrans_voucher_id = $P{voucher_id}
+AND vouchertrans_tax_id != 0
+AND vouchertrans_item_id = 0
+GROUP BY
+	customer_id
+ORDER BY
+	customer_name]]>
+	</queryString>
+	<field name="customer_name" class="java.lang.String"/>
+	<field name="taxamount" class="java.lang.Double"/>
+	<variable name="total" class="java.lang.Double">
+		<initialValueExpression><![CDATA[$P{amt_sum}+$V{tax_sum}]]></initialValueExpression>
+	</variable>
+	<variable name="tax_sum" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$F{taxamount}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="21" splitType="Stretch">
+			<textField>
+				<reportElement x="274" y="1" width="100" height="18" uuid="990d5c36-e350-4013-8d89-e8e9ee4bcb32"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{customer_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="450" y="1" width="100" height="18" uuid="2f1954fb-0b02-412d-9dee-81e3bcaa7271"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{taxamount}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="-1" width="1" height="22" uuid="a9110e43-9e25-4791-8fad-ddc7ef7e7b17"/>
+			</line>
+			<line>
+				<reportElement x="269" y="0" width="1" height="21" uuid="304e906d-6fe8-400c-abe2-d9ac365f886b"/>
+			</line>
+			<line>
+				<reportElement x="552" y="-1" width="1" height="22" uuid="5ef95e81-25a9-444e-a106-edb6d0ebc5c4"/>
+			</line>
+		</band>
+	</detail>
+</jasperReport>

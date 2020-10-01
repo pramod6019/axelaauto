@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
+<!-- 2016-12-29T12:57:30 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="veh-quote-items-one-triumph" pageWidth="555" pageHeight="802" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="a5eece9c-e261-4295-857e-76ced6a1b43f">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<parameter name="comp_id" class="java.lang.Integer"/>
+	<parameter name="quote_id" class="java.lang.String"/>
+	<parameter name="quote_exprice" class="java.lang.String"/>
+	<parameter name="quote_discamt" class="java.lang.String"/>
+	<parameter name="total_amt" class="java.lang.String"/>
+	<parameter name="quote_grandtotal" class="java.lang.String"/>
+	<parameter name="branch_quote_terms" class="java.lang.String"/>
+	<parameter name="main_item_name" class="java.lang.String"/>
+	<parameter name="main_quoteitem_qty" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT
+	item_name,
+	item_code,
+	item_small_desc,
+	item_aftertaxcal,
+	quoteitem_rowcount,
+	quoteitem_qty,
+	uom_shortname,
+	quoteitem_price,
+	quoteitem_disc,
+	quoteitem_total,
+	quoteitem_option_group,
+	quoteitem_option_id,
+	quoteitem_tax,
+	quoteitem_option_group_tax,
+	COALESCE (
+		(
+			SELECT
+				GROUP_CONCAT(
+					CONCAT(
+						opt.quoteitem_option_group,
+						': ',
+						optitem.item_name,
+
+					IF (
+						optitem.item_code != '',
+						CONCAT(' (', optitem.item_code, ')'),
+						''
+					),
+					CONCAT(' Qty: ', opt.quoteitem_qty),
+
+				IF (
+					optitem.item_small_desc != '',
+					CONCAT(
+						'
+',
+						optitem.item_small_desc
+					),
+					''
+				)
+					)
+					ORDER BY
+						opt.quoteitem_id ASC SEPARATOR '
+
+'
+				)
+			FROM
+				axelaauto_$P{comp_id}.axela_sales_quote_item opt
+			INNER JOIN axelaauto_$P{comp_id}.axela_inventory_item optitem ON optitem.item_id = opt.quoteitem_item_id
+			INNER JOIN axelaauto_$P{comp_id}.axela_inventory_item_option ON option_item_id = opt.quoteitem_item_id
+			WHERE
+				opt.quoteitem_quote_id = invitem.quoteitem_quote_id
+			AND opt.quoteitem_option_id = invitem.quoteitem_rowcount
+		),
+		''
+	) AS optionitems
+FROM
+	axelaauto_$P{comp_id}.axela_sales_quote_item invitem
+INNER JOIN axelaauto_$P{comp_id}.axela_inventory_item item ON item.item_id = invitem.quoteitem_item_id
+INNER JOIN axelaauto_$P{comp_id}.axela_inventory_uom ON uom_id = item.item_uom_id
+WHERE 1=1
+AND quoteitem_rowcount = 0
+	AND
+	invitem.quoteitem_quote_id = $P{quote_id}
+GROUP BY
+	quoteitem_id
+ORDER BY
+	quoteitem_option_group_tax,
+	quoteitem_id]]>
+	</queryString>
+	<field name="item_name" class="java.lang.String"/>
+	<field name="quoteitem_price" class="java.lang.String"/>
+	<field name="quoteitem_qty" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<columnHeader>
+		<band height="67">
+			<staticText>
+				<reportElement mode="Opaque" x="4" y="3" width="172" height="20" backcolor="#C2C2C2" uuid="19bfca10-4fd0-4c4d-9279-2fa36c2ef9f2"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Helvetica" size="10"/>
+				</textElement>
+				<text><![CDATA[Items Description]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="180" y="3" width="50" height="20" backcolor="#C2C2C2" uuid="9a68921e-3aab-4e54-b3c1-a676b378385c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Helvetica" size="10"/>
+				</textElement>
+				<text><![CDATA[QTY]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="230" y="3" width="59" height="20" backcolor="#C2C2C2" uuid="4cd28305-ad3c-4cbf-958a-ba9b15ec0d0b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Helvetica" size="10"/>
+				</textElement>
+				<text><![CDATA[Unit Price]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="289" y="3" width="80" height="20" backcolor="#C2C2C2" uuid="027530e7-cd88-4efc-b823-51e72b636c27"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Helvetica" size="10"/>
+				</textElement>
+				<text><![CDATA[Total]]></text>
+			</staticText>
+			<textField>
+				<reportElement mode="Opaque" x="289" y="47" width="80" height="20" backcolor="#C2C2C2" uuid="6936c976-8d6c-43d9-8889-0a73841acf17"/>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Helvetica" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{quote_exprice}+" "]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="4" y="27" width="172" height="20" backcolor="#C2C2C2" uuid="53598af1-80c2-411a-be88-50d6a106a6ee">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Helvetica"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" "+$P{main_item_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="180" y="27" width="50" height="20" backcolor="#C2C2C2" uuid="46de5403-7b33-4306-ae76-ae4e42048718"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Helvetica"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{main_quoteitem_qty}+" "]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="180" y="47" width="109" height="20" backcolor="#C2C2C2" uuid="89752817-493b-4563-94d3-7636643898b5"/>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" mode="Opaque" x="4" y="47" width="172" height="20" backcolor="#C2C2C2" uuid="1a0680dc-b943-4698-a85f-9bd846b37b28"/>
+				<box leftPadding="2" rightPadding="2">
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Helvetica" size="10"/>
+				</textElement>
+				<text><![CDATA[Ex Showroom Price: ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="230" y="27" width="139" height="20" backcolor="#C2C2C2" uuid="d68aee43-008e-4650-a529-926c78512b6d"/>
+				<text><![CDATA[]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement mode="Opaque" x="4" y="0" width="172" height="20" backcolor="#C2C2C2" uuid="3edb724b-2f85-4bd0-a2bc-aff0128d59a5"/>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Helvetica" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" "+$F{item_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="289" y="0" width="80" height="20" backcolor="#C2C2C2" uuid="eccb66da-0f25-4f0b-9b2a-dc19703c90c2"/>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Helvetica" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{quoteitem_price}+" "]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="180" y="0" width="50" height="20" backcolor="#C2C2C2" uuid="284a0811-007f-4745-9355-33aa05673366"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Helvetica"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{quoteitem_qty}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="230" y="0" width="59" height="20" backcolor="#C2C2C2" uuid="765753f8-454c-495f-9e3f-63aa020266d5"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Helvetica"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{quoteitem_price}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="34">
+			<staticText>
+				<reportElement key="" mode="Opaque" x="180" y="4" width="109" height="30" forecolor="#FFFFFF" backcolor="#858181" uuid="b9af0c53-1407-4c99-9694-f433f0058330"/>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Helvetica" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Grand Total: ]]></text>
+			</staticText>
+			<textField>
+				<reportElement mode="Opaque" x="289" y="4" width="80" height="30" forecolor="#FFFFFF" backcolor="#858181" uuid="4f0cd49f-093e-4438-8b4e-f313eefb6bc8"/>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Helvetica" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{quote_grandtotal}+" "]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>

@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
+<!-- 2017-08-23T11:33:24 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="jobcard-print" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="69d25d92-c547-4caa-9f02-31ca5839a781">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="jc_time_in" class="java.lang.String"/>
+	<field name="jc_id" class="java.lang.String"/>
+	<field name="veh_reg_no" class="java.lang.String"/>
+	<field name="veh_chassis_no" class="java.lang.String"/>
+	<field name="jc_veh_id" class="java.lang.String"/>
+	<field name="comp_name" class="java.lang.String"/>
+	<field name="contact" class="java.lang.String"/>
+	<field name="veh_kms" class="java.lang.String"/>
+	<field name="jc_fuel_guage" class="java.lang.String"/>
+	<field name="customer_name" class="java.lang.String"/>
+	<field name="customer_address" class="java.lang.String"/>
+	<field name="acc_city" class="java.lang.String"/>
+	<field name="customer_pin" class="java.lang.String"/>
+	<field name="acc_state" class="java.lang.String"/>
+	<field name="jc_customer_id" class="java.lang.String"/>
+	<field name="jc_grandtotal" class="java.lang.Double"/>
+	<field name="jc_terms" class="java.lang.String"/>
+	<field name="emp_name" class="java.lang.String"/>
+	<field name="img" class="java.lang.Object"/>
+	<field name="comp" class="java.lang.String"/>
+	<field name="amt_word" class="java.lang.String"/>
+	<field name="emp_email1" class="java.lang.String"/>
+	<field name="jobtitle_desc" class="java.lang.String"/>
+	<field name="emp_name1" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="279" y="0" width="277" height="20" forecolor="#090A0A" backcolor="#3FBAB8" uuid="cf3106cc-e779-4e80-b835-117fde52eee2">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Job Card Estimate]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="408" splitType="Stretch">
+			<line>
+				<reportElement x="555" y="0" width="1" height="300" uuid="a87afc59-0f97-4993-ae46-ee36b78c86df"/>
+			</line>
+			<line>
+				<reportElement x="0" y="1" width="1" height="299" uuid="50d24d58-23dc-486e-a572-2d75a3670268"/>
+			</line>
+			<line>
+				<reportElement x="0" y="0" width="555" height="1" uuid="0eb407bb-7ef7-4f7a-8ff6-08682be93449"/>
+			</line>
+			<line>
+				<reportElement x="1" y="241" width="554" height="1" uuid="6b693eac-0819-4200-b0d0-682b3ddb459f"/>
+			</line>
+			<line>
+				<reportElement x="279" y="1" width="1" height="240" uuid="7b9bd893-9870-463e-836c-e887ffdaaabb">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="280" y="184" width="274" height="1" uuid="44fb7c68-ec24-4648-a147-768de9f73316"/>
+			</line>
+			<line>
+				<reportElement x="1" y="184" width="278" height="1" uuid="c5662d7c-3131-4457-919c-e3fefdc256d5"/>
+			</line>
+			<line>
+				<reportElement x="280" y="30" width="275" height="1" uuid="fe81e5c5-3826-47e3-a5ce-4f6f22659e69"/>
+			</line>
+			<line>
+				<reportElement x="280" y="163" width="275" height="1" uuid="274e5e93-b273-4b3f-adef-f5456fefc75a"/>
+			</line>
+			<textField>
+				<reportElement x="281" y="63" width="272" height="20" uuid="d10f8f19-25a7-49ea-86b4-d8dda9b09899">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA["Job Card ID: "+$F{jc_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="280" y="2" width="273" height="20" uuid="87f7ba64-e108-40aa-a060-fa5bf4aebe3d">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA["Date: "+$F{jc_time_in}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="1" y="1" width="278" height="20" uuid="4e7d38fa-1f14-4348-8a85-261fe8d82650">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{comp_name}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="1" y="46" width="278" height="20" uuid="cda48adf-05aa-4bee-9f1a-f97f4fa85d1f">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textFieldExpression><![CDATA[$F{contact}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="281" y="83" width="272" height="20" uuid="9af8c516-87d8-47ef-b3cc-57335f4b151c">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA["Reg. No.: " + $F{veh_reg_no}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="281" y="103" width="272" height="20" uuid="49afe9e3-2044-4628-b9a1-7b0553ed5805">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA["Chassis Number: " + $F{veh_chassis_no}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="281" y="123" width="272" height="20" uuid="321476f9-71bb-44f5-9345-496ad39bc0dd">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA["Vehicle ID: " + $F{jc_veh_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="281" y="143" width="272" height="20" uuid="3d611139-ee47-42d0-b5e3-a24c4bdcbc9a">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textFieldExpression><![CDATA["Kms: " + $F{veh_kms}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="281" y="164" width="272" height="20" uuid="290003d9-4b8b-4e80-a5ed-adfed82f4836">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA["Fuel Gauge: " + $F{jc_fuel_guage} + "%"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="1" y="185" width="278" height="20" uuid="cda1cfde-c5ac-42ca-b0c3-4ced5d7a4781">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textFieldExpression><![CDATA[$F{customer_name}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="1" y="205" width="278" height="20" uuid="134cd63a-7244-4ff4-a85a-7aae50d47c83">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{customer_address}+" "+$F{acc_city}+" "+$F{acc_state}+" "+$F{customer_pin}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="281" y="185" width="272" height="20" uuid="5347ca64-aea7-4592-8fca-6af6071ea700">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA["Customer ID: " + $F{jc_customer_id}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="1" y="299" width="554" height="1" uuid="b060abe4-269f-49b5-98e1-ee9233c9f71f"/>
+			</line>
+			<textField>
+				<reportElement x="284" y="301" width="269" height="20" uuid="0baff577-b9fa-4fb3-bd2d-592dbd1765f0">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA["For " + $F{comp_name}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="301" width="1" height="95" uuid="eb8b9af3-6697-41f8-897a-0ef043bdbbb4"/>
+			</line>
+			<line>
+				<reportElement x="1" y="395" width="554" height="1" uuid="a72471a4-76b5-46dc-b43b-75cd5195736c"/>
+			</line>
+			<line>
+				<reportElement x="280" y="300" width="1" height="95" uuid="88cb9cb2-7fde-4b79-bd4f-b4a75558cecf"/>
+			</line>
+			<line>
+				<reportElement x="555" y="300" width="1" height="96" uuid="18f1880c-84d0-444a-8cbe-91ad66ff6698"/>
+			</line>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="1" y="242" width="551" height="20" uuid="2b074c9b-5303-4a68-a485-dfb9b9486d1e">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textFieldExpression><![CDATA["Amount Chargeable (in words):\n " +"Rupees "+ $F{amt_word}+" Only/-.\n"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="284" y="354" width="268" height="20" uuid="aa782433-d280-4b2c-a5ce-21a36efc0a03">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{emp_name}+"\n"+$F{jobtitle_desc}+"\n"+$F{emp_email1}]]></textFieldExpression>
+			</textField>
+			<componentElement>
+				<reportElement x="284" y="34" width="100" height="12" uuid="bcfd7e2b-9fc9-4c32-bd4f-f4c87c382dff"/>
+				<jr:barbecue xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" type="Code128" drawText="false" checksumRequired="false">
+					<jr:codeExpression><![CDATA[$F{jc_id}]]></jr:codeExpression>
+				</jr:barbecue>
+			</componentElement>
+			<textField>
+				<reportElement x="280" y="46" width="100" height="17" uuid="5a7d7968-06a1-4354-a5a0-891b59078f82"/>
+				<textElement textAlignment="Center" verticalAlignment="Top"/>
+				<textFieldExpression><![CDATA[$F{jc_id}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<textField>
+				<reportElement x="1" y="16" width="555" height="30" uuid="ebbb5ae9-50e8-46c1-ac70-5b1d69b33534"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA["Printed By: "+$F{emp_name1}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

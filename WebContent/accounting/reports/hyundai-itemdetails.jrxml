@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
+<!-- 2017-05-06T12:08:40 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="hyundai-itemdetails" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c5543b26-0217-47d0-9a52-b0d8fafdd85b">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<queryString>
+		<![CDATA[SELECT
+	@row_id := @row_id + 1 AS slno,
+	 item_name,
+   COALESCE(veh_chassis_no,'') As veh_chassis_no,
+   COALESCE(veh_engine_no,'') AS veh_engine_no,
+   option_name,
+   vouchertrans_amount,
+   @discount := COALESCE (
+		(
+			SELECT
+				disc.vouchertrans_amount
+			FROM
+				axelaauto_$P{comp_ID}.axela_acc_voucher_trans disc
+			WHERE
+				disc.vouchertrans_option_id = trans.vouchertrans_rowcount
+			AND disc.vouchertrans_discount = 1
+			AND disc.vouchertrans_voucher_id = trans.vouchertrans_voucher_id
+		),
+		0
+	) AS discount,
+	@vouchervalue := (vouchertrans_amount - @discount) AS vouchervalue,
+	
+	COALESCE (
+		(
+			SELECT
+				tax_name
+			FROM
+				axelaauto_$P{comp_ID}.axela_acc_voucher_trans taxtable
+			INNER JOIN axelaauto_$P{comp_ID}.axela_acc_tax ON tax_id = taxtable.vouchertrans_tax_id
+			WHERE
+				taxtable.vouchertrans_option_id = trans.vouchertrans_rowcount
+			AND taxtable.vouchertrans_tax = 1
+			AND taxtable.vouchertrans_voucher_id = trans.vouchertrans_voucher_id
+			LIMIT 1
+		),
+		0
+	) AS tax_name,
+
+	@netrate := (
+		vouchertrans_price - (@discount / vouchertrans_qty)
+	) AS netrate,
+	@taxrate := COALESCE (
+		(
+			SELECT
+				tax_rate
+			FROM
+				axelaauto_$P{comp_ID}.axela_acc_voucher_trans taxtable
+			INNER JOIN axelaauto_$P{comp_ID}.axela_acc_tax ON tax_id = taxtable.vouchertrans_tax_id
+			WHERE
+				taxtable.vouchertrans_option_id = trans.vouchertrans_rowcount
+			AND taxtable.vouchertrans_tax = 1
+			AND taxtable.vouchertrans_voucher_id = trans.vouchertrans_voucher_id
+			LIMIT 1
+		),
+		0
+	) AS tax,
+	@taxpaid:= COALESCE ((
+		@taxrate / 100 * (
+			vouchertrans_amount -@discount
+		)
+	),0) AS taxpaid,
+	
+	(
+	@taxble_amt :=(@netrate* vouchertrans_qty) + @taxpaid
+		 
+	) AS taxable_amt,
+	vouchertrans_alt_qty,
+	vouchertrans_qty,
+	vouchertrans_price,
+	@total_amount = (@vouchervalue + @taxable_amt) AS total_amt
+	
+FROM
+	axelaauto_$P{comp_ID}.axela_inventory_item
+INNER JOIN axelaauto_$P{comp_ID}.axela_acc_voucher_trans trans ON trans.vouchertrans_item_id = item_id
+INNER JOIN axelaauto_$P{comp_ID}.axela_acc_voucher ON voucher_id = vouchertrans_voucher_id
+INNER JOIN axelaauto_$P{comp_ID}.axela_sales_so ON so_id = voucher_so_id
+INNER JOIN axelaauto_$P{comp_ID}.axela_stock_option ON option_id = so_option_id
+LEFT JOIN axelaauto_$P{comp_ID}.axela_service_veh ON veh_so_id = so_id
+WHERE
+	1 = 1
+AND vouchertrans_discount = 0
+AND vouchertrans_tax = 0
+AND item_type_id = 1
+AND vouchertrans_voucher_id = $P{voucher_id}
+GROUP BY
+	item_id
+ORDER BY
+	vouchertrans_voucher_id]]>
+	</queryString>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

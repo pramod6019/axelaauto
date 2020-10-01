@@ -1,0 +1,95 @@
+body, p {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	text-align: Justify;
+}
+
+a {
+	color: #43478f;
+	text-decoration: underline
+}
+
+A:hover {
+	COLOR: #ff0000;
+	TEXT-DECORATION: underline
+}
+
+A:Active {
+	COLOR: #43478f;
+	text-decoration: underline
+}
+
+a:visited {
+	color: #CC6600;
+	text-decoration: underline
+}
+
+TD {
+	FONT-SIZE: 12px;
+	FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+
+UL.blocklist {
+	PADDING-LEFT: 0px;
+	MARGIN-BOTTOM: 0px;
+	MARGIN-LEFT: 0px;
+	LIST-STYLE-TYPE: none
+}
+
+UL, li {
+	font-size: 12px;
+}
+
+.tableborder {
+	background-color: #FFF;
+	border-color: #333;
+	border-collapse: collapse;
+}
+
+.listtable {
+	width: 100%;
+	background-color: #FFF;
+	border-color: #999;
+	border-collapse: collapse;
+}
+
+.listtable td, pre {
+	padding: 3px;
+	line-height: 150%;
+	FONT-SIZE: 12px;
+	FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+}
+
+.listtable ul, li {
+	padding: 3px;
+	line-height: 150%;
+	FONT-SIZE: 12px;
+	FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+}
+
+.listtable th {
+	padding: 3px;
+	line-height: 150%;
+	color: #000;
+	font-size: 12px;
+	font-weight: bold;
+	text-align: center;
+	background-color: #FFF;
+}
+
+.listtable th a, th a:visited {
+	color: #ffffff;
+	text-decoration: underline
+}
+
+.listtable tbody tr:hover {
+	background-color: #eeeeee;
+}
+
+.listtable tr.alt td {
+	background-color: #ffffcc;
+}
+
+.footer td {
+	font-size: 10px;
+}

@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
+<!-- 2017-06-08T16:37:31 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="receipt-print-volvo" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="35118638-64d3-4633-bb42-50e4052e28a0">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="branch_invoice_name" class="java.lang.String"/>
+	<field name="branch_address" class="java.lang.String"/>
+	<field name="voucher_no" class="java.lang.String"/>
+	<field name="voucher_date" class="java.lang.String"/>
+	<field name="customer_name" class="java.lang.String"/>
+	<field name="amount" class="java.lang.String"/>
+	<field name="voucher_paymode" class="java.lang.String"/>
+	<field name="voucher_narration" class="java.lang.String"/>
+	<field name="voucher_amount" class="java.lang.String"/>
+	<field name="voucher_total" class="java.lang.Double"/>
+	<field name="bank_name" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="80" splitType="Stretch">
+			<line>
+				<reportElement x="-1" y="1" width="557" height="1" uuid="35758b02-94c1-4922-b4e9-219257870302"/>
+			</line>
+			<line>
+				<reportElement x="556" y="1" width="1" height="78" uuid="f920bac4-d83d-40d3-b9a0-b44fbdfe8569"/>
+			</line>
+			<line>
+				<reportElement x="-2" y="1" width="1" height="78" uuid="4474f8c9-49a3-4634-ab4a-f013d22a07f8"/>
+			</line>
+			<textField>
+				<reportElement x="10" y="2" width="370" height="20" uuid="08966334-0db4-4e64-9b61-6c7f2c365f1b">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{branch_invoice_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="10" y="22" width="270" height="57" uuid="83aad316-3bc8-4892-8233-f9f4dd084f1d">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Top"/>
+				<textFieldExpression><![CDATA[$F{branch_address}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="380" y="2" width="176" height="20" uuid="eed73c13-2018-4c0d-b017-d95a3bf4e7db">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[KERALA VOLVO]]></text>
+			</staticText>
+			<line>
+				<reportElement x="-1" y="79" width="557" height="1" uuid="bf360ae8-a46f-4b37-b1fd-fbe6141ed58a"/>
+			</line>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<line>
+				<reportElement x="556" y="-1" width="1" height="21" uuid="9aea720b-37b2-423a-a8ed-383c11317d0a">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="-2" y="-1" width="1" height="21" uuid="10c6173b-91c2-4ff5-909e-c28ddc489098">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+			</line>
+			<staticText>
+				<reportElement x="10" y="0" width="89" height="20" uuid="111d5cc4-498f-4702-b443-58a0e99d3032">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Receipt No.:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="100" y="1" width="100" height="19" uuid="2d60f5c9-8231-4ebf-ba53-36bc81902cfd"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{voucher_no}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="400" y="0" width="55" height="20" uuid="cb429734-9304-4c2c-864c-d7c2bfdc81b1">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Date:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="456" y="1" width="100" height="19" uuid="b01d79ca-5a73-4ded-a6d6-ed5c1c8b37bc"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{voucher_date}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="200" y="-1" width="199" height="20" uuid="baff994c-41a3-4acf-8379-70820513135e">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[RECEIPT]]></text>
+			</staticText>
+			<line>
+				<reportElement x="-1" y="19" width="557" height="1" uuid="06b1d4b2-ce94-4717-b85f-4d02e370c213"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="246" splitType="Stretch">
+			<line>
+				<reportElement x="-2" y="-1" width="1" height="239" uuid="421a7a17-a310-4c1b-9a0a-c9ca39746584"/>
+			</line>
+			<line>
+				<reportElement x="556" y="1" width="1" height="237" uuid="3a930d27-d35b-4dad-bec6-7689058c39e5"/>
+			</line>
+			<staticText>
+				<reportElement x="10" y="17" width="229" height="20" uuid="2ce56067-469c-452a-a4f6-7c58cd73b8bc">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<text><![CDATA[Received with thanks From]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="37" width="229" height="20" uuid="377814db-e246-4740-a765-cb1c42dd16c7">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<text><![CDATA[a sum of Rupees]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="57" width="229" height="20" uuid="c9ad1ac5-6f25-43c3-a762-c07c0bad1eea">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<text><![CDATA[By]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="77" width="229" height="20" uuid="570408a9-962f-4fd4-8e92-1acdde8636a0">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<text><![CDATA[Remarks]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="239" y="17" width="10" height="20" uuid="79b7799a-9e28-4400-9772-2eb16e1ed884">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="239" y="37" width="10" height="20" uuid="70fdc15c-444f-4c23-a871-b1264d1841d6">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="239" y="57" width="10" height="20" uuid="02dd5310-065e-47d6-bcff-482893058000">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="239" y="77" width="10" height="20" uuid="1ac35a2b-6789-4181-9abe-e7e2d2442dcc">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Top"/>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="249" y="17" width="307" height="19" uuid="6fff4475-4929-4514-9d22-d5e837c5da65"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{customer_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="249" y="37" width="304" height="19" uuid="20d907ef-f488-4159-bb30-b460cc0aedae"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{voucher_amount}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="249" y="58" width="303" height="19" uuid="343fe060-f63c-4df8-931a-7c895ce2dbc9"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{voucher_paymode}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="249" y="78" width="304" height="32" uuid="dd80fcf2-0a87-4614-a7a3-e62183ab13e7"/>
+				<textElement textAlignment="Left" verticalAlignment="Top"/>
+				<textFieldExpression><![CDATA[$F{voucher_narration}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="-1" y="140" width="140" height="30" uuid="6c716260-cc25-48b1-9d7b-8bb7fbe7a064"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA["RS "+ 
+new java.text.DecimalFormat("##0.00").format($F{voucher_total})]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="377" y="140" width="176" height="20" uuid="a6a072c9-ed60-4725-b589-7c5b08bd3160"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA["For "+$F{branch_invoice_name}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="10" y="218" width="289" height="20" uuid="124d2cfb-42c8-4d01-b564-c6e8c8087f35"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[* Subject to realisation of the cheque]]></text>
+			</staticText>
+			<line>
+				<reportElement x="-2" y="238" width="559" height="1" uuid="1016f47f-c21c-4c60-aea0-5dd06d5d08e5"/>
+			</line>
+			<staticText>
+				<reportElement x="370" y="215" width="186" height="22" uuid="949012bd-edd1-4919-8480-694b1b316bff"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Authorised Signatory]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="249" y="110" width="302" height="20" uuid="9394ee1c-e034-48fa-8a63-fa62e9fc410a"/>
+				<textFieldExpression><![CDATA["Hypothicated to "+$F{bank_name}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -1,0 +1,212 @@
+
+<link rel="shortcut icon" href="../test/favicon.ico" />
+<link href="../assets/css/font-awesome.css" rel="stylesheet" type="text/css" />
+<link href="../assets/css/components-rounded.css" rel="stylesheet" id="style_components" type="text/css" />
+<link href="../assets/css/bootstrap.css" rel="stylesheet" type="text/css" />
+	
+
+<link href="../assets/css/select2.min.css" rel="stylesheet" type="text/css" />
+<link href="../assets/css/select2-bootstrap.min.css" rel="stylesheet" type="text/css" />
+
+<link href="../assets/css/plugins.css" rel="stylesheet" type="text/css" />
+<link href="../assets/css/bootstrap-datepicker3.css" rel="stylesheet" type="text/css" />
+<link href="../assets/css/bootstrap-timepicker.css" rel="stylesheet" type="text/css" />
+<link href="../assets/css/bootstrap-datetimepicker.css" rel="stylesheet" type="text/css" />
+<LINK REL="STYLESHEET" TYPE="text/css" HREF="../assets/css/footable.core.css">
+<link href="../assets/themes/theme<%=mybean.GetTheme(request)%>.css" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+
+
+
+<script src="../assets/js/jquery.min.js" type="text/javascript"></script> 
+<script src="../assets/js/bootstrap.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="../Library/dynacheck.js"></script>
+<script type="text/javascript" src="../Library/Validate.js"></script>
+<script type="text/javascript" src="../Library/dynacheck.js?target=<%=mybean.jsver%>"></script>
+<script type="text/javascript" src="../ckeditor/ckeditor.js"></script>	
+<script src="../assets/js/select2.full.min.js" type="text/javascript"></script>
+<script src="../assets/js/components-select2.min.js" type="text/javascript"></script>
+
+<script src="../assets/js/components-date-time-pickers.js" type="text/javascript"></script>
+<script src="../assets/js/bootstrap-datepicker.js" type="text/javascript"></script>
+<script src="../assets/js/bootstrap-timepicker.js" type="text/javascript"></script>
+<script src="../assets/js/bootstrap-datetimepicker.js" type="text/javascript"></script>
+	
+<script src="../assets/js/footable.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+
+	$(function() {
+	 $('table').footable({
+		 toggleHTMLElement : '<span>
+				<div class="footable-toggle footable-expand" border="0"></div>' + '<div class="footable-toggle footable-contract" border="0"></div></span>'
+	 });
+		
+	});
+</script>
+
+
+
+
+
+
+
+
+
+
+.ui-corner-all{
+	border-top-left-radius: 6px;
+}
+
+.ui-corner-all{
+	border-top-right-radius: 6px;
+}
+
+.ui-corner-all {
+	border-bottom-left-radius: 6px;
+}
+
+.ui-corner-all{
+	border-bottom-right-radius: 6px;
+}
+
+
+.ui-state-default {
+	background-image: url(images/ui-icons_3d80b3_256x240.png);
+}
+
+.ui-state-default a, .ui-state-default a:link, .ui-state-default a:visited
+	{
+	color: #2779aa;
+	text-decoration: none;
+}
+
+.ui-state-default, .ui-widget-content .ui-state-default,
+	.ui-widget-header .ui-state-default {
+	border: 1px solid #aed0ea;
+	background: #d7ebf9 url(images/ui-bg_glass_80_d7ebf9_1x400.png) 50% 50%
+		repeat-x;
+	font-weight: bold;
+	color: #2779aa;
+}
+
+
+.ui-widget-header .ui-state-default {
+	border: 1px solid #aed0ea;
+	background: #d7ebf9 url(images/ui-bg_glass_80_d7ebf9_1x400.png) 50% 50%
+		repeat-x;
+	font-weight: bold;
+	color: #2779aa;
+}
+
+.ui-widget-header {
+	border: 1px solid #aed0ea;
+	background: #deedf7
+		url(images/ui-bg_highlight-soft_100_deedf7_1x100.png) 50% 50% repeat-x;
+	color: #222222;
+	font-weight: bold;
+}
+.ui-widget-header a {
+	color: #222222;
+}
+
+.ui-state-default,  .ui-state-default,
+	.ui-widget-header .ui-state-default {
+	border: 1px solid #aed0ea;
+	background: #d7ebf9 url(images/ui-bg_glass_80_d7ebf9_1x400.png) 50% 50%
+		repeat-x;
+	font-weight: bold;
+	color: #2779aa;
+}
+
+.ui-widget-header, .ui-widget-header 
+	{
+	border: 1px solid #74b2e2;
+	background: #e4f1fb url(images/ui-bg_glass_100_e4f1fb_1x400.png) 50% 50%
+		repeat-x;
+	font-weight: bold;
+	color: #0070a3;
+}
+
+ .ui-widget-header
+	{
+	border: 1px solid #2694e8;
+	background: #3baae3 url(images/ui-bg_glass_50_3baae3_1x400.png) 50% 50%
+		repeat-x;
+	font-weight: bold;
+	color: #ffffff;
+}
+
+	.ui-widget-header {
+	border: 1px solid #f9dd34;
+	background: #ffef8f url(images/ui-bg_highlight-soft_25_ffef8f_1x100.png)
+		50% top repeat-x;
+	color: #363636;
+}
+
+	.ui-widget-header  a {
+	color: #363636;
+}
+
+ .ui-widget-header
+	{
+	border: 1px solid #cd0a0a;
+	background: #cd0a0a url(images/ui-bg_flat_15_cd0a0a_40x100.png) 50% 50%
+		repeat-x;
+	color: #ffffff;
+}
+
+	.ui-widget-header {
+	color: #ffffff;
+}
+.ui-widget-header {
+	margin-bottom: 8px;
+}
+.ui-widget-header {
+	background-image: url(images/ui-icons_72a7cf_256x240.png);
+}
+
+.ui-widget-header  {
+	opacity: .35;
+	filter: Alpha(Opacity = 35);
+	background-image: none;
+}
+
+.ui-widget-header{
+	opacity: .7;
+	filter: Alpha(Opacity = 70);
+	font-weight: normal;
+}
+.ui-widget-content 
+	.ui-widget-header {
+	color: #ffffff;
+}
+
+
+.ui-widget-header {
+	font-weight: bold;
+}
+/* Corner radius */
+.ui-corner-all{
+	border-top-left-radius: 6px;
+}
+
+.ui-corner-all {
+	border-top-right-radius: 6px;
+}
+
+.ui-corner-all {
+	border-bottom-left-radius: 6px;
+}
+
+.ui-corner-all {
+	border-bottom-right-radius: 6px;
+}
+
+/* Overlays */

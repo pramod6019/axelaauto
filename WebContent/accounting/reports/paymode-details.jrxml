@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.1.0.final using JasperReports Library version 6.1.0  -->
+<!-- 2016-09-01T16:24:28 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="paymode-details" pageWidth="595" pageHeight="842" columnWidth="595" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="ce3b8c92-6e13-4364-9a78-fada086e8b08">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<parameter name="voucher_id" class="java.lang.String"/>
+	<parameter name="comp_ID" class="java.lang.Integer"/>
+	<queryString>
+		<![CDATA[SELECT
+ @row_id := @row_id + 1 AS slno,
+IF (
+	vouchertrans_paymode_id = 1,
+	CONCAT('By ', paymode_name),
+
+IF (
+	vouchertrans_paymode_id = 2,
+	CONCAT(
+		'By ',
+		paymode_name,
+		' vide Cheque No:',
+		vouchertrans_cheque_no,
+		' dated ',
+		DATE_FORMAT(
+			vouchertrans_cheque_date,
+			'%d/%m/%Y'
+		),
+		' drawn on ',
+		vouchertrans_cheque_bank,
+		' branch ',
+		vouchertrans_cheque_branch
+	),
+
+IF (
+	vouchertrans_paymode_id = 3,
+	CONCAT(
+		'By ',
+		paymode_name,
+		' Card No:',
+		vouchertrans_cheque_no,
+		' Bank:',
+		vouchertrans_cheque_bank
+		
+	),
+
+IF (
+	vouchertrans_paymode_id = 5,
+	CONCAT(
+		'By ',
+		paymode_name,
+		' Transaction No:',
+		vouchertrans_cheque_no
+	),
+	CONCAT(
+		'By ',
+		paymode_name,
+		' Bank:',
+		vouchertrans_cheque_bank
+	)
+)
+)
+)
+) AS detail,
+ CONCAT(
+	customer_id,
+	'-',
+	customer_ledgertype
+) AS customer_type,
+ customer_name,
+ vouchertrans_paymode_id,
+ paymode_name,
+ vouchertrans_amount,
+ vouchertrans_cheque_no,
+ vouchertrans_cheque_date,
+ vouchertrans_cheque_bank,
+ vouchertrans_cheque_branch
+FROM
+      (SELECT @row_id := 0) AS init,
+	axelaauto_$P{comp_ID}.axela_acc_voucher_trans
+INNER JOIN axelaauto_$P{comp_ID}.axela_acc_voucher ON voucher_id = vouchertrans_voucher_id
+INNER JOIN axelaauto_$P{comp_ID}.axela_customer ON customer_id = vouchertrans_customer_id
+INNER JOIN axelaauto.axela_acc_paymode ON paymode_id = vouchertrans_paymode_id
+WHERE
+	1 = 1
+AND vouchertrans_voucher_id = $P{voucher_id}
+AND voucher_active = 1
+AND vouchertrans_reconciliation = 1]]>
+	</queryString>
+	<field name="detail" class="java.lang.String"/>
+	<field name="vouchertrans_amount" class="java.lang.Long"/>
+	<field name="slno" class="java.lang.String"/>
+	<variable name="vouchertrans_amount1" class="java.lang.String">
+		<variableExpression><![CDATA[new cloudify.connect.Connect().IndianCurrencyFormatToWord($F{vouchertrans_amount})]]></variableExpression>
+	</variable>
+	<variable name="amt_wordst" class="java.lang.String">
+		<variableExpression><![CDATA[$V{vouchertrans_amount1}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<columnHeader>
+		<band height="21">
+			<staticText>
+				<reportElement x="226" y="-1" width="100" height="20" uuid="57f6d50f-b7c0-4405-830b-171aaaaf203c">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Paymode]]></text>
+			</staticText>
+			<line>
+				<reportElement x="1" y="19" width="551" height="1" uuid="b3570460-6bbe-42e7-bd09-3501a3e5ae13"/>
+			</line>
+			<line>
+				<reportElement x="552" y="-2" width="1" height="22" uuid="6a18162c-856e-4664-87f3-d5761a93a501"/>
+			</line>
+			<line>
+				<reportElement x="0" y="-1" width="1" height="21" uuid="cb6ba3f6-0811-4684-bcfb-6ca3485dc974"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="24" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="21" y="-1" width="531" height="25" uuid="2fcf6a87-ec92-4f03-859a-623df6eea709">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Top">
+					<font fontName="SansSerif"/>
+					<paragraph lineSpacingSize="0.0" tabStopWidth="30"/>
+				</textElement>
+				<textFieldExpression><![CDATA[""+$F{vouchertrans_amount} + "/-" +"  (" + new cloudify.connect.Connect().toTitleCase($V{amt_wordst}) +" Only)  " + $F{detail}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1" y="-1" width="20" height="25" uuid="643cbed3-57c7-4e62-8571-0ba35b51afd9"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Top"/>
+				<textFieldExpression><![CDATA[$F{slno}+"."]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="552" y="-1" width="1" height="25" uuid="bc6178e4-26c2-4fe1-b702-722e1fa05c3f"/>
+			</line>
+			<line>
+				<reportElement x="0" y="-1" width="1" height="25" uuid="bb10bb7f-84a0-456f-b787-abe387da6aaa">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+			</line>
+		</band>
+	</detail>
+</jasperReport>

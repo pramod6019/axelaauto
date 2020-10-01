@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
+<!-- 2017-06-06T10:58:13 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="item-details" pageWidth="555" pageHeight="802" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="82db01c8-1845-4b5f-88aa-7b73dbd39d21">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<parameter name="voucher_id" class="java.lang.String">
+		<parameterDescription><![CDATA[]]></parameterDescription>
+	</parameter>
+	<parameter name="comp_ID" class="java.lang.Integer"/>
+	<queryString>
+		<![CDATA[SELECT
+	@row_id := @row_id + 1 AS slno,
+	item_id,
+	item_name,
+	item_code,
+	item_serial,
+	vouchertrans_alt_qty,
+	vouchertrans_qty,
+	vouchertrans_price,
+	vouchertrans_amount,
+	@discountper := COALESCE (
+		(
+			SELECT
+				disc.vouchertrans_discount_perc
+			FROM
+				axelaauto_$P{comp_ID}.axela_acc_voucher_trans disc
+			WHERE
+				disc.vouchertrans_option_id = trans.vouchertrans_rowcount
+			AND disc.vouchertrans_discount = 1
+			AND disc.vouchertrans_voucher_id = trans.vouchertrans_voucher_id
+		),
+		0
+	) AS discountper,
+	uom_name,
+	@discount := COALESCE (
+		(
+			SELECT
+				disc.vouchertrans_amount
+			FROM
+				axelaauto_$P{comp_ID}.axela_acc_voucher_trans disc
+			WHERE
+				disc.vouchertrans_option_id = trans.vouchertrans_rowcount
+			AND disc.vouchertrans_discount = 1
+			AND disc.vouchertrans_voucher_id = trans.vouchertrans_voucher_id
+		),
+		0
+	) AS discount,
+	@netrate := (
+		vouchertrans_price - (@discount / vouchertrans_qty)
+	) AS netrate,
+	@taxrate := COALESCE (
+		(
+			SELECT
+				customer_rate
+			FROM
+				axelaauto_$P{comp_ID}.axela_acc_voucher_trans taxtable
+			INNER JOIN axelaauto_$P{comp_ID}.axela_customer ON customer_id = taxtable.vouchertrans_tax_id
+			WHERE
+				taxtable.vouchertrans_option_id = trans.vouchertrans_rowcount
+			AND taxtable.vouchertrans_tax = 1
+			AND taxtable.vouchertrans_voucher_id = trans.vouchertrans_voucher_id
+			LIMIT 1
+		),
+		0
+	) AS tax,
+	@taxpaid:= COALESCE ((
+		@taxrate / 100 * (
+			vouchertrans_amount -@discount
+		)
+	),0) AS taxpaid,
+	vouchertrans_truckspace,
+	'' AS purchasebillno,
+	(
+		
+			@taxble_amt :=(@netrate* vouchertrans_qty) + @taxpaid
+		 
+	) AS taxable_amt
+FROM
+	(SELECT @row_id := 0) AS init,
+	axelaauto_$P{comp_ID}.axela_inventory_item
+INNER JOIN axelaauto_$P{comp_ID}.axela_acc_voucher_trans trans ON trans.vouchertrans_item_id = item_id
+INNER JOIN axelaauto_$P{comp_ID}.axela_acc_voucher ON voucher_id = vouchertrans_voucher_id
+INNER JOIN axelaauto_$P{comp_ID}.axela_branch ON branch_id = voucher_branch_id
+INNER JOIN axelaauto_$P{comp_ID}.axela_inventory_uom ON uom_id = vouchertrans_alt_uom_id
+WHERE
+	1 = 1
+AND vouchertrans_discount = 0
+AND vouchertrans_tax = 0
+AND vouchertrans_voucher_id = $P{voucher_id}
+GROUP BY
+	item_id
+ORDER BY
+	vouchertrans_voucher_id]]>
+	</queryString>
+	<field name="item_id" class="java.lang.String"/>
+	<field name="item_name" class="java.lang.String"/>
+	<field name="tax" class="java.lang.Double"/>
+	<field name="vouchertrans_qty" class="java.lang.String"/>
+	<field name="uom_name" class="java.lang.String"/>
+	<field name="netrate" class="java.lang.Double"/>
+	<field name="discount" class="java.lang.Double"/>
+	<field name="slno" class="java.lang.String"/>
+	<field name="taxable_amt" class="java.lang.Double"/>
+	<field name="vouchertrans_price" class="java.lang.Double"/>
+	<variable name="total_items" class="java.lang.Integer" calculation="Count">
+		<variableExpression><![CDATA[$F{item_name}]]></variableExpression>
+	</variable>
+	<variable name="total_qty" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[Double.valueOf($F{vouchertrans_qty})]]></variableExpression>
+	</variable>
+	<variable name="return_total_items" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$F{taxable_amt}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="31" height="20" uuid="4d5a1b13-6404-45d9-9cdb-2f32e3557f60">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[#]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="31" y="0" width="238" height="20" uuid="79da9fec-73cf-41db-952f-a0837472fcce">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Description]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="430" y="0" width="40" height="20" uuid="73793fc0-a9b6-4649-9d2a-c94e66fdc7a1"/>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Tax]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="270" y="0" width="24" height="20" uuid="97dfd21c-31dc-476b-8714-bd27b7559db3">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Qty]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="294" y="0" width="47" height="20" uuid="8ddf6c70-c7cf-4e9a-8aa2-87fcc2ae58f9"/>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[UOM]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="341" y="0" width="50" height="20" uuid="fad67a2a-fe92-441c-be83-d3d229450461"/>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Rate]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="391" y="0" width="39" height="20" uuid="62318fa8-82f6-413d-883f-47e9c85658cd"/>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Disc.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToTallestObject" x="470" y="0" width="89" height="20" uuid="4504959b-0517-4623-97ae-df5865e45164"/>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Net Amount
+]]></text>
+			</staticText>
+			<line>
+				<reportElement x="269" y="0" width="1" height="20" uuid="6f192f4f-7871-4b69-bfde-9fdf576168d2"/>
+			</line>
+			<line>
+				<reportElement x="558" y="0" width="1" height="20" uuid="f2114a14-59a7-47e2-94e2-417f06ebf253"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="18" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="-2" width="31" height="20" uuid="233594dd-1ce6-4649-a804-c109276c16bb">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2">
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{slno}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="31" y="-2" width="238" height="20" uuid="c821dee2-3a37-410e-98c9-6fe2b9c70aba"/>
+				<box leftPadding="2">
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{item_name}.replaceAll( "&#40;", "(" ).replaceAll( "&#41;", ")" )]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="430" y="-2" width="40" height="20" uuid="7e3b143a-ddb9-42af-afcd-bae34e912109"/>
+				<box rightPadding="2">
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[new java.text.DecimalFormat("##0.00").format($F{tax})+"%"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="270" y="-2" width="24" height="20" uuid="8a2882c3-59fc-4937-90d2-54752e748de5">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2" rightPadding="2">
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{vouchertrans_qty}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="294" y="-2" width="47" height="20" uuid="42315f48-56a2-4cd7-b72b-ff4a7cf087df"/>
+				<box leftPadding="2">
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{uom_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="341" y="-2" width="50" height="20" uuid="5c85289d-6d13-46c0-893b-92a4fb174394"/>
+				<box leftPadding="0" rightPadding="2">
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[new java.text.DecimalFormat("##0.00").format($F{vouchertrans_price})]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="391" y="-2" width="39" height="20" uuid="991dd20c-1caa-4b2d-9c38-257d9ff1f90f"/>
+				<box rightPadding="2">
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[new java.text.DecimalFormat("##0.00").format($F{discount})]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="470" y="0" width="88" height="18" uuid="78a10591-0b10-4c8a-b6ea-6f49cc0151cf"/>
+				<box rightPadding="2">
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[new java.text.DecimalFormat("##0.00").format($F{taxable_amt})]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="-2" y="-21" width="1" height="39" uuid="28453e3b-82a7-4680-84ab-1e84fd349db1"/>
+			</line>
+			<line>
+				<reportElement x="269" y="-1" width="1" height="19" uuid="2585205c-8506-4e32-b69b-67a076cd9d6c"/>
+			</line>
+			<line>
+				<reportElement x="558" y="-1" width="1" height="19" uuid="325e17b4-c9fb-434d-b2e6-8d769efe1dd7"/>
+			</line>
+		</band>
+	</detail>
+	<summary>
+		<band height="22">
+			<line>
+				<reportElement x="-2" y="-1" width="1" height="21" uuid="e4a6c2ba-1a77-4211-9660-a02798bc769c"/>
+			</line>
+			<staticText>
+				<reportElement x="0" y="-1" width="269" height="20" uuid="e356d35a-7a83-481f-9212-9e08f4a71114">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<text><![CDATA[Total:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="-2" y="21" width="561" height="1" uuid="59067ed5-bef4-4e33-acb1-ff4a7eac2e3f"/>
+			</line>
+			<line>
+				<reportElement x="269" y="-1" width="1" height="21" uuid="ac25da9f-5cb0-4c08-b092-d4ebf711be48"/>
+			</line>
+			<textField>
+				<reportElement x="270" y="-1" width="24" height="21" uuid="36009cea-5671-4b2c-95ef-e60bb8fd34fe"/>
+				<box rightPadding="2">
+					<leftPen lineWidth="0.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$V{total_qty}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="296" y="-1" width="154" height="20" uuid="9a445b96-2bd6-4015-9fc1-7c9edfbaa005">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<line>
+				<reportElement x="558" y="-1" width="1" height="22" uuid="72517147-2017-43ba-8df7-ec60f25c9a48"/>
+			</line>
+			<textField>
+				<reportElement x="451" y="0" width="107" height="20" uuid="53e5f493-1b63-40e4-b373-8bfa0709707c"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[new java.text.DecimalFormat("##0.00").format($V{return_total_items})]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>

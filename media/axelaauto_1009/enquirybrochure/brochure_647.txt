@@ -1,0 +1,65 @@
+int n = 0;
+		try {
+			ps = con1.prepareStatement("select Mail from Student222");
+			ResultSet rs3 = ps.executeQuery();
+			while (rs3.next()) {
+				if (rs3.getString(1).equalsIgnoreCase(mail)) {
+					++n;
+				}
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		if (n > 1) {
+			pw.print("email already in use...!");
+		}
+
+
+<option  value="0">select City</option>
+<option  value="0">select Country</option>
+<option value="0">select State</option>
+
+
+
+
+int mail1 = 0;int count = 0;
+		try {
+			ps = con1.prepareStatement("select mail from student222 where FirstName=?");
+			ps.setString(1, fName);
+			rs = ps.executeQuery();
+			while (rs.next()) {
+				if (rs.getString(1).equalsIgnoreCase(mail))
+					;
+				++mail1;
+			}
+
+		} catch (SQLException e3) {
+			// TODO Auto-generated catch block
+			e3.printStackTrace();
+		}
+		
+		if (mail1 == 0) {
+
+
+
+
+
+		try {
+			ps = con1.prepareStatement("select Mail from Student222");
+			rs = ps.executeQuery();
+			while (rs.next()) {
+				if (rs.getString(1).equalsIgnoreCase(mail)) {
+					++count;
+				}
+		
+			}
+
+		} catch (SQLException e2) {
+			// TODO Auto-generated catch block
+			e2.printStackTrace();
+		}
+		}
+		if (count > 1) {
+			pw.print("Email already in use...!");
+		}

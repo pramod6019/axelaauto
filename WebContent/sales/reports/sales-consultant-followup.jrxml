@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.1.0.final using JasperReports Library version 6.1.0  -->
+<!-- 2016-08-29T16:45:22 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="sales-consultant-followup" pageWidth="590" pageHeight="842" columnWidth="550" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="60f3111d-9fb3-41ed-aa20-ae61130ece62">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<parameter name="enquiry_id" class="java.lang.String"/>
+	<parameter name="SI" class="java.lang.String"/>
+	<parameter name="so_promise_date" class="java.lang.String">
+		<defaultValueExpression><![CDATA[$P{so_promise_date}]]></defaultValueExpression>
+	</parameter>
+	<parameter name="comp_id" class="java.lang.Integer"/>
+	<queryString>
+		<![CDATA[SELECT @rowid := @rowid + 1 as rowid, followup_id, 
+	followup_enquiry_id,
+	followup_desc,
+	'' as so_promise_date,
+	DATE_FORMAT(followup_entry_time,'%d/%m/%Y') AS followup_entry_time,
+	COALESCE (DATE_FORMAT( 
+			(SELECT
+				nextf.followup_followup_time
+			FROM
+				axelaauto_$P{comp_id}.axela_sales_enquiry_followup nextf
+			WHERE
+				nextf.followup_enquiry_id = mainf.followup_enquiry_id
+			AND nextf.followup_id > mainf.followup_id
+			ORDER BY
+				followup_followup_time
+			LIMIT 1
+	), '%d/%m/%Y'), '') AS nextfollowup
+FROM
+	axelaauto_$P{comp_id}.axela_sales_enquiry_followup mainf, (SELECT @rowid := 0) AS init
+
+WHERE
+	1 = 1
+AND followup_enquiry_id = $P{enquiry_id}
+GROUP BY
+	followup_id
+ORDER BY
+	followup_followup_time]]>
+	</queryString>
+	<field name="followup_entry_time" class="java.lang.String"/>
+	<field name="followup_desc" class="java.lang.String"/>
+	<field name="nextfollowup" class="java.lang.String"/>
+	<field name="rowid" class="java.lang.String"/>
+	<field name="so_promise_date" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band/>
+	</pageHeader>
+	<columnHeader>
+		<band/>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="-2" y="0" width="40" height="20" uuid="af614bc4-5b50-4074-b635-92af8bb0be94">
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{rowid}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="38" y="0" width="120" height="20" uuid="50d1ec49-6ebb-42db-a9e7-65134722ce54">
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{followup_entry_time}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="158" y="0" width="110" height="20" uuid="02e00e16-7816-4c66-802d-0b93f020a293">
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{followup_desc}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="268" y="0" width="120" height="20" uuid="4b4a438a-4a34-4a4e-bfe0-fb856a1a575c"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{so_promise_date}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="388" y="0" width="150" height="20" uuid="325cde6f-5d34-4307-a8bb-6b97dab5cc1b"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nextfollowup}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

@@ -1,0 +1,661 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
+<!-- 2017-05-11T18:05:38 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="salesorder-deliverychallan" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c76bd634-e5cd-4938-a375-7010fc048ed2">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="so_no" class="java.lang.String"/>
+	<field name="model_name" class="java.lang.String"/>
+	<field name="item_name" class="java.lang.String"/>
+	<field name="so_date" class="java.lang.String"/>
+	<field name="colour" class="java.lang.String"/>
+	<field name="vehstock_id" class="java.lang.String"/>
+	<field name="vehstock_chassis_no" class="java.lang.String"/>
+	<field name="vehstock_engine_no" class="java.lang.String"/>
+	<field name="customer_id" class="java.lang.String"/>
+	<field name="so_reg_no" class="java.lang.String"/>
+	<field name="customer_name" class="java.lang.String"/>
+	<field name="so_reg_date" class="java.lang.String"/>
+	<field name="customer_address" class="java.lang.String"/>
+	<field name="fincomp_name" class="java.lang.String"/>
+	<field name="emp_name" class="java.lang.String"/>
+	<field name="contact_mobile2" class="java.lang.String"/>
+	<field name="contact_mobile1" class="java.lang.String"/>
+	<field name="so_delivered_date" class="java.lang.String"/>
+	<field name="city_name" class="java.lang.String"/>
+	<field name="branch_invoice_name" class="java.lang.String"/>
+	<field name="principal_company" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement x="202" y="1" width="150" height="18" uuid="e8151616-88dd-4939-a9bc-ee3dd6e7d9f1"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DELIVERY CHALLAN]]></text>
+			</staticText>
+			<line>
+				<reportElement x="5" y="19" width="545" height="1" uuid="f03534e7-ee7a-4dad-9dd8-aa12c8fbcfdb"/>
+			</line>
+		</band>
+	</title>
+	<detail>
+		<band height="611" splitType="Stretch">
+			<staticText>
+				<reportElement x="5" y="10" width="100" height="15" uuid="6a6f6239-0d04-4bec-9134-b13ed51647e6">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[No.:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="5" y="33" width="100" height="12" uuid="16591c90-6430-4bbb-8415-35318aef9ac1">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[Date:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="5" y="55" width="100" height="12" uuid="481b019c-267c-4fc1-a86f-308c3a5389c4"/>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[Vehicle ID:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="5" y="79" width="100" height="12" uuid="4f9d5564-e22a-4b0c-9aa3-7b177c5a5f73">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[Order Date:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="5" y="170" width="100" height="12" uuid="f69705c6-7120-441b-9682-29143fa5461a"/>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[             (R)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="5" y="91" width="100" height="12" uuid="70942dd2-19e5-4570-bc78-a9c38be80123"/>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[Customer ID:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="5" y="103" width="100" height="12" uuid="16070e45-62a6-4a61-9361-7d7346fce7cc"/>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[Name:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="5" y="115" width="100" height="12" uuid="3700c94b-b1fb-4697-b811-0027ae5aead2"/>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[Address:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="5" y="158" width="100" height="12" uuid="e62a0cae-fb5c-4b06-ba2e-0436debd0aa7">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[Phone (O):]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="5" y="67" width="100" height="12" uuid="6a2189a8-0045-4c59-8125-40b2bf2340dd">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[Order No.:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="5" y="182" width="100" height="12" uuid="d8683c69-9941-47f5-9f60-a6a90c605477"/>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[             (M)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="290" y="9" width="100" height="12" uuid="762279e0-df8b-4d95-b46b-7c1c58a07207">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[Model:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="290" y="90" width="100" height="12" uuid="563715c2-bd18-4bbf-a198-1e45fa15e66d"/>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[Registration No.:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="290" y="78" width="100" height="12" uuid="00e31301-355e-4991-89ea-615e3fe6572f"/>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[Key No.:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="290" y="102" width="100" height="12" uuid="fd1ab1a8-594c-4e2d-92e6-0d689716b643"/>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[Registration Date:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="290" y="54" width="100" height="12" uuid="59075bd9-7ae9-4fed-bf1f-21b053df8a29"/>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[Chassis No.:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="290" y="152" width="100" height="12" uuid="c578215b-8f19-4fc9-85b5-aa01e8bba37f">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[Sales Executive:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="290" y="21" width="100" height="12" uuid="edebc99a-8175-444b-871a-b72fbf2caf43">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[Variant:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="290" y="114" width="100" height="12" uuid="6ac2b901-0f00-4177-bf7e-4e582289648a"/>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[Hypothecated to:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="290" y="33" width="100" height="12" uuid="f235ef00-110f-42dc-b577-b5bf8e569b6d"/>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[Color:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="290" y="66" width="100" height="12" uuid="034867dc-2e4a-4810-9f02-71631f8f9573">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[Engine No.:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="290" y="164" width="100" height="12" uuid="2205048c-16ad-422e-8600-d5422abefc2a"/>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[Phone (M):]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="290" y="176" width="100" height="12" uuid="4b65c3a2-c718-429e-9233-4d2f5f7d13b6"/>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[Invoice:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="290" y="188" width="100" height="12" uuid="aff7faa1-a367-4be2-97ad-6bae07a32ef3"/>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[Delivery:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="290" y="200" width="100" height="12" uuid="7357ef46-787d-4a57-b111-7e44a7b9c85c"/>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[Gate Pass:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="5" y="264" width="154" height="18" uuid="b565068d-688b-4a05-ba61-279d29dc1b16">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Standard Delivery items]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="260" y="264" width="154" height="18" uuid="24fa4a3d-9f1c-4513-aaa1-507ab3c78177">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tools And Accessories]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="5" y="282" width="150" height="12" uuid="5aa50883-5bad-4e85-a119-d176df7fc23b">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[1. Duplicate Key]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="260" y="294" width="150" height="12" uuid="13f08bf3-dab2-48ab-bdbd-6e7762f53576"/>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[2. Insurance Cover Note/Policy]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="5" y="294" width="150" height="12" uuid="09c02bd0-3d66-47cd-8a9d-87a3899a4fe7">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[2. Key]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="260" y="306" width="150" height="12" uuid="a73f351c-f33f-447f-8b48-35b772792073"/>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[3. PDI Copy]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="5" y="306" width="150" height="12" uuid="d0edaee6-5985-4c6f-a761-1ac775a7e04c"/>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[3. Manual Issued]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="260" y="318" width="150" height="12" uuid="ff2a64d7-c97c-41a2-a782-0655371ef4ed"/>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[4. POP Survey Form]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="5" y="318" width="150" height="12" uuid="b18ba83f-f93d-4ed8-9f78-422dd398c03a"/>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[4. R.C. Book]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="5" y="330" width="150" height="12" uuid="c8fabe25-7686-42ea-a011-c51fee64c5a3"/>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[5. RTO Challan]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="5" y="342" width="150" height="12" uuid="48cd3cd1-6485-40e1-af05-fe0d650068df"/>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[6. Sales Invoice]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="5" y="354" width="150" height="12" uuid="ba7cdd43-c0ad-4e1a-964d-efa27ff3bbb7"/>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[7. Sales Letter]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="260" y="330" width="150" height="12" uuid="fd198756-3f34-4726-b224-10877d3a644d"/>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[5. Type of Registration]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="260" y="342" width="150" height="12" uuid="1195d227-c86c-470d-b30f-d2816d681b9e"/>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[6. SSI Feedback card]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="260" y="354" width="150" height="12" uuid="7ac7516b-a9c3-427c-ad6b-0d150ffefd32"/>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[7. Taxi/Ambulance/Normal]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="5" y="366" width="150" height="12" uuid="1a0693b0-0284-4724-a227-dcbe3b5d4568"/>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[8. Tool Kit]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="260" y="282" width="150" height="12" uuid="02baf977-e5d2-410b-a27f-7c14d4f2048f">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[1. CMVR Kit]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="105" y="10" width="100" height="15" uuid="e5932988-209e-49bb-a37c-f7bd50402c0c">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{so_no}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="390" y="9" width="100" height="12" uuid="2196063b-4618-440c-8672-7f825d124ae9">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{model_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="390" y="21" width="100" height="12" uuid="df0e4ef2-f181-4752-8f66-8bea9718072b">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{item_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="105" y="33" width="100" height="12" uuid="bff70bbb-db4d-42d4-b936-0ae8fd7fef39">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{so_date}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="390" y="33" width="100" height="12" uuid="ff30f70e-c78a-4eb8-9d24-ecd94f5919e9"/>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{colour}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="390" y="54" width="100" height="12" uuid="b26ce2de-baf9-43fd-b3c7-c74a1deb7369"/>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{vehstock_chassis_no}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="390" y="66" width="100" height="12" uuid="4da3e848-c6c4-40c0-847f-f5a64c4b7a1d"/>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{vehstock_engine_no}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="105" y="55" width="100" height="12" uuid="47751962-3711-4116-a906-ed81f590f5ad"/>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{vehstock_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="105" y="91" width="100" height="12" uuid="73f206bc-53aa-46a1-b383-d0778fd70c8b">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{customer_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="105" y="103" width="100" height="12" uuid="8e8ea0d0-acc1-4e3c-b323-77b2b350958e">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{customer_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="105" y="115" width="100" height="12" uuid="e5ea400f-cd5c-4597-90be-0c5e71d9c7ee">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{customer_address}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="390" y="90" width="100" height="12" uuid="7fcd3193-8c15-4894-9044-1e03da87a667">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{so_reg_no}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="390" y="102" width="100" height="12" uuid="62824637-8606-40dc-9e39-0e1ac8aba6be">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{so_reg_date}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="390" y="114" width="100" height="12" uuid="a0ab408c-d7a2-4763-8320-8cc553dab48a">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{fincomp_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="390" y="152" width="100" height="12" uuid="ae6f6d25-40cb-420a-84f9-a326e41c0cd2">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{emp_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="390" y="164" width="100" height="12" uuid="ee737e19-8289-4c42-9f60-3c187008b1bb">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{contact_mobile2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="105" y="182" width="100" height="12" uuid="b076bea6-a9d1-4849-9d18-88b2e471554e">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{contact_mobile1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="390" y="188" width="100" height="12" uuid="e33200f6-5eb3-40ad-a8e0-0414ae982d25">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{so_delivered_date}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="5" y="410" width="154" height="18" uuid="5e00abc0-6cdd-4ffe-ae47-9c8e0ce2d8e7">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Terms and Conditions:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="5" y="500" width="465" height="12" uuid="726af97d-6364-4f67-b253-06d7425cb18e">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[7. The Sale of the vehicle would be deemed to have taken place when the invoice is raised. ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="5" y="476" width="450" height="12" uuid="4ddb84a8-72c6-420f-8852-92b8818e286a"/>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[5. Force Majeure clause would be applicable to all deliveries.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="5" y="440" width="308" height="12" uuid="69073d0f-43ec-45e5-b89e-e700e604a497">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[2. Any disputed or claims out of the invoice will be subjected to the jurisdiction of court ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="5" y="452" width="525" height="12" uuid="c61d2311-9b30-422d-8255-1fcfe99c7e03"/>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[3. Invoice is raised subject to encashment & credit advise of the instrument of payment i.e. Demand draft or banker's pay order/cheque]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="5" y="428" width="525" height="12" uuid="8a631b4d-3c39-40cb-bb13-67c59dc394ec">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[1. The sale of the above is governed by the Warranty as quoted in 'Warranty & Service Booklet' supplied with each new motorcycle]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="313" y="440" width="142" height="12" uuid="badeabb2-b162-4bac-bf91-1fd52fc7d84c">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{city_name}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="333" y="452" width="1" height="12" uuid="2310e95f-ee7c-40c3-b5ae-ae47df748a58">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[.]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="5" y="530" width="174" height="18" uuid="f66ac195-216d-4e1a-8832-81316934ac81">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{customer_name}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="331" y="530" width="23" height="18" uuid="9c88cf1d-f8ee-4f7b-98a6-e836ea06b0a5">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[For ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="354" y="530" width="196" height="18" uuid="f5e4810b-18fe-4a63-b2b4-1d1cbcb778c3">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{branch_invoice_name}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="5" y="589" width="174" height="22" uuid="6c280ca0-e9e3-474a-bcc2-42b033103c95">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[(Customer Name & Signature)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="362" y="589" width="188" height="22" uuid="310002b0-ffe9-47f5-8efa-c955369172cb">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Right">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[(Authorized Signatory)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="5" y="464" width="525" height="12" uuid="b4a68bb3-6b70-4c05-8114-42729418f321"/>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[4. The price excise duty,any other statutory duties and taxes would be charged as applicable on the date of delivery.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="5" y="488" width="450" height="12" uuid="e3717262-09e2-4581-bfc5-e3da037f13e4"/>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[6. No claim will be entertained after the delivery of goods.]]></text>
+			</staticText>
+		</band>
+	</detail>
+</jasperReport>

@@ -1,0 +1,702 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
+<!-- 2018-01-02T23:10:51 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="testdrive-print-gatepass-porsche" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="b6bcd570-206f-4dd5-a698-9063eecbed9c">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="testdrive_id" class="java.lang.String"/>
+	<field name="customer_name" class="java.lang.String"/>
+	<field name="contactname" class="java.lang.String"/>
+	<field name="customer_address" class="java.lang.String"/>
+	<field name="customer_mobile1" class="java.lang.String"/>
+	<field name="customer_phone1" class="java.lang.String"/>
+	<field name="model_name" class="java.lang.String"/>
+	<field name="veh_regno" class="java.lang.String"/>
+	<field name="location_name" class="java.lang.String"/>
+	<field name="branch_invoice_name" class="java.lang.String"/>
+	<field name="testdrive_time_from" class="java.lang.String"/>
+	<field name="testdrive_out_time" class="java.lang.String"/>
+	<field name="testdrive_license_no" class="java.lang.String"/>
+	<field name="testdrive_license_issued_by" class="java.lang.String"/>
+	<field name="testdrive_license_valid" class="java.lang.String"/>
+	<field name="driver" class="java.lang.String"/>
+	<field name="testdrive_out_kms" class="java.lang.String"/>
+	<field name="testdrive_in_kms" class="java.lang.String"/>
+	<field name="veh_name" class="java.lang.String"/>
+	<field name="testdrive_time_to" class="java.lang.String"/>
+	<field name="manager" class="java.lang.String"/>
+	<field name="testdrive_date" class="java.lang.String"/>
+	<field name="branch_logo" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="75" splitType="Stretch">
+			<staticText>
+				<reportElement x="390" y="40" width="164" height="20" uuid="b4bd91ec-972d-4f85-8fc4-7719405e6af8"/>
+				<textElement textAlignment="Right" verticalAlignment="Bottom">
+					<font fontName="Helvetica" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[DEMO CAR AGREEMENT]]></text>
+			</staticText>
+			<image>
+				<reportElement x="0" y="0" width="110" height="50" isPrintInFirstWholeBand="true" uuid="f7a22531-e653-43b2-af48-ba447516b750">
+					<printWhenExpression><![CDATA[$F{branch_logo}.equals( "" ) == false]]></printWhenExpression>
+				</reportElement>
+				<imageExpression><![CDATA[$F{branch_logo}]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<detail>
+		<band height="416" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="140" height="14" uuid="319c0137-624c-444d-8243-c106b36b8208">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2">
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Name of the Customer:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="14" width="140" height="14" uuid="4d5c9597-ea67-4fdb-a8d3-e68b1279e331">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2">
+					<pen lineWidth="1.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Contact Person:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="28" width="140" height="14" uuid="d1ff7053-be0b-435b-9ef3-87debbe4b680">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2">
+					<pen lineWidth="1.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Address:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="42" width="140" height="14" uuid="142af7da-e464-4982-b176-8af369036567">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2">
+					<pen lineWidth="1.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Mobile:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="56" width="140" height="14" uuid="f2baa111-3fec-4158-8ef9-4995c515a6e4">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2">
+					<pen lineWidth="1.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Tel:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="70" width="140" height="14" uuid="d4bb5cca-2906-4098-b3fc-12feeb70d11e">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2">
+					<pen lineWidth="1.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Demo Vehicle Requested:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="84" width="140" height="14" uuid="3f992ad5-600d-4f89-b166-c551e3d7e1db">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2">
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Registration Number:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="98" width="140" height="14" uuid="53e566ea-a49a-452d-9e83-cca7f1e8100d">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2">
+					<pen lineWidth="1.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Demo ID:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="112" width="140" height="14" uuid="961e74e0-7136-4453-9f82-d62de892c497">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2">
+					<pen lineWidth="1.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Date:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="126" width="140" height="14" uuid="915d66a6-ee7d-4323-82f4-55c2e9992624">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2">
+					<pen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Time (Commence):]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="140" width="554" height="14" uuid="05b1c945-983e-4336-a030-97de24d618c5">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2">
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="0.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Terms and Conditions:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="140" y="0" width="414" height="14" uuid="f2d06401-e7d6-4671-b5a1-a00b1ad50df3"/>
+				<box leftPadding="2" rightPadding="0">
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+					<topPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{customer_name}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="140" y="14" width="414" height="14" uuid="fa3e0ae1-a42b-4c72-acd6-22040283a21e"/>
+				<box leftPadding="2" rightPadding="0">
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+					<topPen lineWidth="0.0"/>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{contactname}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="140" y="28" width="414" height="14" uuid="e9d3775a-06aa-4726-b77b-f559510bef48"/>
+				<box leftPadding="2" rightPadding="0">
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+					<topPen lineWidth="0.0"/>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{customer_address}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="140" y="70" width="414" height="14" uuid="65db33c4-6db0-4b6e-8349-fb506df9d774"/>
+				<box leftPadding="2" rightPadding="0">
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+					<topPen lineWidth="0.0"/>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{model_name}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="140" y="56" width="414" height="14" uuid="aed6e42d-1757-4428-8d6a-a3cd01cfc66c"/>
+				<box leftPadding="2" rightPadding="0">
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+					<topPen lineWidth="0.0"/>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{customer_phone1}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="140" y="42" width="414" height="14" uuid="011d5155-a138-4d83-acd6-e715d1409ee3"/>
+				<box leftPadding="2" rightPadding="0">
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+					<topPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{customer_mobile1}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="140" y="112" width="140" height="14" uuid="2719a16a-f814-4f02-aecd-ebceea5cdd6f"/>
+				<box leftPadding="2" rightPadding="0">
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+					<topPen lineWidth="0.0"/>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{testdrive_date}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="140" y="98" width="414" height="14" uuid="a0d4ee9a-8dcb-41bb-acef-bdfbf01a5d6d"/>
+				<box leftPadding="2" rightPadding="0">
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+					<topPen lineWidth="0.0"/>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{testdrive_id}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="140" y="84" width="414" height="14" uuid="b3f27b6d-65b2-4f3d-8104-3514ac1d1f7d"/>
+				<box leftPadding="2" rightPadding="0">
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+					<topPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{veh_regno}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="140" y="126" width="140" height="14" uuid="76d2a203-1674-48d9-bddf-1d7ed6b52dea"/>
+				<box leftPadding="2" rightPadding="0">
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+					<topPen lineWidth="0.0"/>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{testdrive_time_from}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="280" y="126" width="141" height="14" uuid="8ba276bf-f77c-4b7e-965a-2a777e8bc282">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2">
+					<pen lineWidth="1.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Time (End):]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="280" y="112" width="141" height="14" uuid="f923ed55-7443-4656-9e5a-5eb95a1900ac">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2">
+					<pen lineWidth="1.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Place of Test Drive:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="421" y="126" width="133" height="14" uuid="5cd68897-2734-46a9-ba1b-a60470c67939"/>
+				<box leftPadding="2" rightPadding="0">
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{testdrive_time_to}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="421" y="112" width="133" height="14" uuid="979c9b04-ffaa-4482-bd6e-24f3c5aea77a"/>
+				<box leftPadding="2" rightPadding="0">
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{location_name}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="154" width="554" height="186" uuid="35327192-873e-494d-98d8-1d2cc476e799"/>
+				<box leftPadding="2">
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement>
+					<font fontName="Helvetica" isBold="false"/>
+				</textElement>
+				<text><![CDATA[The customer is responsible for the demonstrator car at all times while the car is being driven.
+The customer will provide a copy for valid Driving license to the Organization for driving the demonstrator car OR not having a valid driving License are not permitted to drive the Demonstrator car.
+The customer, agree to report any damage caused due to an accident to the police and to the Organization as soon as possible and to supply the relevant police report immediately to the Organization.
+The customer agrees to pay for any damages (To the Vehicle/Third Party Damages) if the same occur while he is Driving theTest Drive Vehicle.
+The customer is responsible for all relevant excess insurance payments if the same are required in case the vehicle required any Insurance claims.
+The customer is responsible for any parking fines or for any monitoring offences committed while in possession of the Demonstrator car.
+The customer agrees not to carry any animals or smoke in the Demonstrator car.
+The customer agree that Organization is not responsible for goods left in the Demonstrator .]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="340" width="110" height="19" uuid="3e80d40e-c1e8-4895-9d8e-9119361104b4">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2">
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Agreed and Signed:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="280" y="340" width="141" height="19" uuid="85c50087-716f-42d9-8c20-b496bd874064">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2">
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="0.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Date:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="421" y="340" width="133" height="19" uuid="5e7f1ddd-7d83-4753-a082-838fef82f0cd"/>
+				<box leftPadding="2" rightPadding="0">
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+					<topPen lineWidth="0.0"/>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" isBold="false"/>
+				</textElement>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="280" y="359" width="80" height="17" uuid="781312c8-f573-4ac9-93f4-60133d66fcdf"/>
+				<box leftPadding="2" rightPadding="0">
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+					<topPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{testdrive_license_issued_by}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="110" y="359" width="80" height="17" uuid="7f7d1ff6-5a82-4e8c-9eca-0dc3b154a2e6"/>
+				<box leftPadding="2" rightPadding="0">
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+					<topPen lineWidth="1.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{testdrive_license_no}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="359" width="110" height="17" uuid="fc86b791-479f-44dd-ac8c-f4122f09aa72">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2">
+					<pen lineWidth="1.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Driving License#:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="110" y="340" width="170" height="19" uuid="afd0d84b-f783-4681-98f1-352dba555a4a">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2">
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="190" y="359" width="90" height="17" uuid="5e737fd0-1a6a-4fca-8ba8-8c73b8edc4c7">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2">
+					<pen lineWidth="1.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Issued by:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="360" y="359" width="100" height="17" uuid="d3534db0-89d3-43f3-9211-11908cd67230">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2">
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Valid till:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="460" y="359" width="94" height="17" uuid="54d1b367-e0e1-493f-bd81-2c20339043e7"/>
+				<box leftPadding="2" rightPadding="0">
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+					<topPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{testdrive_license_valid}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="376" width="110" height="13" uuid="6d5f6541-1e8d-436b-ad0b-ff3573fc2505">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2">
+					<pen lineWidth="1.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Sales Manager:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="110" y="376" width="170" height="13" uuid="a047d1d1-4a98-402a-a1d9-1de459a130cf"/>
+				<box leftPadding="2" rightPadding="0">
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+					<topPen lineWidth="1.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{manager}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="280" y="376" width="140" height="13" uuid="0b40e983-bccd-4432-8b58-1eb919733849">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2">
+					<pen lineWidth="1.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Driver's Name:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="420" y="376" width="134" height="13" uuid="3b8627a8-fe22-4c53-9976-288bcab98772"/>
+				<box leftPadding="2" rightPadding="0">
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+					<topPen lineWidth="1.0"/>
+					<bottomPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{driver}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="420" y="389" width="134" height="13" uuid="30ac8de6-687b-4de6-a3f5-0a7c4f796509"/>
+				<box leftPadding="2" rightPadding="0">
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+					<topPen lineWidth="1.0"/>
+					<bottomPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" isBold="false"/>
+				</textElement>
+			</textField>
+			<staticText>
+				<reportElement x="280" y="389" width="140" height="13" uuid="a6d144df-2c57-4447-86d9-eb4650f088cb">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2">
+					<pen lineWidth="1.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Purpose of use:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="389" width="110" height="13" uuid="90ef05ed-a374-4a40-8ddb-9ab66be983ca">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2">
+					<pen lineWidth="1.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Approved by:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="110" y="389" width="170" height="13" uuid="a223da6b-9f41-42b7-aa65-3ec26675a538"/>
+				<box leftPadding="2" rightPadding="0">
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+					<topPen lineWidth="1.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" isBold="false"/>
+				</textElement>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="402" width="110" height="14" uuid="c2097109-6d63-478b-89fc-df89bf881472">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2">
+					<pen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Starting Kilometers:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="280" y="402" width="140" height="14" uuid="1d3a5d13-41aa-4b25-a25f-d97031fd5af2">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2">
+					<pen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Closing Kilometers:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="110" y="402" width="170" height="14" uuid="070dd593-1385-4e55-a575-73c6001a7a41"/>
+				<box leftPadding="2" rightPadding="0">
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+					<topPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{testdrive_out_kms}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="420" y="402" width="134" height="14" uuid="576d5882-3345-441c-99b5-d5bee5f277aa"/>
+				<box leftPadding="2" rightPadding="0">
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+					<topPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{testdrive_in_kms}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

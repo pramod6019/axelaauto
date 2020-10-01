@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
+<!-- 2018-01-06T13:08:21 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="veh-quote-items1" pageWidth="555" pageHeight="802" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="a5eece9c-e261-4295-857e-76ced6a1b43f">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w1" value="25"/>
+	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w2" value="964"/>
+	<parameter name="comp_id" class="java.lang.Integer"/>
+	<parameter name="quote_id" class="java.lang.String"/>
+	<parameter name="quote_exprice" class="java.lang.String"/>
+	<parameter name="quote_discamt" class="java.lang.String"/>
+	<parameter name="total_amt" class="java.lang.String"/>
+	<parameter name="quote_grandtotal" class="java.lang.String"/>
+	<parameter name="branch_quote_terms" class="java.lang.String"/>
+	<parameter name="main_quoteitem_qty" class="java.lang.String"/>
+	<parameter name="main_item_name" class="java.lang.String"/>
+	<parameter name="main_quoteitem_price" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT
+	COALESCE(REPLACE(REPLACE(item_name,'&#40;','('),'&#41;',')'), '') AS item_name,
+	item_code,
+	item_small_desc,
+	item_aftertaxcal,
+	quoteitem_rowcount,
+	quoteitem_qty,
+	uom_shortname,
+	IF(quoteitem_price = '0', '', quoteitem_price) AS quoteitem_price,
+	quoteitem_disc,
+	quoteitem_total,
+	quoteitem_option_group,
+	quoteitem_option_id,
+	quoteitem_tax,
+	quoteitem_option_group_tax,
+	COALESCE (
+		(
+			SELECT
+				GROUP_CONCAT(
+					CONCAT(
+						opt.quoteitem_option_group,
+						': ',
+						optitem.item_name,
+
+					IF (
+						optitem.item_code != '',
+						CONCAT(' (', optitem.item_code, ')'),
+						''
+					),
+					CONCAT(' Qty: ', opt.quoteitem_qty),
+
+				IF (
+					optitem.item_small_desc != '',
+					CONCAT(
+						'
+',
+						optitem.item_small_desc
+					),
+					''
+				)
+					)
+					ORDER BY
+						opt.quoteitem_id ASC SEPARATOR '
+
+'
+				)
+			FROM
+				axelaauto_$P{comp_id}.axela_sales_quote_item opt
+			INNER JOIN axelaauto_$P{comp_id}.axela_inventory_item optitem ON optitem.item_id = opt.quoteitem_item_id
+			INNER JOIN axelaauto_$P{comp_id}.axela_inventory_item_option ON option_item_id = opt.quoteitem_item_id
+			WHERE
+				opt.quoteitem_quote_id = invitem.quoteitem_quote_id
+			AND opt.quoteitem_option_id = invitem.quoteitem_rowcount
+		),
+		''
+	) AS optionitems
+FROM
+	axelaauto_$P{comp_id}.axela_sales_quote_item invitem
+INNER JOIN axelaauto_$P{comp_id}.axela_inventory_item item ON item.item_id = invitem.quoteitem_item_id
+INNER JOIN axelaauto_$P{comp_id}.axela_inventory_group ON group_name = quoteitem_option_group
+INNER JOIN axelaauto_$P{comp_id}.axela_inventory_uom ON uom_id = item.item_uom_id
+WHERE 1=1
+AND quoteitem_rowcount = 0
+AND invitem.quoteitem_quote_id = $P{quote_id}
+AND quoteitem_option_group NOT IN ('Essential Kit','Insurance','Road Tax','TCS', 'Additional Discounts','Handling Charges')
+GROUP BY
+	quoteitem_id,quoteitem_option_group
+ORDER BY
+	quoteitem_option_group_tax,
+	quoteitem_id,
+	group_aftertax]]>
+	</queryString>
+	<field name="item_name" class="java.lang.String"/>
+	<field name="quoteitem_price" class="java.lang.String"/>
+	<field name="quoteitem_option_group" class="java.lang.String"/>
+	<field name="item_code" class="java.lang.String"/>
+	<group name="Group1" isReprintHeaderOnEachPage="true">
+		<groupExpression><![CDATA[$F{item_name}]]></groupExpression>
+		<groupHeader>
+			<band height="13">
+				<textField>
+					<reportElement isPrintRepeatedValues="false" x="0" y="1" width="554" height="12" isRemoveLineWhenBlank="true" uuid="1f98666b-6a7f-4777-9668-336acaacdea0">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					</reportElement>
+					<box leftPadding="2">
+						<topPen lineWidth="0.3" lineStyle="Solid" lineColor="#9C9C9C"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement verticalAlignment="Bottom">
+						<font fontName="Helvetica" size="9" isBold="true" isUnderline="false"/>
+						<paragraph lineSpacingSize="0.25"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{quoteitem_option_group}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="11">
+			<textField>
+				<reportElement x="0" y="1" width="300" height="10" uuid="636e5d39-ad50-4f7a-805c-c63975bc1aac">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Helvetica" size="7"/>
+					<paragraph lineSpacing="Single" lineSpacingSize="0.25"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{item_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="300" y="1" width="110" height="10" uuid="1beba69b-245c-4698-bb7a-9ffe690987b5"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font fontName="Helvetica" size="7"/>
+					<paragraph lineSpacingSize="0.25"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{item_code}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="410" y="1" width="144" height="10" uuid="791fb803-5deb-49a4-9566-bcaaf06b2e55">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Bottom">
+					<font fontName="Helvetica" size="7"/>
+					<paragraph lineSpacingSize="0.25"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{quoteitem_price}.equals("") ? "" : new cloudify.connect.Connect().IndDecimalFormat($F{quoteitem_price})]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

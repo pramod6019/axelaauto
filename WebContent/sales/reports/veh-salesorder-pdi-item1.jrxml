@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
+<!-- 2018-02-05T10:49:02 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="veh-salesorder-pdi-items" pageWidth="555" pageHeight="802" whenNoDataType="BlankPage" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" whenResourceMissingType="Empty" uuid="f9253a00-c020-4ed8-aa1b-b44291a6db5a">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<property name="net.sf.jasperreports.print.create.bookmarks" value="false"/>
+	<parameter name="comp_id" class="java.lang.Integer"/>
+	<parameter name="so_id" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT
+	item_name,
+	soitem_disc,
+	soitem_total,
+	(so_grandtotal - so_exprice) AS so_grandtotal,
+	so_discamt
+FROM
+	axelaauto_$P{comp_id}.axela_sales_so
+INNER JOIN axelaauto_$P{comp_id}.axela_sales_so_item ON soitem_so_id = so_id
+INNER JOIN axelaauto_$P{comp_id}.axela_inventory_item ON item_id = soitem_item_id
+WHERE
+	so_id =  $P{so_id} 
+AND item_type_id != 1
+GROUP BY
+	soitem_id]]>
+	</queryString>
+	<field name="item_name" class="java.lang.String"/>
+	<field name="soitem_disc" class="java.lang.String"/>
+	<field name="soitem_total" class="java.lang.String"/>
+	<field name="so_grandtotal" class="java.lang.String"/>
+	<field name="so_discamt" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<columnHeader>
+		<band height="20">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="20" uuid="713386b5-6bf1-453a-ade1-42f6deaaa05a">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Helvetica" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Accessories Fitment Requested (All Price Inclusive of Fitment Charges )]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="250" height="20" uuid="7318a15f-daf3-4ac3-819f-a9c7070bbc30"/>
+				<box leftPadding="2">
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new cloudify.connect.Connect().unescapehtml($F{item_name})+":"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="250" y="0" width="150" height="20" uuid="7b9d1a72-bfff-47f5-981c-d40d527bed69"/>
+				<box rightPadding="2">
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Helvetica" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new cloudify.connect.Connect().IndFormat($F{soitem_total})]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="400" y="0" width="155" height="20" uuid="b73501a1-47fe-484d-b404-3e20ba14eb93"/>
+				<box rightPadding="2">
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Helvetica" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new cloudify.connect.Connect().IndFormat($F{soitem_disc})]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="20">
+			<textField>
+				<reportElement x="250" y="0" width="150" height="20" uuid="fd6cbb29-f897-4673-b648-9a0fb3842590"/>
+				<box rightPadding="2">
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Helvetica" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new cloudify.connect.Connect().IndFormat($F{so_grandtotal})]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="400" y="0" width="155" height="20" uuid="51bd850e-1456-4762-947c-ed0515800cfa"/>
+				<box rightPadding="2">
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Helvetica" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new cloudify.connect.Connect().IndFormat($F{so_discamt})]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="0" width="250" height="20" uuid="92e826f4-db1b-4051-a8c6-cd0d256cc625">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2">
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Total Accessories Amt:]]></text>
+			</staticText>
+		</band>
+	</columnFooter>
+</jasperReport>

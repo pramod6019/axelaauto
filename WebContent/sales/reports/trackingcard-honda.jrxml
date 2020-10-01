@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.1.0.final using JasperReports Library version 6.1.0  -->
+<!-- 2016-05-04T15:18:52 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="trackingcard-honda" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="e8c58194-34f1-4041-8704-aee61a50fa02">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="82" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="50" height="20" uuid="86654a30-c23e-439c-a497-42a9b53ba61e">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Pin Card]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="80" y="1" width="100" height="20" uuid="829d4138-5be9-47e2-bc03-21b9793820ea">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Dealer Name]]></text>
+			</staticText>
+			<line>
+				<reportElement x="183" y="21" width="157" height="1" uuid="4f57a4e7-4d59-4655-8f90-be20e3c0523a">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+			</line>
+			<staticText>
+				<reportElement x="343" y="1" width="87" height="20" uuid="8fcfa11f-125f-4d7f-a79d-eca12cd57c2c">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[D'Lite Enquiry ID. ]]></text>
+			</staticText>
+			<line>
+				<reportElement x="430" y="20" width="120" height="1" uuid="29d8dcca-4318-4c17-8bad-0fd54b56b2a8"/>
+			</line>
+			<staticText>
+				<reportElement x="0" y="30" width="80" height="30" uuid="7a54bb34-d958-433a-ab4a-48b7077ad09f">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Sales Consultant:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="83" y="58" width="89" height="1" uuid="e0acf9d7-3fe6-4d46-ac7e-10d55a622102">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+			</line>
+			<staticText>
+				<reportElement x="172" y="30" width="100" height="30" uuid="0313f164-297c-47f1-9e95-a77e2559c4ec"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Expected Date Of Purchase:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="272" y="57" width="89" height="1" uuid="4accb9bb-fd0a-40bf-80ef-cdf6e662c688">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="435" y="61" width="89" height="1" uuid="2361ea43-e605-4e16-94e1-015810f181ab">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+			</line>
+			<staticText>
+				<reportElement x="364" y="29" width="71" height="30" uuid="85a51f02-cb5b-4d91-9206-3c674e32510b"/>
+				<text><![CDATA[Static Text]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

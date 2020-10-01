@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
+<!-- 2017-01-04T17:54:33 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="onetriumph-salesinvoice-print" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="4dda6513-771e-40e0-8ea0-27b16752aad1">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="customer_name" class="java.lang.String"/>
+	<field name="customer_address" class="java.lang.String"/>
+	<field name="quote_id" class="java.lang.String"/>
+	<field name="quote_date" class="java.lang.String"/>
+	<field name="enquiry_id" class="java.lang.String"/>
+	<field name="customer_id" class="java.lang.String"/>
+	<field name="branch_add" class="java.lang.String"/>
+	<field name="branch_invoice_name" class="java.lang.String"/>
+	<field name="quote_exprice" class="java.lang.String"/>
+	<field name="quote_discamt" class="java.lang.String"/>
+	<field name="quote_grandtotal" class="java.lang.String"/>
+	<field name="total_amt" class="java.lang.String"/>
+	<field name="team_lead_name" class="java.lang.String"/>
+	<field name="team_lead_mob" class="java.lang.String"/>
+	<field name="emp_name" class="java.lang.String"/>
+	<field name="quoteitem_price" class="java.lang.String"/>
+	<field name="team_lead_email" class="java.lang.String"/>
+	<field name="item_name" class="java.lang.String"/>
+	<field name="comp_id" class="java.lang.Integer"/>
+	<field name="branch_quote_terms" class="java.lang.String"/>
+	<field name="branch_logo" class="java.lang.String"/>
+	<field name="reportname" class="java.lang.String"/>
+	<field name="emp_mobile1" class="java.lang.String"/>
+	<field name="branch_email1" class="java.lang.String"/>
+	<field name="branch_mobile1" class="java.lang.String"/>
+	<field name="customer_mobile1" class="java.lang.String"/>
+	<field name="main_item_name" class="java.lang.String"/>
+	<field name="main_quoteitem_qty" class="java.lang.String"/>
+	<field name="voucher_id" class="java.lang.String"/>
+	<field name="total_item_space" class="java.lang.String"/>
+	<field name="voucher_date" class="java.lang.String"/>
+	<group name="quote_details">
+		<groupExpression><![CDATA[$F{item_name}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="185" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement stretchType="RelativeToTallestObject" x="0" y="72" width="349" height="22" uuid="601eec2a-0d57-4cfc-b53f-cd0193f6c931">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2">
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement markup="html">
+					<font fontName="Helvetica" size="10" isBold="true" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" "+$F{branch_invoice_name}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="94" width="349" height="25" uuid="6c440307-0f36-4d38-ad15-86b7c94a307b">
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement>
+					<font fontName="Helvetica" size="10" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" "+$F{branch_add}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="349" y="103" width="141" height="30" uuid="2ac93369-8750-48ab-8632-b125bf2ab9be"/>
+				<textElement textAlignment="Right" verticalAlignment="Bottom">
+					<font fontName="Helvetica" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{reportname}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="500" y="103" width="53" height="30" uuid="e9365638-3774-47ef-9a60-5285aee109fe"/>
+				<textElement textAlignment="Left" verticalAlignment="Bottom">
+					<font fontName="Helvetica" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{voucher_id}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="490" y="103" width="10" height="30" uuid="b3611b8e-1b07-46a8-9176-bd59910ec195"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font fontName="Helvetica" size="11"/>
+				</textElement>
+				<text><![CDATA[-]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="40" y="136" width="100" height="17" uuid="0d0843ce-9cbb-46cc-a762-f1c3fcaa5717"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="Helvetica" size="10" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{branch_email1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="40" y="119" width="100" height="17" uuid="71bbc6ce-25c0-4004-af8f-5df0e92875fd"/>
+				<textElement>
+					<font fontName="Helvetica" size="10" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{branch_mobile1}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="136" width="40" height="17" uuid="8e7dc705-fc39-4dd1-a613-85d6c597952c"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="Helvetica" size="10" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[ Email : ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="119" width="40" height="17" uuid="fa8a53ce-3b89-403a-9ebe-299b90e2a54c"/>
+				<textElement>
+					<font fontName="Helvetica" size="10" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[ Tel. : ]]></text>
+			</staticText>
+			<textField>
+				<reportElement mode="Opaque" x="0" y="165" width="553" height="20" backcolor="#C2C2C2" uuid="147f1d75-6001-4ab3-a7f9-7726e82f3468">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="html"/>
+				<textFieldExpression><![CDATA[" "+$F{voucher_date}]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="0" y="0" width="90" height="70" uuid="a9ddecd6-d86d-4b86-ba28-076c3d6f2d89"/>
+				<imageExpression><![CDATA[$F{branch_logo}]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement mode="Opaque" x="-20" y="159" width="594" height="3" backcolor="#000000" uuid="9b49766b-43ed-4be3-ae1b-eaa60c04a773"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="html"/>
+				<textFieldExpression><![CDATA[" "]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="390" y="0" width="163" height="71" uuid="30792040-613d-4741-9a36-d0c64b3f3fec"/>
+				<imageExpression><![CDATA["../../assets/img/triumph-brandlogo.png"]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement x="197" y="136" width="112" height="17" uuid="07e4a9f4-b5b1-4e3f-bc22-25e441b8a294"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="Helvetica" size="10" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["www.onetriumph.com"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="147" y="136" width="50" height="17" uuid="b72f7085-7588-4373-a914-756fefe85b4b"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="Helvetica" size="10" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[ Website : ]]></text>
+			</staticText>
+			<line>
+				<reportElement mode="Opaque" x="143" y="139" width="1" height="8" backcolor="#080808" uuid="1d61f3d7-63c7-430a-96e4-d6d378b743f0">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.5" lineStyle="Solid"/>
+				</graphicElement>
+			</line>
+		</band>
+	</title>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="90">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+			<textField isStretchWithOverflow="true">
+				<reportElement mode="Opaque" x="0" y="4" width="179" height="78" backcolor="#C2C2C2" uuid="78c0af52-033f-423a-951b-448f55289524"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="html">
+					<font fontName="Helvetica"/>
+					<paragraph leftIndent="1"/>
+				</textElement>
+				<textFieldExpression><![CDATA["INVOICE TO    <br><br>"+$F{customer_name}+"<br> "+$F{customer_address}+"<br> "+$F{customer_mobile1}+"<br>"]]></textFieldExpression>
+			</textField>
+			<subreport>
+				<reportElement x="181" y="0" width="375" height="27" uuid="3fe46e87-41cc-4d21-be7c-70d37852c323"/>
+				<subreportParameter name="comp_id">
+					<subreportParameterExpression><![CDATA[$F{comp_id}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="quote_id">
+					<subreportParameterExpression><![CDATA[$F{quote_id}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="quoteitem_price">
+					<subreportParameterExpression><![CDATA[$F{quoteitem_price}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="quote_grandtotal">
+					<subreportParameterExpression><![CDATA[$F{quote_grandtotal}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="quote_discamt">
+					<subreportParameterExpression><![CDATA[$F{quote_discamt}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="total_amt">
+					<subreportParameterExpression><![CDATA[$F{total_amt}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="quote_exprice">
+					<subreportParameterExpression><![CDATA[$F{quote_exprice}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="branch_quote_terms">
+					<subreportParameterExpression><![CDATA[$F{branch_quote_terms}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="main_item_name">
+					<subreportParameterExpression><![CDATA[$F{main_item_name}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="main_quoteitem_qty">
+					<subreportParameterExpression><![CDATA[$F{main_quoteitem_qty}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA["onetriumph-item-details.jasper"]]></subreportExpression>
+			</subreport>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement mode="Opaque" x="0" y="86" width="179" height="4" isRemoveLineWhenBlank="true" backcolor="#C2C2C2" uuid="e0a474d9-690e-4e84-a4c2-a563e140ed3e"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="html">
+					<font fontName="Helvetica"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{total_item_space} + " "]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<lastPageFooter>
+		<band height="305">
+			<staticText>
+				<reportElement mode="Opaque" x="-20" y="275" width="594" height="30" forecolor="#FCFAFA" backcolor="#363232" uuid="eb285f65-1cea-4e32-94b5-0310bd7ed850"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="20"/>
+				</textElement>
+				<text><![CDATA[WHERE ALL GREAT RIDES BEGIN!]]></text>
+			</staticText>
+			<image>
+				<reportElement x="426" y="254" width="129" height="19" uuid="d06f652e-286c-47e3-98ae-757faff3455f"/>
+				<imageExpression><![CDATA["../../assets/img/One-triumph.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="0" y="174" width="326" height="59" uuid="ab17ea1c-0739-4e10-932b-631cf8f2ec17"/>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font fontName="Helvetica" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[* Price & Taxes prevailing at the time of delivery will be applicable.
+**Payment to be made in favor of OneTriumph (A Division of Dehradun Automobile Pvt. Ltd.]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="113" width="259" height="28" uuid="08208eb8-1743-4a33-b15e-5e7d915fee71"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Helvetica" size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Thank You For Your Business"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="327" y="112" width="227" height="28" uuid="bcbb7f3a-1a47-48e3-b24b-2774dc81e95a"/>
+				<box leftPadding="2" bottomPadding="2" rightPadding="2">
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="html">
+					<font fontName="Helvetica" size="11" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{emp_name}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="1" y="31" width="218" height="79" isPrintWhenDetailOverflows="true" uuid="8a1a55b6-68b4-453e-b167-8a3594ac8ecf"/>
+				<textElement textAlignment="Left" markup="none">
+					<font fontName="Helvetica" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[
+Name		: Dehradun Automobile Pvt. Ltd.
+Bank Name	: HDFC
+Account No	: 50200022441831
+IFCI Code	: HDFC0000551
+Branch		: Mayapuri Phase-1, New Delhi
+VAT		: 07597148703]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="141" width="150" height="32" uuid="2818f117-7ac0-4c76-9c8f-c823585b466a"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Helvetica" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Terms & Condition Apply *]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="11" width="110" height="20" uuid="363293de-94aa-4a44-9564-3bbfae58e656"/>
+				<textElement verticalAlignment="Bottom">
+					<font size="12" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Bank Information]]></text>
+			</staticText>
+		</band>
+	</lastPageFooter>
+</jasperReport>

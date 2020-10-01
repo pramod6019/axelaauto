@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
+<!-- 2017-05-18T15:00:13 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="item-details-sub" pageWidth="555" pageHeight="802" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" isIgnorePagination="true" uuid="56b2c817-85c5-4401-8f55-3f8e67bba8eb">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<parameter name="voucher_id" class="java.lang.String"/>
+	<parameter name="return_total_items" class="java.lang.Double"/>
+	<parameter name="total_qty" class="java.lang.Double"/>
+	<parameter name="total_items" class="java.lang.Integer"/>
+	<parameter name="comp_ID" class="java.lang.Integer"/>
+	<queryString>
+		<![CDATA[SELECT 
+	customer_name,
+	COALESCE (sum(vouchertrans_amount), 0) AS taxamount
+FROM
+	axelaauto_$P{comp_ID}.axela_acc_voucher_trans
+INNER JOIN axelaauto_$P{comp_ID}.axela_customer ON customer_id = vouchertrans_tax_id
+WHERE
+	vouchertrans_voucher_id = $P{voucher_id}
+AND vouchertrans_tax_id != 0
+AND vouchertrans_item_id = 0
+GROUP BY
+	customer_id
+ORDER BY
+	customer_name]]>
+	</queryString>
+	<field name="customer_name" class="java.lang.String"/>
+	<field name="taxamount" class="java.lang.Double"/>
+	<variable name="return_tax_sum" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$F{taxamount}]]></variableExpression>
+		<initialValueExpression><![CDATA[0.00]]></initialValueExpression>
+	</variable>
+	<variable name="grand_total" class="java.lang.Double">
+		<variableExpression><![CDATA[$V{return_tax_sum}+$P{return_total_items}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="270" y="0" width="161" height="20" uuid="913ac5ba-350c-4f07-8db6-9f60818fe962">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{customer_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="449" y="0" width="99" height="20" uuid="d9499e03-b479-480a-b296-31333c395aaf">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{taxamount}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="551" y="-1" width="1" height="21" uuid="a1856a47-bb41-4372-adc1-4f47ff435224"/>
+			</line>
+			<line>
+				<reportElement x="-1" y="-1" width="1" height="21" uuid="1e463f73-87a7-4d13-9ef1-7a245360b2d2"/>
+			</line>
+			<line>
+				<reportElement x="268" y="0" width="1" height="20" uuid="fd9c57ff-9171-441b-81e7-991fd36b64af"/>
+			</line>
+		</band>
+	</detail>
+</jasperReport>

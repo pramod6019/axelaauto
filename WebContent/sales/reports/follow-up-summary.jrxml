@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.1.0.final using JasperReports Library version 6.1.0  -->
+<!-- 2016-08-29T15:20:27 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="follow-up-summary" pageWidth="525" pageHeight="842" columnWidth="485" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="94348fa1-2f8d-42a4-a76f-2426128edd6a">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<parameter name="enquiry_id" class="java.lang.String"/>
+	<parameter name="comp_id" class="java.lang.Integer"/>
+	<queryString>
+		<![CDATA[SELECT enquiry_id, followup_enquiry_id, followup_desc,
+DATE_FORMAT(followup_entry_time,'%d/%m/%y')AS followup_entry_time,
+COALESCE((SELECT DATE_FORMAT(followup_followup_time,'%d/%m/%y')
+FROM  axelaauto_$P{comp_id}.axela_sales_enquiry_followup
+	WHERE followup_enquiry_id=$P{enquiry_id}
+AND followup_id>f.followup_id
+					ORDER BY followup_followup_time LIMIT  1),'') AS nextfollowup
+ from  axelaauto_$P{comp_id}.axela_sales_enquiry_followup f 
+ inner join  axelaauto_$P{comp_id}.axela_sales_enquiry on enquiry_id = f.followup_enquiry_id
+ inner join  axelaauto_$P{comp_id}.axela_emp on emp_id = f.followup_entry_id 
+ LEFT JOIN axelaauto_$P{comp_id}.axela_sales_so ON so_enquiry_id = enquiry_id
+ inner join  axelaauto_$P{comp_id}.axela_sales_enquiry_followup_type on followuptype_id = f.followup_followuptype_id 
+ where 1 = 1 and f.followup_enquiry_id =$P{enquiry_id}
+ order by f.followup_followup_time]]>
+	</queryString>
+	<field name="followup_desc" class="java.lang.String"/>
+	<field name="followup_entry_time" class="java.lang.String"/>
+	<field name="nextfollowup" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="32" splitType="Stretch">
+			<line>
+				<reportElement x="-1" y="0" width="491" height="1" uuid="e466d056-1f33-4c3d-a71b-ef20d775faa0">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+			</line>
+			<staticText>
+				<reportElement x="0" y="1" width="490" height="30" uuid="45bf9ea3-c452-4e3a-b168-e6678c9385cf"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Prospect Followup-Summary]]></text>
+			</staticText>
+			<line>
+				<reportElement x="-1" y="1" width="1" height="30" uuid="cbd5528a-9191-498a-a6f6-4ad34ab284f0"/>
+			</line>
+			<line>
+				<reportElement x="491" y="1" width="1" height="30" uuid="92507726-8ff9-445a-a4e8-1b07f6bcf808"/>
+			</line>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="29" splitType="Stretch">
+			<line>
+				<reportElement x="-1" y="0" width="1" height="29" uuid="c2d620fe-e242-4856-908d-b8c6061ca60c"/>
+			</line>
+			<line>
+				<reportElement x="491" y="0" width="1" height="29" uuid="cb56d451-bc22-49d5-969b-c68eba7348e0"/>
+			</line>
+			<staticText>
+				<reportElement x="0" y="0" width="60" height="29" uuid="33533987-00de-4ae0-9c51-b21ce3afc2ff"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Follow Up Done On Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="60" y="0" width="230" height="29" uuid="1bfc5463-2764-491c-a145-36d9d75ba910"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Remarks]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="290" y="0" width="70" height="29" uuid="0d3da3f1-f3b4-47dd-8d66-0ca85caae24e"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Next Contact Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="360" y="0" width="60" height="29" uuid="7b3ff7ae-65fa-4763-bb84-73f38ca92c60"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Description]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="420" y="0" width="70" height="29" uuid="3aae90f1-4c4e-4cb9-9cc8-161b7e9c8886"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Authorized Signature]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="30" splitType="Stretch">
+			<textField isBlankWhenNull="true">
+				<reportElement x="0" y="0" width="60" height="30" uuid="d087cabe-44a3-4975-992f-b91829209c57">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="7" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{followup_entry_time}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="-1" y="0" width="1" height="30" uuid="3ffb3729-3807-4cea-9e6e-25b395d0265f">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="491" y="0" width="1" height="30" uuid="4952280b-daa0-476b-92d4-4ff09cfc5ca8">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+			</line>
+			<textField isBlankWhenNull="true">
+				<reportElement x="60" y="0" width="230" height="30" uuid="b2aacff2-b87d-4357-ba93-4fe204d74aa3"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="7" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{followup_desc}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="290" y="0" width="70" height="30" uuid="51b78bfb-41ee-44d7-9ed0-a489ce6efed0"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="7" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nextfollowup}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="360" y="0" width="60" height="30" uuid="2365229f-08ed-4b25-911c-e91235fd52d5"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="8" isBold="true"/>
+				</textElement>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="420" y="0" width="70" height="30" uuid="02a1c0d2-3b6c-4abd-b190-6dc205d7d493"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="8" isBold="true"/>
+				</textElement>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>
